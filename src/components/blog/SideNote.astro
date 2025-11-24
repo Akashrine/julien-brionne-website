@@ -7,7 +7,7 @@ const { children } = Astro.props;
 ---
 
 <aside class="side-note-magazine fade-in-up">
-	<div class="side-note-content-magazine">
+	<div class="side-note-content-magazine border-l-2 border-sand/40 dark:border-sand/30 bg-[#F9F6F1] dark:bg-[#1E1E1E] text-[#121212] dark:text-[#C9B8A5] px-6 py-6 rounded-r-lg font-sans text-sm md:text-xs leading-relaxed">
 		<slot />
 	</div>
 </aside>
@@ -34,25 +34,6 @@ const { children } = Astro.props;
 	}
 	
 	.side-note-content-magazine {
-		border-left: 2px solid rgba(198, 166, 118, 0.4);
-		background-color: #F9F6F1;
-		padding: 1.5rem;
-		border-radius: 0 0.5rem 0.5rem 0;
-		font-family: 'Inter', sans-serif;
-		font-size: 0.875rem;
-		line-height: 1.6;
-		color: #121212;
-	}
-	
-	.dark .side-note-content-magazine {
-		border-left-color: rgba(198, 166, 118, 0.3);
-		background-color: #1E1E1E;
-		color: #C9B8A5;
-	}
-	
-	@media (min-width: 1280px) {
-		.side-note-content-magazine {
-			font-size: 0.8125rem;
-		}
+		/* Styles de base gérés par Tailwind maintenant */
 	}
 </style>

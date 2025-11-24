@@ -139,6 +139,23 @@ body {
 	color: #121212;
 }
 
+/* Amélioration de l'alignement autour des images flottantes */
+.article-content :global(.float-img) + p {
+	margin-top: 0;
+}
+
+/* Assurer que les titres après une image flottante ont un clearfix */
+.article-content :global(.float-img) ~ h2,
+.article-content :global(.float-img) ~ h3 {
+	clear: both;
+	margin-top: 3rem;
+}
+
+/* Assurer que le SideNote ne s'enroule pas autour de l'image */
+.article-content :global(.float-img) ~ :global(.side-note-magazine) {
+	clear: both;
+}
+
 .dark .article-content p {
 	color: #C9B8A5;
 }

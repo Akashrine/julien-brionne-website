@@ -115,16 +115,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	const toggleBtn = document.getElementById('theme-toggle');
 	const darkIcon = document.getElementById('theme-toggle-dark-icon');
 	const lightIcon = document.getElementById('theme-toggle-light-icon');
+	const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+	const darkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+	const lightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+	// Fonction pour mettre à jour toutes les icônes
+	function updateThemeIcons(isDark) {
+		if (isDark) {
+			lightIcon?.classList.remove('hidden');
+			darkIcon?.classList.add('hidden');
+			lightIconMobile?.classList.remove('hidden');
+			darkIconMobile?.classList.add('hidden');
+		} else {
+			darkIcon?.classList.remove('hidden');
+			lightIcon?.classList.add('hidden');
+			darkIconMobile?.classList.remove('hidden');
+			lightIconMobile?.classList.add('hidden');
+		}
+	}
 
 	if (toggleBtn && darkIcon && lightIcon) {
 		// Initialiser l'icône selon le thème actuel
-		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		const isDark = localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+		if (isDark) {
 			document.documentElement.classList.add('dark');
-			lightIcon.classList.remove('hidden');
 		} else {
 			document.documentElement.classList.remove('dark');
-			darkIcon.classList.remove('hidden');
 		}
+		updateThemeIcons(isDark);
 
 		// Fonction pour mettre à jour le favicon
 		function updateFavicon(isDark) {
@@ -155,47 +173,49 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		}
 
-		// Gestion du toggle
+		// Gestion du toggle desktop
 		toggleBtn.addEventListener('click', function() {
-			darkIcon.classList.toggle('hidden');
-			lightIcon.classList.toggle('hidden');
+			const isCurrentlyDark = document.documentElement.classList.contains('dark');
+			const newIsDark = !isCurrentlyDark;
 			
-			let isDark = false;
-			if (localStorage.getItem('color-theme')) {
-				if (localStorage.getItem('color-theme') === 'light') {
-					document.documentElement.classList.add('dark');
-					localStorage.setItem('color-theme', 'dark');
-					isDark = true;
-				} else {
-					document.documentElement.classList.remove('dark');
-					localStorage.setItem('color-theme', 'light');
-					isDark = false;
-				}
+			updateThemeIcons(newIsDark);
+			
+			if (newIsDark) {
+				document.documentElement.classList.add('dark');
+				localStorage.setItem('color-theme', 'dark');
 			} else {
-				if (document.documentElement.classList.contains('dark')) {
-					document.documentElement.classList.remove('dark');
-					localStorage.setItem('color-theme', 'light');
-					isDark = false;
-				} else {
-					document.documentElement.classList.add('dark');
-					localStorage.setItem('color-theme', 'dark');
-					isDark = true;
-				}
+				document.documentElement.classList.remove('dark');
+				localStorage.setItem('color-theme', 'light');
 			}
 			
-			// Mettre à jour le favicon
-			updateFavicon(isDark);
-			
-			// Mettre à jour les images selon le thème
-			updateThemeImages(isDark);
+			updateFavicon(newIsDark);
+			updateThemeImages(newIsDark);
 			
 			// Track le changement de thème dans GA4
 			if (typeof window !== 'undefined' && window.gtag) {
 				window.gtag('event', 'theme_change', {
-					theme: isDark ? 'dark' : 'light',
+					theme: newIsDark ? 'dark' : 'light',
 					event_category: 'preferences'
 				});
 			}
+		});
+		
+		// Gestion du toggle mobile (synchronisé avec desktop)
+		if (toggleBtnMobile) {
+			toggleBtnMobile.addEventListener('click', function() {
+				// Déclencher le toggle desktop pour synchroniser
+				toggleBtn.click();
+			});
+		}
+		
+		// Observer les changements de thème pour synchroniser les icônes
+		const themeObserver = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			updateThemeIcons(isDark);
+		});
+		themeObserver.observe(document.documentElement, { 
+			attributes: true, 
+			attributeFilter: ['class'] 
 		});
 		
 		// Initialiser les images au chargement selon le thème actuel

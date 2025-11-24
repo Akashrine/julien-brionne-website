@@ -46,6 +46,7 @@ const { src, alt, caption, side = 'left', width = '300px' } = Astro.props;
 			float: left;
 			margin-right: 2rem;
 			margin-bottom: 1rem;
+			margin-top: 0.5rem;
 			width: auto;
 		}
 		
@@ -53,8 +54,17 @@ const { src, alt, caption, side = 'left', width = '300px' } = Astro.props;
 			float: right;
 			margin-left: 2rem;
 			margin-bottom: 1rem;
+			margin-top: 0.5rem;
 			width: auto;
 		}
+	}
+	
+	/* Clearfix pour les éléments suivants qui ne doivent pas s'enrouler */
+	:global(.article-content) :global(h2),
+	:global(.article-content) :global(h3),
+	:global(.article-content) :global(.side-note-magazine),
+	:global(.article-content) :global(.break-section) {
+		clear: both;
 	}
 </style>
 
