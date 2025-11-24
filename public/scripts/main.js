@@ -225,11 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// ===== NAVBAR - SCROLL ET LOGO =====
 	const navbar = document.getElementById('navbar');
+	const navbarInner = document.getElementById('navbar-inner');
 	const logoText = document.getElementById('logo-text');
 	const logoLight = document.getElementById('logo-light');
 	const logoDark = document.getElementById('logo-dark');
 
-	if (navbar && logoText && logoLight && logoDark) {
+	if (navbar && navbarInner && logoText && logoLight && logoDark) {
 		// Fonction pour mettre à jour le logo selon le thème
 		function updateLogoTheme(isDark) {
 			if (isDark) {
@@ -273,12 +274,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > 50) {
-				navbar.classList.add('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
-				navbar.classList.remove('bg-transparent', 'border-transparent', 'py-6');
+				navbar.classList.add('bg-ivory/80', 'dark:bg-graphite/80', 'backdrop-blur-sm', 'shadow-sm', 'border-sand/10');
+				navbar.classList.remove('bg-transparent', 'border-transparent');
+				navbarInner.classList.remove('py-6');
+				navbarInner.classList.add('py-3');
 				toggleLogo(true);
 			} else {
-				navbar.classList.remove('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
-				navbar.classList.add('bg-transparent', 'border-transparent', 'py-6');
+				navbar.classList.remove('bg-ivory/80', 'dark:bg-graphite/80', 'backdrop-blur-sm', 'shadow-sm', 'border-sand/10');
+				navbar.classList.add('bg-transparent', 'border-transparent');
+				navbarInner.classList.remove('py-3');
+				navbarInner.classList.add('py-6');
 				toggleLogo(false);
 			}
 		});
