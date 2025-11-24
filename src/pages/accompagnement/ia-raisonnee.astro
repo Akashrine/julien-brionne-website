@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "IA Raisonnée — Ajouter de l'IA là où elle crée de la valeur | Julien Brionne";
+const description = "J'aide les équipes à intégrer l'IA de manière raisonnée, là où elle a un effet levier réel sur l'usage et la valeur.";
+---
+
+<Layout title={title} description={description}>
+	<Navbar />
+	<main>
+		
+		<!-- SECTION 1 — HERO -->
+		<section class="min-h-[90vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - IA Raisonnée">
+			<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
+			
+			<!-- SVG d'arrière-plan -->
+			<div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+				<svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60 dark:opacity-30">
+					<path d="M-100 600 C 200 600, 400 300, 800 400 C 1200 500, 1400 200, 1600 200" stroke="#C6A676" stroke-width="1.5" fill="none" />
+					<path d="M-100 620 C 200 620, 400 320, 800 420 C 1200 520, 1400 220, 1600 220" stroke="#C6A676" stroke-width="1" fill="none" opacity="0.7" />
+					<circle cx="1100" cy="300" r="15" fill="#C6A676" />
+				</svg>
+			</div>
+			
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
+						IA Raisonnée — intégrer l'IA là où elle crée de la valeur, pas du bruit
+					</h1>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Le problème (aligné à gauche) -->
+		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="probleme-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-5xl mx-auto relative z-10">
+				<div class="max-w-3xl">
+					<div class="relative mb-6 fade-in-up">
+						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+						<h2 id="probleme-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+							Le problème
+						</h2>
+						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+							L'IA ne doit pas créer du bruit.
+						</p>
+					</div>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+						La majorité des intégrations IA sont gadgets. Elles créent plus de complexité que de valeur.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — Objectif (carte éditoriale) -->
+		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="objectif-heading">
+			<div class="max-w-5xl mx-auto">
+				<div class="border border-sand/20 dark:border-sand/15 bg-[#F9F6F1] dark:bg-graphite rounded-xl p-12 shadow-sm">
+					<div class="relative mb-6 fade-in-up">
+						<div class="absolute top-0 left-0 w-2 h-2 bg-sand rounded-full"></div>
+						<h2 id="objectif-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory ml-4 relative">
+							<span class="absolute -left-8 top-1/2 -translate-y-1/2 w-24 h-[1px] bg-sand/20 dark:bg-sand/15 opacity-20"></span>
+							Objectif
+						</h2>
+						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4 ml-4">
+							Identifier les opportunités qui créent réellement de la valeur.
+						</p>
+					</div>
+					<div class="space-y-6 fade-in-up ml-4" style="transition-delay: 0.1s;">
+						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+							Identifier les opportunités d'IA qui créent réellement :
+						</p>
+						<ul class="space-y-4 ml-4">
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">valeur</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">vitesse</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">qualité</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">meilleures décisions</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — Approche (grille 2 colonnes) -->
+		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="approche-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-5xl mx-auto relative z-10">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+					<!-- Colonne gauche — Texte -->
+					<div class="fade-in-up">
+						<div class="relative mb-6">
+							<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+							<h2 id="approche-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+								Approche
+							</h2>
+							<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+								IA = effet levier réel.
+							</p>
+						</div>
+						<ul class="space-y-4 mt-8">
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">cartographie des opportunités</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">quick wins raisonnés</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">IA ≠ bruit</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">IA = effet levier réel</span>
+							</li>
+						</ul>
+					</div>
+					<!-- Colonne droite — Illustration -->
+					<div class="flex justify-center items-center fade-in-up" style="transition-delay: 0.1s;">
+						<img src="/AI-Photoroom.webp" 
+							 alt="IA Raisonnée" 
+							 class="w-48 md:w-64 h-auto opacity-90 dark:opacity-80"
+							 loading="lazy"
+							 width="256"
+							 height="256">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — CTA Final -->
+		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl space-y-6 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
+					Votre produit traverse un moment critique.
+				</h2>
+				<p class="font-serif text-lg italic opacity-80 text-graphite dark:text-warmgray-300">
+					Clarifions ensemble ce qui bloque.
+				</p>
+				<p class="text-base text-graphite dark:text-warmgray-300">
+					Un échange de 30 minutes pour comprendre votre situation et identifier les leviers immédiats.
+				</p>
+				<div class="flex flex-col items-center gap-6 pt-4">
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Diagnostiquer votre situation produit">
+						Diagnostiquer votre situation
+					</a>
+					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>

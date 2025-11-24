@@ -1,0 +1,103 @@
+---
+title: "L'art subtil de dire Non : Le super-pouvoir du CPO"
+description: "Pourquoi dire \"oui\" à toutes les fonctionnalités est la voie la plus rapide vers un produit médiocre. Guide de survie pour prioriser sans se faire détester."
+date: "2025-11-20"
+draft: false
+cover: "cover.webp"
+tags: ["STRATÉGIE", "MANAGEMENT"]
+---
+
+import FullImage from '../../components/blog/FullImage.astro';
+import SideNote from '../../components/blog/SideNote.astro';
+import Quote from '../../components/blog/Quote.astro';
+import PullQuote from '../../components/blog/PullQuote.astro';
+import Highlight from '../../components/blog/Highlight.astro';
+import BreakSection from '../../components/blog/BreakSection.astro';
+import CodeWindow from '../../components/blog/CodeWindow.astro';
+import FloatImg from '../../components/blog/FloatImg.astro';
+
+C'est la scène classique du lundi matin. Le CEO arrive avec une "idée géniale" eue sous la douche. Le Sales VP a promis une feature "critique" pour signer un gros compte. Le support client hurle pour corriger un bug UX. Et au milieu, vous avez une équipe de 5 développeurs et une roadmap déjà pleine à craquer.
+
+La réalité du Product Management, c'est que vous ne gérez pas la production. Vous gérez le **renoncement**.
+
+## Le coût invisible du "Oui"
+
+Chaque feature ajoutée, c'est une dette. Technique, cognitive pour les utilisateurs, de maintenance pour l'équipe. Dire "oui" est facile, confortable, rassurant. C'est aussi souvent lâche.
+
+<Quote>
+La stratégie, c'est l'art du sacrifice. Si tout est prioritaire, rien ne l'est.
+</Quote>
+
+Il faut changer de système d'exploitation mental. Refuser par méthode, pas par principe. Voici comment je structure mes arbitrages.
+
+<CodeWindow title="shouldBuildIt()" language="javascript">
+```javascript
+function shouldBuildIt(feature) {
+  // 1. Est-ce aligné avec la vision ?
+  if (!feature.alignedWithVision) {
+    return "NON : pas aligné avec la direction produit";
+  }
+  
+  // 2. Est-ce que ça résout un vrai problème ?
+  if (!feature.solvesRealProblem) {
+    return "NON : problème non identifié ou mal défini";
+  }
+  
+  // 3. Quel est le coût d'opportunité ?
+  const opportunityCost = calculateOpportunityCost(feature, currentRoadmap);
+  if (opportunityCost > feature.impact) {
+    return "NON : coût d'opportunité trop élevé";
+  }
+  
+  // 4. A-t-on les preuves nécessaires ?
+  if (!feature.hasEvidence) {
+    return "NON : pas assez de preuves, besoin de Discovery";
+  }
+  
+  // Si on arrive ici, on peut considérer
+  return "OUI : on lance la Discovery";
+}
+```
+</CodeWindow>
+
+## La méthode R.I.C.E revisitée
+
+Oubliez les tableaux Excel complexes. La vraie priorisation, c'est une conversation.
+
+Quand un stakeholder vous propose une idée, ne dites pas "non". Dites **"Oui, et..."**.
+
+**Exemple :**
+
+**Stakeholder :** "On devrait ajouter un dashboard analytics pour les clients enterprise."
+
+**Vous :** "Oui, et pour le faire bien, il faudrait déprioriser le projet X qui représente 100k€ de revenus récurrents. Est-ce que ce dashboard vaut plus que ces 100k€ ?"
+
+Vous ne refusez pas. Vous **déplacez la conversation** vers les trade-offs, pas vers les goûts et les couleurs.
+
+## Le "Kill Meeting"
+
+<FloatImg 
+	src="/blog/art-subtil-dire-non/kill-meeting.jpg" 
+	alt="Réunion Kill Meeting - Décider quoi arrêter"
+	side="left"
+	width="300px"
+/>
+
+Une fois par trimestre, organisez un "Kill Meeting". Pas pour décider quoi construire. Pour décider **quoi arrêter**.
+
+C'est un rituel sain pour une équipe produit. Parce que la valeur ne se mesure pas au nombre de JIRA tickets passés en "Done". Elle se mesure à la **clarté** que vous apportez dans le chaos.
+
+<SideNote>
+Le Kill Meeting n'est pas une séance de critique. C'est un moment de clarification : qu'est-ce qui ne sert plus la vision ? Qu'est-ce qui alourdit le produit sans créer de valeur ?
+</SideNote>
+
+## Conclusion : Devenir un Product Copilot
+
+Un Product Copilot, c'est quelqu'un qui peut naviguer dans la turbulence. Qui sait dire "non" avec méthode, pas avec arrogance.
+
+La valeur ne se mesure pas au nombre de tickets JIRA déplacés vers "Done". Elle se mesure à la clarté que vous apportez dans le chaos.
+
+La prochaine fois qu'on vous demande une feature, respirez, souriez, et demandez :
+
+**"Pour ne pas faire quoi ?"**
+

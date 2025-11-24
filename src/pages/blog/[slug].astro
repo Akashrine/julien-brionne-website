@@ -1,0 +1,92 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import FullImage from '../../components/blog/FullImage.astro';
+import SideNote from '../../components/blog/SideNote.astro';
+import Quote from '../../components/blog/Quote.astro';
+import PullQuote from '../../components/blog/PullQuote.astro';
+import Highlight from '../../components/blog/Highlight.astro';
+import BreakSection from '../../components/blog/BreakSection.astro';
+import CodeWindow from '../../components/blog/CodeWindow.astro';
+import ImageGallery from '../../components/blog/ImageGallery.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => {
+    return !data.draft;
+  });
+  
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props as Props;
+
+// Rendu du contenu MDX
+const { Content, headings } = await post.render();
+
+// Données frontmatter
+const slug = post.slug;
+const postTitle = post.data.title;
+const postDescription = post.data.description;
+const postDateRaw = post.data.date;
+const coverImage = post.data.cover ? `/blog/${slug}/${post.data.cover}` : null;
+const tags = post.data.tags || [];
+
+// Formatage de la date
+let formattedDate = postDateRaw;
+try {
+	const dateObj = new Date(postDateRaw);
+	formattedDate = dateObj.toLocaleDateString('fr-FR', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	});
+} catch (e) {
+	formattedDate = postDateRaw;
+}
+
+// Calcul du temps de lecture approximatif basé sur la description et le titre
+// Estimation : ~200 mots/min, on utilise une estimation basée sur la longueur du contenu
+function estimateReadingTime(title: string, description: string): number {
+	const wordsPerMinute = 200;
+	const estimatedWords = title.split(/\s+/).length + description.split(/\s+/).length * 20; // Estimation
+	return Math.max(3, Math.ceil(estimatedWords / wordsPerMinute));
+}
+
+const readingTime = estimateReadingTime(postTitle, postDescription);
+
+// Pour le <Layout>
+const title = `${postTitle} | Julien Brionne`;
+const description = postDescription;
+---
+
+<ArticleLayout 
+  title={title}
+  description={description}
+  postTitle={postTitle}
+  postDescription={postDescription}
+  postDate={postDateRaw}
+  coverImage={coverImage}
+  currentSlug={slug}
+  readingTime={readingTime}
+  tags={tags}
+>
+  <Content 
+    components={{
+      FullImage,
+      SideNote,
+      Quote,
+      PullQuote,
+      Highlight,
+      BreakSection,
+      CodeWindow,
+      ImageGallery,
+    }}
+  />
+</ArticleLayout>

@@ -1,0 +1,485 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "L'approche Product Copilot — Clarifier. Aligner. Créer de l'impact. | Julien Brionne";
+const description = "Mon approche : remettre de la clarté là où elle manque, stabiliser ce qui déraille et concentrer toute l'énergie sur l'impact réel, pas la production de features.";
+---
+
+<Layout title={title} description={description}>
+	<Navbar />
+	<main>
+		
+		<!-- SECTION INTRO — Manifeste -->
+		<section class="pt-32 md:pt-40 pb-24 md:pb-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Introduction - Approche Product Copilot">
+			<div class="max-w-4xl mx-auto text-center space-y-12 fade-in-up">
+				<div class="space-y-6">
+					<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
+						PHILOSOPHIE
+					</p>
+					<h1 class="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory" style="font-size: 4.5rem;">
+						L'approche Product Copilot
+					</h1>
+					<p class="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1] text-balance italic text-sand dark:text-sand-light">
+						Clarifier. Aligner. Créer de l'impact.
+					</p>
+				</div>
+				
+				<div class="max-w-2xl mx-auto space-y-6 text-left">
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Un produit n'avance pas parce qu'on produit plus.
+					</p>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Il avance quand l'équipe décide mieux, ensemble.
+					</p>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Mon approche est simple : remettre de la clarté là où elle manque, stabiliser ce qui déraille et concentrer toute l'énergie sur l'impact réel, pas la production de features.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 1 — Quand un produit commence à perdre son sens -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative" aria-labelledby="signaux-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-7xl mx-auto relative z-10">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+					<!-- Colonne gauche -->
+					<div class="space-y-8 fade-in-up">
+						<h2 id="signaux-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-graphite dark:text-ivory">
+							Quand un produit commence à perdre son sens
+						</h2>
+						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+							La plupart des équipes sentent que quelque chose se dérègle avant même d'être capables de le nommer.
+						</p>
+						<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8">
+							<p class="font-serif text-xl md:text-2xl italic leading-relaxed text-graphite dark:text-ivory">
+								"Dans ces moments-là, un produit ne manque pas d'idées. Il manque de leadership produit."
+							</p>
+						</div>
+					</div>
+					
+					<!-- Colonne droite -->
+					<div class="space-y-6 fade-in-up" style="transition-delay: 0.1s;">
+						<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
+							LES SIGNAUX FAIBLES
+						</p>
+						<ul class="space-y-4">
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">la vision circule mal</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">les priorités changent trop vite</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">l'usage stagne et personne ne sait pourquoi</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">l'équipe compense au lieu de piloter</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">les décisions ne s'appuient plus sur une direction claire</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">la roadmap rassure… mais n'aligne plus</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Ma philosophie de travail -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-labelledby="philosophie-heading">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center space-y-12 mb-12 fade-in-up">
+					<h2 id="philosophie-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory">
+						Ma philosophie de travail
+					</h2>
+					<div class="max-w-3xl mx-auto space-y-4">
+						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+							Pas de frameworks magiques. Pas de PowerPoint théorique. Pas de rituels ajoutés "pour mieux structurer".
+						</p>
+						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 font-medium">
+							Mon approche tient en trois mouvements :
+						</p>
+					</div>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in-up" style="transition-delay: 0.1s;">
+					<!-- Piloter -->
+					<div class="space-y-6 group">
+						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Piloter</h3>
+						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Reconnecter la vision, les arbitrages et la direction produit. Redonner de la lisibilité. Faire circuler ce qui doit circuler.
+						</p>
+					</div>
+					
+					<!-- Stabiliser -->
+					<div class="space-y-6 group">
+						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Stabiliser</h3>
+						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Créer un rythme. Clarifier les rôles. Simplifier ce qui crée de la surcharge. Faire ensemble, pas à côté.
+						</p>
+					</div>
+					
+					<!-- Résoudre -->
+					<div class="space-y-6 group">
+						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Résoudre</h3>
+						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Traiter les vrais leviers : adoption, activation, usage, churn, compréhension du problème client. L'impact, pas l'exécution.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — FRAME -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-graphite relative" aria-labelledby="frame-heading">
+			<div class="absolute inset-0 opacity-[0.1] pointer-events-none" style="background-image: radial-gradient(circle, #C6A676 1px, transparent 1px); background-size: 20px 20px;"></div>
+			<div class="max-w-7xl mx-auto relative z-10">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
+					<!-- Colonne gauche — Texte -->
+					<div class="space-y-8 fade-in-up">
+						<h2 id="frame-heading" class="font-serif text-4xl md:text-5xl lg:text-6xl text-sand">
+							FRAME<span class="text-sand text-2xl md:text-3xl align-super">™</span>
+						</h2>
+						<p class="font-sans text-lg md:text-xl text-ivory">
+							Le système qui structure le travail.
+						</p>
+						<div class="w-16 h-[1px] bg-sand"></div>
+						<p class="font-sans text-base md:text-lg leading-relaxed text-warmgray-300">
+							Je ne crois pas aux frameworks qui s'imposent à une équipe. Je crois aux cadres qui l'aident à voir plus clair.
+						</p>
+						<p class="font-sans text-base md:text-lg leading-relaxed text-warmgray-300">
+							FRAME est un outil que j'utilise en interne pour structurer notre travail.
+						</p>
+						<a href="/outils" class="inline-flex items-center gap-2 font-sans text-base md:text-lg text-sand hover:text-sand-light transition-colors duration-300 group mt-4">
+							Voir mes autres outils
+							<svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</div>
+					
+					<!-- Colonne droite — Grille FRAME — 2 lignes de 3 colonnes -->
+					<div class="grid grid-cols-3 gap-4 md:gap-6 fade-in-up" style="transition-delay: 0.1s;">
+						<!-- F — Focus -->
+						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
+							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">F</div>
+							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Focus</h3>
+							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
+								Ce qui compte vraiment. Les choix. Les renoncements.
+							</p>
+						</div>
+						
+						<!-- R — Risques -->
+						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
+							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">R</div>
+							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Risques</h3>
+							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
+								Ce qui met le produit en danger. Les zones d'ombre.
+							</p>
+						</div>
+						
+						<!-- A — Alignement -->
+						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
+							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">A</div>
+							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Alignement</h3>
+							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
+								Vision → stratégie → exécution. Tout bouge dans le même sens.
+							</p>
+						</div>
+						
+						<!-- M — Mesure -->
+						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
+							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">M</div>
+							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Mesure</h3>
+							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
+								Outcomes, KPIs. Célébrer le changement de comportement.
+							</p>
+						</div>
+						
+						<!-- E — Expérience -->
+						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
+							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">E</div>
+							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Expérience</h3>
+							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
+								Apprendre plus vite. Boucles courtes. Décisions meilleures.
+							</p>
+						</div>
+						
+						<!-- Citation FRAME (sans carte) -->
+						<div class="flex items-center">
+							<p class="font-serif text-sm md:text-base italic leading-relaxed text-warmgray-300">
+								"FRAME ne remplace pas une équipe. Il lui redonne la capacité d'avancer."
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION A — Ce qu'un Product Leader devrait vraiment apporter -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative" aria-labelledby="product-leader-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="product-leader-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 text-graphite dark:text-ivory fade-in-up">
+					Ce qu'un Product Leader devrait vraiment apporter
+				</h2>
+				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Un Product Leader n'est pas là pour ajouter du process. Il est là pour clarifier, trancher et donner un sens commun. Son rôle est de rendre les enjeux visibles, d'éclairer les arbitrages et de transformer le flou en direction. Un bon Product Leader ne fait pas produire plus : il aide l'équipe à décider mieux.
+					</p>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">clarifier les arbitrages, pas multiplier les process</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">rendre les enjeux visibles, pas documenter l'existant</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">transformer le flou en direction</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">créer un rythme stable</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">aider l'équipe à décider mieux, pas à produire plus</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">se concentrer sur l'usage réel, pas les features</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION B — Ce que je ne fais pas (anti-bullshit) -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-labelledby="anti-bullshit-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="anti-bullshit-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 text-graphite dark:text-ivory fade-in-up">
+					Ce que je ne fais pas
+				</h2>
+				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Mon approche repose sur la clarté, pas sur l'accumulation. Beaucoup d'équipes pensent qu'on peut résoudre les problèmes produits en ajoutant des frameworks, des rituels ou des process. C'est souvent l'inverse.
+					</p>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">ajouter des process "pour structurer"</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">imposer des frameworks sans comprendre le problème</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">multiplier les rituels</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">forcer du Scrum ou du Shape Up</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">produire des dizaines de pages Notion</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">transformer l'équipe en machine à tickets</span>
+						</li>
+					</ul>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 font-medium">
+						Je retire ce qui crée du bruit. Je renforce ce qui crée de l'impact.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION C — Un produit est un système de décisions -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative" aria-labelledby="decisions-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="decisions-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 text-graphite dark:text-ivory fade-in-up">
+					La vérité : un produit est un système de décisions
+				</h2>
+				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Quand les décisions sont bonnes, le produit avance. Quand elles sont floues, tout ralentit. Un produit ne s'abîme pas à cause d'un manque de features : il s'abîme à cause de décisions mal posées, tardives ou non assumées.
+					</p>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">une bonne décision > 10 features</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">une décision claire aligne plus qu'un process</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">une décision assumée stabilise l'équipe</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">une décision tardive crée de la dette d'ambiguïté</span>
+						</li>
+					</ul>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 font-medium">
+						Un Product Leader, c'est avant tout un leader des décisions.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION D — Mon rôle dans l'équipe -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-labelledby="role-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="role-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 text-graphite dark:text-ivory fade-in-up">
+					Mon rôle dans l'équipe
+				</h2>
+				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+						Je ne me mets pas au-dessus de l'équipe. Je me mets dans l'équipe. Je prends des décisions quand elle n'a plus la bande passante. Je clarifie quand la vision ne circule plus. Je protège du bruit ce qui doit rester clair. Je crée l'espace permettant aux PMs de retrouver de l'impact.
+					</p>
+					<ul class="space-y-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">je décide quand l'équipe est saturée</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">je clarifie quand la vision se brouille</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">je protège du bruit</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">j'aligne les arbitrages</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">je redonne du rythme et du sens</span>
+						</li>
+					</ul>
+					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 font-medium">
+						Mon rôle : remettre le produit dans le bon sens, et laisser une équipe qui fonctionne mieux qu'avant mon arrivée.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — La trajectoire -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative" aria-labelledby="trajectoire-heading">
+			<div class="max-w-5xl mx-auto">
+				<div class="bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg p-12 shadow-sm fade-in-up">
+					<h2 id="trajectoire-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 text-center text-graphite dark:text-ivory">
+						La trajectoire
+					</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+						<!-- Colonne gauche -->
+						<div class="space-y-4">
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'équipe arrête de compenser et recommence à piloter</span>
+							</div>
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">La roadmap redevient un guide, pas une liste</span>
+							</div>
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'usage remonte car on traite les vrais problèmes</span>
+							</div>
+						</div>
+						<!-- Colonne droite -->
+						<div class="space-y-4">
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">La vision devient un outil, pas un poster</span>
+							</div>
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les arbitrages deviennent plus simples</span>
+							</div>
+							<div class="flex items-start gap-3">
+								<span class="text-sand dark:text-sand-light font-sans text-xl mt-0.5 flex-shrink-0">✓</span>
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Le CEO retrouve de la visibilité et du calme</span>
+							</div>
+						</div>
+					</div>
+					<div class="border-t border-sand/20 dark:border-sand/15 pt-12">
+						<p class="font-serif text-lg md:text-xl italic leading-relaxed text-center text-graphite dark:text-warmgray-300 mb-6">
+							"Un produit ne se remet pas sur les rails avec plus de process. Il se remet sur les rails avec de la clarté, un leadership solide et des décisions qui tiennent la route."
+						</p>
+						<p class="text-center font-sans text-base md:text-lg text-graphite dark:text-ivory uppercase tracking-wide font-semibold">
+							C'est exactement ce que j'apporte.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Conclusion -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative" aria-labelledby="conclusion-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl mx-auto relative z-10 text-center space-y-8 fade-in-up">
+				<h2 id="conclusion-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory">
+					Un produit ne se remet pas sur les rails avec plus de process.
+				</h2>
+				<div class="space-y-4 font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
+					<p>Il se remet sur les rails avec : de la clarté, un leadership produit solide, une équipe alignée, des décisions qui tiennent la route, une compréhension fine de l'usage.</p>
+					<p class="font-medium text-graphite dark:text-ivory">C'est exactement ce que j'apporte.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6 — CTA Final -->
+		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl space-y-6 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
+					Votre produit traverse un moment critique.
+				</h2>
+				<p class="font-serif text-lg italic opacity-80 text-graphite dark:text-warmgray-300">
+					Clarifions ensemble ce qui bloque.
+				</p>
+				<p class="text-base text-graphite dark:text-warmgray-300">
+					Un échange de 30 minutes pour comprendre votre situation et identifier les leviers immédiats.
+				</p>
+				<div class="flex flex-col items-center gap-6 pt-4">
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Diagnostiquer votre situation produit">
+						Diagnostiquer votre situation
+					</a>
+					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>
+

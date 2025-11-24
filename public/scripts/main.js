@@ -1,0 +1,275 @@
+// Import des utilitaires GA4 (sera disponible après build)
+// Les fonctions trackEvent sont définies dans src/utils/analytics.ts
+
+// Gestion des animations fade-in-up au scroll et autres fonctionnalités
+document.addEventListener('DOMContentLoaded', () => {
+	// ===== GOOGLE ANALYTICS 4 - TRACKING AUTOMATIQUE DES PAGES =====
+	// Astro étant une SPA-like, on track les changements de page
+	if (typeof window !== 'undefined' && window.gtag) {
+		// Track la page initiale
+		window.gtag('event', 'page_view', {
+			page_path: window.location.pathname,
+			page_title: document.title
+		});
+		
+		// Track les changements d'URL (si navigation client-side)
+		let lastPath = window.location.pathname;
+		const observer = new MutationObserver(() => {
+			if (window.location.pathname !== lastPath) {
+				lastPath = window.location.pathname;
+				window.gtag('event', 'page_view', {
+					page_path: lastPath,
+					page_title: document.title
+				});
+			}
+		});
+		
+		// Observer les changements dans le DOM (pour détecter les navigations)
+		observer.observe(document.body, {
+			childList: true,
+			subtree: true
+		});
+	}
+	// ===== ANIMATIONS FADE-IN-UP =====
+	const observerOptions = { 
+		root: null, 
+		rootMargin: '0px', 
+		threshold: 0.1 
+	};
+	
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+				observer.unobserve(entry.target);
+			}
+		});
+	}, observerOptions);
+	
+	document.querySelectorAll('.fade-in-up').forEach((el) => { 
+		observer.observe(el); 
+	});
+	
+	// Track les sections visibles dans GA4 (optionnel, pour analytics avancés)
+	if (typeof window !== 'undefined' && window.gtag) {
+		const sectionObserver = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const sectionId = entry.target.id || entry.target.getAttribute('aria-labelledby') || 'unknown';
+					const sectionName = entry.target.querySelector('h1, h2')?.textContent?.trim() || sectionId;
+					
+					// Track seulement une fois par section
+					if (!entry.target.dataset.gaTracked) {
+						entry.target.dataset.gaTracked = 'true';
+						window.gtag('event', 'view_section', {
+							section_name: sectionName,
+							section_id: sectionId,
+							event_category: 'engagement'
+						});
+					}
+				}
+			});
+		}, { threshold: 0.5 });
+		
+		// Observer les sections principales
+		document.querySelectorAll('section[id], section[aria-labelledby]').forEach(section => {
+			sectionObserver.observe(section);
+		});
+	}
+
+	// ===== GESTIONNAIRE LEMCAL POPUP + TRACKING GA4 =====
+	const lemcalLinks = document.querySelectorAll('[data-lemcal-popup]');
+	
+	lemcalLinks.forEach(link => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const url = link.getAttribute('href');
+			const linkText = link.textContent.trim();
+			const linkLocation = link.closest('section')?.id || 'unknown';
+			
+			// Track l'événement CTA dans GA4
+			if (typeof window !== 'undefined' && window.gtag) {
+				window.gtag('event', 'click_cta', {
+					cta_location: linkLocation,
+					cta_text: linkText,
+					cta_url: url,
+					event_category: 'engagement',
+					event_label: 'lemcal_popup'
+				});
+			}
+			
+			const popup = window.open(
+				url,
+				'lemcal',
+				'width=600,height=700,scrollbars=yes,resizable=yes,menubar=no,toolbar=no,location=no'
+			);
+			
+			// Si la popup est bloquée, ouvrir dans un nouvel onglet
+			if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+				window.open(url, '_blank');
+			}
+		});
+	});
+
+	// ===== NAVBAR - TOGGLE THÈME =====
+	const toggleBtn = document.getElementById('theme-toggle');
+	const darkIcon = document.getElementById('theme-toggle-dark-icon');
+	const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+	if (toggleBtn && darkIcon && lightIcon) {
+		// Initialiser l'icône selon le thème actuel
+		if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark');
+			lightIcon.classList.remove('hidden');
+		} else {
+			document.documentElement.classList.remove('dark');
+			darkIcon.classList.remove('hidden');
+		}
+
+		// Fonction pour mettre à jour le favicon
+		function updateFavicon(isDark) {
+			const favicon = document.querySelector('link[rel="icon"]');
+			if (favicon) {
+				favicon.href = isDark ? '/favicons/favicon-dark.webp' : '/favicons/favicon-light.webp';
+			}
+		}
+
+		// Fonction pour mettre à jour les images selon le thème
+		function updateThemeImages(isDark) {
+			document.querySelectorAll('.theme-image').forEach(img => {
+				const lightSrc = img.getAttribute('data-light-src');
+				const darkSrc = img.getAttribute('data-dark-src');
+				if (lightSrc && darkSrc) {
+					// Mettre à jour la source de l'image
+					img.src = isDark ? darkSrc : lightSrc;
+					
+					// Mettre à jour la source dans le <source> parent si présent
+					const picture = img.closest('picture');
+					if (picture) {
+						const source = picture.querySelector('source[type="image/webp"]');
+						if (source) {
+							source.srcset = isDark ? darkSrc : lightSrc;
+						}
+					}
+				}
+			});
+		}
+
+		// Gestion du toggle
+		toggleBtn.addEventListener('click', function() {
+			darkIcon.classList.toggle('hidden');
+			lightIcon.classList.toggle('hidden');
+			
+			let isDark = false;
+			if (localStorage.getItem('color-theme')) {
+				if (localStorage.getItem('color-theme') === 'light') {
+					document.documentElement.classList.add('dark');
+					localStorage.setItem('color-theme', 'dark');
+					isDark = true;
+				} else {
+					document.documentElement.classList.remove('dark');
+					localStorage.setItem('color-theme', 'light');
+					isDark = false;
+				}
+			} else {
+				if (document.documentElement.classList.contains('dark')) {
+					document.documentElement.classList.remove('dark');
+					localStorage.setItem('color-theme', 'light');
+					isDark = false;
+				} else {
+					document.documentElement.classList.add('dark');
+					localStorage.setItem('color-theme', 'dark');
+					isDark = true;
+				}
+			}
+			
+			// Mettre à jour le favicon
+			updateFavicon(isDark);
+			
+			// Mettre à jour les images selon le thème
+			updateThemeImages(isDark);
+			
+			// Track le changement de thème dans GA4
+			if (typeof window !== 'undefined' && window.gtag) {
+				window.gtag('event', 'theme_change', {
+					theme: isDark ? 'dark' : 'light',
+					event_category: 'preferences'
+				});
+			}
+		});
+		
+		// Initialiser les images au chargement selon le thème actuel
+		const isDarkOnLoad = document.documentElement.classList.contains('dark');
+		updateThemeImages(isDarkOnLoad);
+	}
+
+	// ===== NAVBAR - SCROLL ET LOGO =====
+	const navbar = document.getElementById('navbar');
+	const logoText = document.getElementById('logo-text');
+	const logoLight = document.getElementById('logo-light');
+	const logoDark = document.getElementById('logo-dark');
+
+	if (navbar && logoText && logoLight && logoDark) {
+		// Fonction pour mettre à jour le logo selon le thème
+		function updateLogoTheme(isDark) {
+			if (isDark) {
+				logoLight.classList.add('hidden');
+				logoDark.classList.remove('hidden');
+			} else {
+				logoLight.classList.remove('hidden');
+				logoDark.classList.add('hidden');
+			}
+		}
+		
+		// Initialiser le logo selon le thème
+		const isDarkMode = document.documentElement.classList.contains('dark');
+		updateLogoTheme(isDarkMode);
+		
+		function toggleLogo(showLogo) {
+			if (showLogo) {
+				// Afficher le logo et masquer le texte
+				logoText.classList.add('opacity-0', 'scale-0', 'absolute');
+				const isDark = document.documentElement.classList.contains('dark');
+				if (isDark) {
+					logoDark.classList.remove('opacity-0', 'scale-0');
+					logoDark.classList.add('opacity-100', 'scale-100', 'relative');
+					logoLight.classList.add('opacity-0', 'scale-0');
+					logoLight.classList.remove('opacity-100', 'scale-100', 'relative');
+				} else {
+					logoLight.classList.remove('opacity-0', 'scale-0');
+					logoLight.classList.add('opacity-100', 'scale-100', 'relative');
+					logoDark.classList.add('opacity-0', 'scale-0');
+					logoDark.classList.remove('opacity-100', 'scale-100', 'relative');
+				}
+			} else {
+				// Masquer le logo et afficher le texte
+				logoText.classList.remove('opacity-0', 'scale-0', 'absolute');
+				logoLight.classList.add('opacity-0', 'scale-0');
+				logoLight.classList.remove('opacity-100', 'scale-100', 'relative');
+				logoDark.classList.add('opacity-0', 'scale-0');
+				logoDark.classList.remove('opacity-100', 'scale-100', 'relative');
+			}
+		}
+		
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				navbar.classList.add('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
+				navbar.classList.remove('bg-transparent', 'border-transparent', 'py-6');
+				toggleLogo(true);
+			} else {
+				navbar.classList.remove('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
+				navbar.classList.add('bg-transparent', 'border-transparent', 'py-6');
+				toggleLogo(false);
+			}
+		});
+		
+		// Mettre à jour le logo quand le thème change
+		const themeObserver = new MutationObserver(() => {
+			if (window.scrollY > 50) {
+				toggleLogo(true);
+			}
+		});
+		themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+});
+

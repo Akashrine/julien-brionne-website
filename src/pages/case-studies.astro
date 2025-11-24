@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getPageBreadcrumbSchema } from '../utils/schemas';
+import { caseStudies } from '../data/caseStudies.js';
+
+const title = "Études de cas — Comment je débloque les produits qui comptent | Julien Brionne";
+const description = "Trois études de cas détaillées : rétention conversationnelle, stabilisation d'équipe produit, activation et onboarding. Comment j'interviens pour débloquer l'impact réel.";
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = new URL('/case-studies', siteUrl).href;
+
+// Breadcrumb Schema
+const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Études de cas");
+---
+
+<Layout title={title} description={description}>
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	
+	<Navbar />
+	<main>
+		
+		<!-- SECTION 1 — HERO -->
+		<section class="pt-32 md:pt-40 pb-24 md:pb-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Hero - Études de cas">
+			<div class="max-w-3xl mx-auto text-center space-y-6 fade-in-up">
+				<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
+					ÉTUDES DE CAS
+				</p>
+				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory">
+					Comment je débloque les produits qui comptent.
+				</h1>
+				<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 max-w-2xl mx-auto">
+					Des interventions concrètes sur des problèmes réels. Rétention, équipe, activation. Trois cas où l'impact a précédé la production.
+				</p>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Grille 3 Case Studies -->
+		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="case-studies-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-7xl mx-auto relative z-10">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+					{caseStudies.map((caseStudy, index) => (
+						<a href={`/case-study/${caseStudy.slug}`} class="group bg-[#F9F6F1] dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-xl p-8 md:p-10 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300 hover:shadow-lg fade-in-up" style={`transition-delay: ${0.1 * index}s`}>
+							<div class="space-y-4">
+								<p class="font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-sand dark:text-sand-light font-semibold">
+									{caseStudy.label}
+								</p>
+								<h2 class="font-serif text-2xl md:text-3xl leading-tight text-graphite dark:text-ivory group-hover:text-sand dark:group-hover:text-sand-light transition-colors duration-300">
+									{caseStudy.title}
+								</h2>
+								<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
+									{caseStudy.description}
+								</p>
+								<div class="pt-4">
+									<span class="font-sans text-sm font-medium text-sand dark:text-sand-light group-hover:underline inline-flex items-center gap-2">
+										Lire l'étude
+										<svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+										</svg>
+									</span>
+								</div>
+							</div>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — CTA Final -->
+		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl space-y-6 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
+					Votre produit traverse un moment critique ?
+				</h2>
+				<p class="font-serif text-lg italic opacity-80 text-graphite dark:text-warmgray-300">
+					Un échange de 30 minutes pour clarifier vos enjeux.
+				</p>
+				<div class="flex flex-col items-center gap-6 pt-4">
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Discuter de votre situation produit">
+						Discuter de votre situation
+					</a>
+					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>
+

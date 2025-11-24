@@ -1,0 +1,31 @@
+---
+interface Props {
+	images: Array<{
+		src: string;
+		alt: string;
+		caption?: string;
+	}>;
+	layout?: 'side-by-side' | 'stacked';
+}
+
+const { images, layout = 'side-by-side' } = Astro.props;
+---
+
+<figure class={`my-12 md:my-16 fade-in-up ${layout === 'side-by-side' ? 'grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6' : 'space-y-4 md:space-y-6'}`}>
+	{images.map((image) => (
+		<div class="relative">
+			<img 
+				src={image.src} 
+				alt={image.alt}
+				class="w-full h-auto object-cover"
+				loading="lazy"
+			/>
+			{image.caption && (
+				<figcaption class="mt-3 font-sans text-xs italic text-graphite/50 dark:text-ivory/50 text-center">
+					{image.caption}
+				</figcaption>
+			)}
+		</div>
+	))}
+</figure>
+

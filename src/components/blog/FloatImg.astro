@@ -1,0 +1,60 @@
+---
+interface Props {
+	src: string;
+	alt: string;
+	caption?: string;
+	side?: 'left' | 'right';
+	width?: string;
+}
+
+const { src, alt, caption, side = 'left', width = '300px' } = Astro.props;
+---
+
+<figure class={`float-img float-${side} my-6 md:my-8`}>
+	<img 
+		src={src} 
+		alt={alt}
+		class="w-full h-auto object-cover"
+		loading="lazy"
+		style={`width: ${width};`}
+	/>
+	{caption && (
+		<figcaption class="mt-2 font-sans text-xs italic text-graphite/50 dark:text-ivory/50">
+			{caption}
+		</figcaption>
+	)}
+</figure>
+
+<style>
+	.float-img {
+		margin-bottom: 1.5rem;
+		margin-top: 0;
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	.float-img img {
+		display: block;
+		border-radius: 0.25rem;
+	}
+	
+	/* Sur desktop, float selon le côté */
+	@media (min-width: 768px) {
+		.float-img.float-left {
+			float: left;
+			margin-right: 2rem;
+			margin-bottom: 1rem;
+			width: auto;
+		}
+		
+		.float-img.float-right {
+			float: right;
+			margin-left: 2rem;
+			margin-bottom: 1rem;
+			width: auto;
+		}
+	}
+</style>
+

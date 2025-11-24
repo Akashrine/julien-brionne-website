@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getAccompagnementProduitSchema, getPageBreadcrumbSchema } from '../utils/schemas';
+
+const title = "Accompagnements Produit — Reprendre le contrôle de votre produit, étape par étape | Julien Brionne";
+const description = "Des missions structurées pour piloter, stabiliser et renforcer votre système produit.";
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = `${siteUrl}/accompagnement-produit`;
+
+const serviceSchema = getAccompagnementProduitSchema({
+	siteUrl,
+	pageUrl,
+	name: "Accompagnements Produit — Missions Structurées",
+	description: "Des missions structurées pour piloter, stabiliser et renforcer votre système produit. Diagnostic, Impact Sprint, Leadership Opérationnel, Coaching Product, IA Raisonnée.",
+	serviceType: [
+		"Accompagnement Produit",
+		"Diagnostic Produit",
+		"Impact Sprint",
+		"Leadership Opérationnel",
+		"Coaching Product",
+		"IA Raisonnée"
+	],
+	areaServed: {
+		"@type": "Country",
+		"name": "France"
+	}
+});
+
+const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagnements Produit");
+---
+
+<Layout title={title} description={description}>
+	<Navbar />
+	<main>
+		
+		<!-- SECTION 1 — HERO -->
+		<section class="min-h-[90vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - Accompagnements Produit">
+			<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
+			
+			<!-- SVG d'arrière-plan -->
+			<div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+				<svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60 dark:opacity-30">
+					<path d="M-100 600 C 200 600, 400 300, 800 400 C 1200 500, 1400 200, 1600 200" stroke="#C6A676" stroke-width="1.5" fill="none" />
+					<path d="M-100 620 C 200 620, 400 320, 800 420 C 1200 520, 1400 220, 1600 220" stroke="#C6A676" stroke-width="1" fill="none" opacity="0.7" />
+					<circle cx="1100" cy="300" r="15" fill="#C6A676" />
+				</svg>
+			</div>
+			
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
+						Accompagnements Produit — Reprendre le contrôle de votre produit, étape par étape
+					</h1>
+					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 max-w-2xl leading-relaxed pt-2">
+						Des missions structurées pour piloter, stabiliser et renforcer votre système produit.
+					</p>
+					<div class="pt-8 flex flex-wrap gap-4">
+						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+						   data-lemcal-popup
+						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
+						   aria-label="Planifier un appel">
+							Planifier un appel
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Diagnostic Produit -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="diagnostic-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="diagnostic-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					1. Diagnostic Produit
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Comprendre ce qui freine l'impact.</p>
+					<p>Faire apparaître les tensions et les décisions manquantes.</p>
+					<p>Remettre de la clarté.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — Impact Sprint -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="impact-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="impact-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					2. Impact Sprint
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Redonner rapidement de la traction.</p>
+					<p>Usage, activation, adoption, churn.</p>
+					<p>Les leviers qui changent la trajectoire.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — Leadership Opérationnel -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="leadership-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="leadership-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					3. Leadership Opérationnel
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Piloter l'équipe.</p>
+					<p>Clarifier les rôles.</p>
+					<p>Stabiliser les décisions.</p>
+					<p>Installer un système qui tient la vitesse.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Coaching Product -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="coaching-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="coaching-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					4. Coaching Product
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Accompagner un PM, un Head ou un Lead.</p>
+					<p>Faire monter en impact, pas juste en compétences.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6 — IA Raisonnée -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="ia-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="ia-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					5. IA Raisonnée
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Ajouter de l'IA là où elle crée de la valeur, pas du bruit.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 7 — CTA final -->
+		<section class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
+			<div class="max-w-3xl space-y-10 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">
+					Vous n'avez pas besoin de plus de frameworks.
+				</h2>
+				<p class="text-xl md:text-2xl text-graphite dark:text-warmgray-300">Vous avez besoin d'un copilote.</p>
+				<div>
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Planifier un appel">
+						Planifier un appel
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+

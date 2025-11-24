@@ -1,0 +1,326 @@
+/* Réglages globaux */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Optimisation des polices - évite FOIT */
+/* Note: font-display est géré par Google Fonts via display=swap dans le link */
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+::selection { 
+	background: #C6A676; 
+	color: #FAF9F6; 
+}
+
+.text-balance { 
+	text-wrap: balance; 
+}
+
+/* Animations - Optimisées avec will-change */
+.fade-in-up {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	will-change: opacity, transform;
+}
+
+.fade-in-up.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+	will-change: auto;
+}
+
+.hover-underline { 
+	position: relative; 
+	text-decoration: none; 
+}
+
+.hover-underline::after {
+	content: ''; 
+	position: absolute; 
+	width: 100%; 
+	transform: scaleX(0);
+	height: 1px; 
+	bottom: -2px; 
+	left: 0; 
+	background-color: #C6A676;
+	transform-origin: bottom right; 
+	transition: transform 0.4s ease;
+}
+
+.hover-underline:hover::after { 
+	transform: scaleX(1); 
+	transform-origin: bottom left; 
+}
+
+.btn-premium { 
+	transition: all 0.3s ease-out; 
+}
+
+.btn-premium:hover { 
+	transform: translateY(-2px); 
+	box-shadow: 0 10px 20px -10px rgba(198, 166, 118, 0.3); 
+}
+
+/* Ajustement du masque pour garantir la visibilité */
+.illustration-mask {
+	-webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 90%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 90%, transparent 100%);
+	-webkit-mask-composite: source-in; 
+	mask-composite: intersect;
+}
+
+.bg-split-overlay {
+	background: transparent;
+}
+
+@media (min-width: 1024px) {
+	.bg-split-overlay { 
+		background: linear-gradient(90deg, transparent 40%, rgba(198, 166, 118, 0.05) 40%); 
+	}
+	
+	.dark .bg-split-overlay { 
+		background: linear-gradient(90deg, transparent 40%, rgba(198, 166, 118, 0.05) 40%); 
+	}
+}
+
+/* Styles pour le contenu des articles - Style Magazine/Éditorial */
+.article-content {
+	font-family: 'Inter', sans-serif;
+	color: #121212;
+	line-height: 1.85;
+	font-size: 1.125rem;
+}
+
+.dark .article-content {
+	color: #C9B8A5;
+}
+
+@media (min-width: 768px) {
+	.article-content {
+		font-size: 1.25rem;
+	}
+}
+
+/* Lettrine (Drop Cap) sur le premier paragraphe */
+.article-content > p:first-of-type::first-letter {
+	float: left;
+	font-family: 'Playfair Display', serif;
+	font-size: 6rem;
+	line-height: 0.85;
+	padding-right: 0.5rem;
+	padding-top: 0.15rem;
+	color: #C6A676;
+	font-weight: 500;
+	margin-right: 0.1em;
+	margin-bottom: -0.1em;
+}
+
+.dark .article-content > p:first-of-type::first-letter {
+	color: #D4BC94;
+}
+
+@media (min-width: 768px) {
+	.article-content > p:first-of-type::first-letter {
+		font-size: 7rem;
+	}
+}
+
+/* Paragraphes */
+.article-content p {
+	font-family: 'Inter', sans-serif;
+	margin-bottom: 1.75rem;
+	line-height: 1.85;
+	color: #121212;
+}
+
+.dark .article-content p {
+	color: #C9B8A5;
+}
+
+/* Titres */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+	font-family: 'Playfair Display', serif;
+	font-weight: 500;
+	color: #121212;
+	line-height: 1.2;
+	margin-top: 3rem;
+	margin-bottom: 1.5rem;
+}
+
+.dark .article-content h1,
+.dark .article-content h2,
+.dark .article-content h3,
+.dark .article-content h4 {
+	color: #FAF9F6;
+}
+
+.article-content h2 {
+	font-size: 2rem;
+	margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+	.article-content h2 {
+		font-size: 2.5rem;
+	}
+}
+
+.article-content h3 {
+	font-size: 1.75rem;
+	margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+	.article-content h3 {
+		font-size: 2rem;
+	}
+}
+
+/* Listes */
+.article-content ul,
+.article-content ol {
+	margin-bottom: 1.75rem;
+	padding-left: 0;
+	color: #121212;
+	list-style: none;
+}
+
+.dark .article-content ul,
+.dark .article-content ol {
+	color: #C9B8A5;
+}
+
+.article-content ul li {
+	font-family: 'Inter', sans-serif;
+	margin-bottom: 0.75rem;
+	line-height: 1.85;
+	padding-left: 1.5em;
+	position: relative;
+}
+
+.article-content ul li::before {
+	content: '—';
+	position: absolute;
+	left: 0;
+	color: #C6A676;
+	font-weight: 500;
+}
+
+.dark .article-content ul li::before {
+	color: #D4BC94;
+}
+
+.article-content ol {
+	counter-reset: list-counter;
+	padding-left: 1.5em;
+}
+
+.article-content ol li {
+	font-family: 'Inter', sans-serif;
+	margin-bottom: 0.75rem;
+	line-height: 1.85;
+	counter-increment: list-counter;
+	position: relative;
+	padding-left: 0.5em;
+}
+
+.article-content ol li::before {
+	content: counter(list-counter) '.';
+	position: absolute;
+	left: -1.5em;
+	color: #C6A676;
+	font-weight: 500;
+}
+
+.dark .article-content ol li::before {
+	color: #D4BC94;
+}
+
+/* Liens */
+.article-content a {
+	color: #C6A676;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: color 0.2s ease;
+}
+
+.dark .article-content a {
+	color: #D4BC94;
+}
+
+.article-content a:hover {
+	color: #A88B5E;
+	text-decoration-thickness: 2px;
+}
+
+/* Strong */
+.article-content strong {
+	font-weight: 600;
+	color: #121212;
+}
+
+.dark .article-content strong {
+	color: #FAF9F6;
+}
+
+/* Citations (blockquote) */
+.article-content blockquote {
+	border: none;
+	margin: 3rem 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+
+.article-content blockquote p {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.75rem;
+	line-height: 1.5;
+	font-style: italic;
+	color: #C6A676;
+	position: relative;
+	padding: 0 2rem;
+}
+
+.dark .article-content blockquote p {
+	color: #D4BC94;
+}
+
+@media (min-width: 768px) {
+	.article-content blockquote p {
+		font-size: 2rem;
+		padding: 0 3rem;
+	}
+}
+
+/* Images */
+.article-content img {
+	margin: 3rem 0;
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+}
+
+
+
+/* HR */
+.article-content hr {
+	border: none;
+	border-top: 1px solid rgba(198, 166, 118, 0.2);
+	margin: 3.5rem 0;
+}
+
+.dark .article-content hr {
+	border-top-color: rgba(198, 166, 118, 0.15);
+}
+

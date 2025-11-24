@@ -1,0 +1,26 @@
+# robots.txt pour julien-brionne.fr
+# Généré pour optimiser le référencement
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://julien-brionne.fr/sitemap-index.xml
+Sitemap: https://julien-brionne.fr/sitemap-0.xml
+
+# Bloquer les fichiers système et temporaires
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /*.json$
+
+# Autoriser les ressources importantes
+Allow: /favicons/
+Allow: /scripts/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl-delay pour éviter la surcharge (optionnel)
+Crawl-delay: 1
+

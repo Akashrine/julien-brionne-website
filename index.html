@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julien Brionne | Product Copilot</title>
+    <meta name="description" content="Hands-on Product Leader pour startups SaaS en croissance.">
+    
+    <!-- Fonts: Playfair Display (Serif Premium) & Inter (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuration Tailwind personnalisée -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: {
+                            DEFAULT: '#FAF9F6',
+                            dim: '#F2F1ED', 
+                            dark: '#EBE9E4'
+                        },
+                        graphite: {
+                            DEFAULT: '#121212',
+                            light: '#1E1E1E',
+                            lighter: '#2A2A2A'
+                        },
+                        sand: {
+                            DEFAULT: '#C6A676',
+                            light: '#D4BC94',
+                            dark: '#A88B5E'
+                        },
+                        softgray: '#7D7D7D',
+                        linkedin: '#0077B5',
+                        substack: '#FF6719',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-split': 'linear-gradient(to right, #FAF9F6 60%, #F2F1ED 60%)',
+                        'hero-split-dark': 'linear-gradient(to right, #121212 60%, #1E1E1E 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Réglages globaux */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        ::selection { background: #C6A676; color: #FAF9F6; }
+        .text-balance { text-wrap: balance; }
+        
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-underline { position: relative; text-decoration: none; }
+        .hover-underline::after {
+            content: ''; position: absolute; width: 100%; transform: scaleX(0);
+            height: 1px; bottom: -2px; left: 0; background-color: #C6A676;
+            transform-origin: bottom right; transition: transform 0.4s ease;
+        }
+        .hover-underline:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+
+        .btn-premium { transition: all 0.3s ease-out; }
+        .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(198, 166, 118, 0.3); }
+
+        /* Ajustement du masque pour garantir la visibilité */
+        .illustration-mask {
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 90%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to left, black 90%, transparent 100%);
+            -webkit-mask-composite: source-in; mask-composite: intersect;
+        }
+
+        .bg-split { background: #FAF9F6; }
+        .dark .bg-split { background: #121212; }
+        @media (min-width: 1024px) {
+            .bg-split { background: linear-gradient(90deg, var(--tw-colors-ivory) 60%, var(--tw-colors-ivory-dim) 60%); }
+            .dark .bg-split { background: linear-gradient(90deg, var(--tw-colors-graphite) 60%, var(--tw-colors-graphite-light) 60%); }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-sans antialiased transition-colors duration-500 bg-ivory text-graphite dark:bg-graphite dark:text-ivory">
+
+    <!-- NAV -->
+    <nav class="fixed w-full top-0 z-50 transition-all duration-500" id="navbar">
+        <!-- ALIGNEMENT: px-6 md:px-12 sur le container max-w -->
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+            <a href="#" class="font-sans text-lg md:text-xl tracking-tight flex items-baseline gap-0.5 group text-graphite dark:text-ivory">
+                <span class="font-medium">Julien</span>
+                <span class="font-bold">Brionne</span>
+                <span class="text-sand text-3xl leading-none transition-transform duration-300 group-hover:scale-110 origin-bottom">.</span>
+            </a>
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="text-graphite dark:text-ivory hover:text-sand transition-colors focus:outline-none" aria-label="Basculer le thème">
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="#contact" class="text-sm font-medium hover-underline tracking-wide text-graphite dark:text-ivory">Discuter</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <!-- ALIGNEMENT: Suppression du px-6 sur la section parent pour laisser le conteneur gérer l'alignement -->
+    <section class="min-h-[95vh] flex items-center pt-32 pb-20 relative bg-split overflow-hidden">
+        <!-- ALIGNEMENT: Ajout de px-6 md:px-12 ici pour matcher exactement la Nav -->
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+            <div class="lg:col-span-7 space-y-8 fade-in-up text-left pr-0 lg:pr-12" style="transition-delay: 0.1s;">
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-[5rem] leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
+                    Hands-on Product Leader qui remet votre produit dans le bon sens.
+                </h1>
+                <p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand pt-2 font-semibold">
+                    Piloter. Stabiliser. Résoudre.
+                </p>
+                <p class="font-sans text-softgray dark:text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed pt-2">
+                    J’aide les startups SaaS en phase de croissance à surmonter les crises de scaling et à retrouver un produit lisible et aligné.
+                </p>
+                <div class="pt-8">
+                    <a href="#contact" class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium">
+                        Discuter de votre situation
+                    </a>
+                </div>
+            </div>
+            
+            <!-- ILLUSTRATION HERO -->
+            <div class="lg:col-span-5 relative h-[500px] lg:h-[700px] fade-in-up w-full flex items-end justify-center lg:justify-end" style="transition-delay: 0.3s;">
+                <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop" 
+                     alt="Technical drawing product structure" 
+                     class="w-full h-full object-cover object-center opacity-100 dark:opacity-80 illustration-mask filter sepia-[.2] grayscale contrast-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LE MOMENT -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-ivory-dim dark:bg-graphite-light relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
+                <div class="md:col-span-5 space-y-8 fade-in-up">
+                    <h2 class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
+                        Le moment où j’interviens
+                    </h2>
+                    <p class="leading-relaxed text-lg text-graphite dark:text-gray-300">
+                        Le scaling n'est pas une ligne droite. Il arrive un moment où la vélocité devient contre-productive si la direction est perdue et que le système craque. J'interviens lorsque les signaux passent au rouge :
+                    </p>
+                </div>
+                <div class="md:col-span-6 md:col-start-7 fade-in-up" style="transition-delay: 0.2s;">
+                    <ul class="space-y-6 text-lg text-graphite dark:text-gray-200">
+                        <li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
+                            <span class="text-sand font-serif text-xl mt-[-2px] transition-all duration-300 group-hover:translate-x-1 group-hover:text-sand-light">—</span>
+                            <span>Quand la croissance crée du désalignement structurel</span>
+                        </li>
+                        <li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
+                            <span class="text-sand font-serif text-xl mt-[-2px] transition-all duration-300 group-hover:translate-x-1 group-hover:text-sand-light">—</span>
+                            <span>Quand le produit avance vite, mais plus dans le bon sens</span>
+                        </li>
+                        <li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
+                            <span class="text-sand font-serif text-xl mt-[-2px] transition-all duration-300 group-hover:translate-x-1 group-hover:text-sand-light">—</span>
+                            <span>Quand l’adoption, l’activation ou l’usage décrochent</span>
+                        </li>
+                        <li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
+                            <span class="text-sand font-serif text-xl mt-[-2px] transition-all duration-300 group-hover:translate-x-1 group-hover:text-sand-light">—</span>
+                            <span>Quand les priorités explosent et que la vision ne circule plus</span>
+                        </li>
+                        <li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
+                            <span class="text-sand font-serif text-xl mt-[-2px] transition-all duration-300 group-hover:translate-x-1 group-hover:text-sand-light">—</span>
+                            <span>Quand l’équipe n’avance plus ensemble</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MES ACCOMPAGNEMENTS -->
+    <section class="py-24 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl mb-16 fade-in-up text-graphite dark:text-ivory">Mes accompagnements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 fade-in-up" style="transition-delay: 0.2s;">
+                
+                <!-- Carte 1 avec effet Water Ink -->
+                <div class="border border-sand/30 dark:border-sand/20 p-8 md:p-12 flex flex-col gap-4 hover:border-sand/60 transition-colors duration-500 group relative overflow-hidden isolate">
+                    <!-- Effet Water Ink (cercle expansif) -->
+                    <div class="absolute inset-0 bg-sand/10 scale-0 rounded-full group-hover:scale-[2.5] transition-transform duration-700 ease-out origin-center pointer-events-none -z-10"></div>
+                    
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory group-hover:text-sand transition-colors">0. Impact Sprint</h3>
+                    <span class="text-xs font-medium text-softgray dark:text-gray-500 uppercase tracking-widest">Durée : 4 semaines</span>
+                    <p class="text-graphite dark:text-gray-300 leading-relaxed mt-2">Objectif : débloquer rapidement des métriques critiques (adoption, activation, usage) par une intervention ciblée.</p>
+                </div>
+
+                <!-- Carte 2 -->
+                <div class="border border-sand/30 dark:border-sand/20 p-8 md:p-12 flex flex-col gap-4 md:border-l-0 hover:border-sand/60 transition-colors duration-500 group relative overflow-hidden isolate">
+                    <div class="absolute inset-0 bg-sand/10 scale-0 rounded-full group-hover:scale-[2.5] transition-transform duration-700 ease-out origin-center pointer-events-none -z-10"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory group-hover:text-sand transition-colors">1. Diagnostic Produit</h3>
+                    <span class="text-xs font-medium text-softgray dark:text-gray-500 uppercase tracking-widest">Durée : 2–3 semaines</span>
+                    <p class="text-graphite dark:text-gray-300 leading-relaxed mt-2">Objectif : auditer le système actuel, voir clair, aligner les parties prenantes et décider des chantiers prioritaires.</p>
+                </div>
+
+                <!-- Carte 3 -->
+                <div class="border border-sand/30 dark:border-sand/20 p-8 md:p-12 flex flex-col gap-4 md:border-t-0 hover:border-sand/60 transition-colors duration-500 group relative overflow-hidden isolate">
+                    <div class="absolute inset-0 bg-sand/10 scale-0 rounded-full group-hover:scale-[2.5] transition-transform duration-700 ease-out origin-center pointer-events-none -z-10"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory group-hover:text-sand transition-colors">2. Leadership & Pilotage</h3>
+                    <span class="text-xs font-medium text-softgray dark:text-gray-500 uppercase tracking-widest">Durée : 2–6 mois</span>
+                    <p class="text-graphite dark:text-gray-300 leading-relaxed mt-2">Objectif : reprendre la barre en tant que Head of / VP Product par intérim. Piloter la vision, structurer les arbitrages.</p>
+                </div>
+
+                <!-- Carte 4 -->
+                <div class="border border-sand/30 dark:border-sand/20 p-8 md:p-12 flex flex-col gap-4 md:border-t-0 md:border-l-0 hover:border-sand/60 transition-colors duration-500 group relative overflow-hidden isolate">
+                    <div class="absolute inset-0 bg-sand/10 scale-0 rounded-full group-hover:scale-[2.5] transition-transform duration-700 ease-out origin-center pointer-events-none -z-10"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory group-hover:text-sand transition-colors">3. Coaching Leaders</h3>
+                    <span class="text-xs font-medium text-softgray dark:text-gray-500 uppercase tracking-widest">Durée : 6–8 semaines</span>
+                    <p class="text-graphite dark:text-gray-300 leading-relaxed mt-2">Objectif : faire grandir vos PMs seniors & fondateurs pour qu'ils reprennent la maîtrise du scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: APPROCHE -->
+    <section class="py-24 px-6 md:px-12 bg-ivory-dim dark:bg-graphite-light relative z-10">
+        <div class="max-w-7xl mx-auto space-y-16 fade-in-up">
+            <h2 class="font-serif text-3xl md:text-4xl text-center text-graphite dark:text-ivory">Une approche structurante</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+                <div class="space-y-6 group">
+                    <div class="w-16 h-[1px] bg-sand transition-all duration-500 group-hover:w-24"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory">Piloter</h3>
+                    <p class="leading-relaxed text-graphite dark:text-gray-300">Redonner une direction nette. Je clarifie la vision et je structure les instances d'arbitrages pour que les décisions soient prises et tenues.</p>
+                </div>
+                <div class="space-y-6 group">
+                    <div class="w-16 h-[1px] bg-sand transition-all duration-500 group-hover:w-24"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory">Stabiliser</h3>
+                    <p class="leading-relaxed text-graphite dark:text-gray-300">Remettre un fonctionnement lisible. Je réduis la surcharge cognitive des PMs et je rétablis des processus tenables et alignés.</p>
+                </div>
+                <div class="space-y-6 group">
+                    <div class="w-16 h-[1px] bg-sand transition-all duration-500 group-hover:w-24"></div>
+                    <h3 class="font-serif text-2xl text-graphite dark:text-ivory">Résoudre</h3>
+                    <p class="leading-relaxed text-graphite dark:text-gray-300">Débloquer le produit. J'interviens directement sur les points de friction critiques qui freinent l'adoption, l'activation ou la délivrance de valeur.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: BIO -->
+    <section class="py-24 md:py-0 px-6 md:px-0 flex flex-col md:flex-row min-h-[600px] relative z-10 bg-ivory dark:bg-graphite">
+        <div class="w-full md:w-1/2 bg-gray-200 h-96 md:h-auto relative overflow-hidden fade-in-up">
+            <!-- PHOTO DE PROFIL (Placeholder) -->
+            <!-- ATTENTION: Remplacez le src ci-dessous par votre fichier: _WOL6954-min.jpg -->
+            <img src="_WOL6954-min.jpg" 
+                 alt="Julien Brionne" 
+                 class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 hover:scale-105 opacity-90 dark:opacity-70 sepia grayscale brightness-90 contrast-110"
+                 loading="lazy">
+        </div>
+        <div class="w-full md:w-1/2 flex items-center p-8 md:p-24 fade-in-up" style="transition-delay: 0.2s;">
+            <div class="max-w-lg space-y-8">
+                <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">Qui je suis</h2>
+                <div class="space-y-6 text-lg leading-relaxed text-graphite dark:text-gray-300">
+                    <p>Je suis un Hands-on Product Leader depuis 10 ans.</p>
+                    <p>J'ai construit et dirigé des équipes produit chez Heetch, WizVille, Waalaxy et plusieurs autres SaaS en forte croissance.</p>
+                    <p>Mon approche est calme, lucide et structurante. Je ne suis pas là pour ajouter du bruit, mais pour remettre du pilotage, des arbitrages clairs et de la lisibilité là où le système craque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FINAL CTA -->
+    <section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-10 bg-ivory-dim dark:bg-graphite-light fade-in-up">
+        <div class="max-w-3xl space-y-10">
+            <h2 class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">Votre produit traverse un moment critique ? Parlons-en.</h2>
+            <div><a href="mailto:julien@example.com" class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium">Discuter de votre situation</a></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-sand/20 dark:border-sand/10 text-center md:text-left px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 relative z-10 bg-ivory dark:bg-graphite transition-colors">
+        <span class="font-sans text-lg flex items-baseline gap-0.5 text-graphite dark:text-ivory"><span class="font-medium">Julien</span><span class="font-bold">Brionne</span><span class="text-sand text-2xl leading-none">.</span></span>
+        
+        <!-- Réseaux Sociaux déplacés ici -->
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-softgray hover:text-linkedin transition-colors duration-300" aria-label="LinkedIn">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+                    <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+                </svg>
+            </a>
+            <a href="#" class="text-softgray hover:text-substack transition-colors duration-300" aria-label="Substack">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 448 511.471">
+                    <path d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="text-sm text-softgray dark:text-gray-500 font-sans">&copy; <script>document.write(new Date().getFullYear())</script> Product Copilot. Tous droits réservés.</div>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in-up').forEach((el) => { observer.observe(el); });
+
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
+                    navbar.classList.remove('bg-transparent', 'border-transparent', 'py-6');
+                } else {
+                    navbar.classList.remove('bg-ivory/95', 'dark:bg-graphite/95', 'shadow-sm', 'border-sand/10', 'py-4');
+                    navbar.classList.add('bg-transparent', 'border-transparent', 'py-6');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

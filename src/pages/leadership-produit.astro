@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getLeadershipProduitSchema, getPageBreadcrumbSchema } from '../utils/schemas';
+
+const title = "Leadership Produit — Le facteur déterminant quand le produit commence à perdre son sens | Julien Brionne";
+const description = "Piloter. Stabiliser. Résoudre. Le leadership produit qui remet les équipes dans le même sens.";
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = `${siteUrl}/leadership-produit`;
+
+const serviceSchema = getLeadershipProduitSchema({
+	siteUrl,
+	pageUrl,
+	name: "Leadership Produit — Piloter, Stabiliser, Résoudre",
+	description: "Le leadership produit qui remet les équipes dans le même sens. Piloter avec une vision claire, stabiliser les rôles et processus, résoudre les problèmes d'adoption et d'usage.",
+	serviceType: [
+		"Leadership Produit",
+		"Pilotage Produit",
+		"Stabilisation Produit",
+		"Résolution Produit",
+		"Management Produit"
+	],
+	areaServed: {
+		"@type": "Country",
+		"name": "France"
+	}
+});
+
+const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Leadership Produit");
+---
+
+<Layout title={title} description={description}>
+	<Navbar />
+	<main>
+		
+		<!-- SECTION 1 — HERO -->
+		<section class="min-h-[90vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - Leadership Produit">
+			<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
+			
+			<!-- SVG d'arrière-plan -->
+			<div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+				<svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60 dark:opacity-30">
+					<path d="M-100 600 C 200 600, 400 300, 800 400 C 1200 500, 1400 200, 1600 200" stroke="#C6A676" stroke-width="1.5" fill="none" />
+					<path d="M-100 620 C 200 620, 400 320, 800 420 C 1200 520, 1400 220, 1600 220" stroke="#C6A676" stroke-width="1" fill="none" opacity="0.7" />
+					<circle cx="1100" cy="300" r="15" fill="#C6A676" />
+				</svg>
+			</div>
+			
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
+						Leadership Produit — Le facteur déterminant quand le produit commence à perdre son sens
+					</h1>
+					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 max-w-2xl leading-relaxed pt-2">
+						Piloter. Stabiliser. Résoudre.
+					</p>
+					<p class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300 max-w-2xl leading-relaxed italic">
+						Le leadership produit qui remet les équipes dans le même sens.
+					</p>
+					<div class="pt-8 flex flex-wrap gap-4">
+						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+						   data-lemcal-popup
+						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
+						   aria-label="Discuter de votre situation produit">
+							Discuter de votre situation
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Piloter -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="piloter-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="piloter-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					1. Piloter
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Redonner une vision qui guide les décisions.</p>
+					<p>Arbitrages clairs.</p>
+					<p>Rythme stable.</p>
+					<p>Direction nette.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — Stabiliser -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="stabiliser-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="stabiliser-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					2. Stabiliser
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Rôles clairs.</p>
+					<p>Rituels utiles.</p>
+					<p>Meilleure circulation de l'information.</p>
+					<p>Décisions sans friction.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — Résoudre -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="resoudre-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="resoudre-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					3. Résoudre
+				</h2>
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Activation, adoption, usage, churn.</p>
+					<p>Tout ce qui annonce une perte de traction.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Ce que j'ai appris en 10 ans -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="appris-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="appris-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
+					Ce que j'ai appris en 10 ans
+				</h2>
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<ul class="space-y-4 ml-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">le chaos vient toujours d'un manque de clarté</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">une équipe s'aligne quand les décisions s'alignent</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">un produit ne ralentit jamais "à cause d'un outil"</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">l'adoption est un symptôme, pas une cause</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">un bon leader produit fait moins, mais mieux</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6 — CTA final -->
+		<section class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl space-y-10 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">
+					Vous avez besoin d'un leadership qui clarifie et qui pilote.
+				</h2>
+				<div>
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Discuter de votre situation produit">
+						Parlons-en
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+

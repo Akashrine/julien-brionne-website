@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getFractionalHeadOfProductSchema, getPageBreadcrumbSchema } from '../utils/schemas';
+
+const title = "Fractional Head of Product — Leadership Produit Hands-on pour Startups SaaS | Julien Brionne";
+const description = "Le leadership produit opérationnel, sans attendre un recrutement long. Je pilote, clarifie et stabilise votre produit pendant que l'équipe respire enfin.";
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = `${siteUrl}/fractional-head-of-product`;
+
+const serviceSchema = getFractionalHeadOfProductSchema({
+	siteUrl,
+	pageUrl,
+	name: "Fractional Head of Product — Leadership Produit Hands-on",
+	description: "Le leadership produit opérationnel, sans attendre un recrutement long. Je pilote, clarifie et stabilise votre produit pendant que l'équipe respire enfin.",
+	serviceType: [
+		"Fractional Head of Product",
+		"Leadership Produit Opérationnel",
+		"Pilotage Produit",
+		"Stabilisation Produit",
+		"Résolution Produit"
+	],
+	areaServed: {
+		"@type": "Country",
+		"name": "France"
+	}
+});
+
+const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional Head of Product");
+---
+
+<Layout title={title} description={description}>
+	<Navbar />
+	<main>
+		
+		<!-- SECTION 1 — HERO -->
+		<section class="min-h-[90vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - Fractional Head of Product">
+			<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
+			
+			<!-- SVG d'arrière-plan -->
+			<div class="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+				<svg width="100%" height="100%" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="opacity-60 dark:opacity-30">
+					<path d="M-100 600 C 200 600, 400 300, 800 400 C 1200 500, 1400 200, 1600 200" stroke="#C6A676" stroke-width="1.5" fill="none" />
+					<path d="M-100 620 C 200 620, 400 320, 800 420 C 1200 520, 1400 220, 1600 220" stroke="#C6A676" stroke-width="1" fill="none" opacity="0.7" />
+					<circle cx="1100" cy="300" r="15" fill="#C6A676" />
+				</svg>
+			</div>
+			
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
+						Fractional Head of Product — Leadership Produit Hands-on pour Startups SaaS
+					</h1>
+					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 max-w-2xl leading-relaxed pt-2">
+						Le leadership produit opérationnel, sans attendre un recrutement long.
+					</p>
+					<p class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300 max-w-2xl leading-relaxed italic">
+						Je pilote, clarifie et stabilise votre produit pendant que l'équipe respire enfin.
+					</p>
+					<div class="pt-8 flex flex-wrap gap-4">
+						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+						   data-lemcal-popup
+						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
+						   aria-label="Discuter de votre situation produit">
+							Discuter de votre situation
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 2 — Pourquoi un Fractional Head of Product ? -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pourquoi-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
+					Pourquoi un Fractional Head of Product ?
+				</h2>
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p class="font-medium text-graphite dark:text-ivory">Un produit ne déraille jamais d'un coup.</p>
+					<p class="font-medium text-graphite dark:text-ivory">Il glisse.</p>
+					<p class="font-medium text-graphite dark:text-ivory">Progressivement.</p>
+					<p class="font-medium text-graphite dark:text-ivory">En silence.</p>
+					<p class="pt-4">Les signaux faibles :</p>
+					<ul class="space-y-4 ml-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">les priorités changent trop vite</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">l'usage stagne</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">les PMs compensent au lieu de piloter</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">la vision n'aligne plus</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">les décisions ne se rattachent plus à une direction claire</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span class="flex-1">l'équipe fait du mieux qu'elle peut… mais plus ensemble</span>
+						</li>
+					</ul>
+					<p class="pt-4 italic text-graphite dark:text-warmgray-300">
+						Un Fractional Head of Product intervient dans ces moments critiques.
+					</p>
+					<p class="text-graphite dark:text-warmgray-300">
+						Sans onboarding long. Sans gap d'expertise. Sans immobiliser votre organisation.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3 — Ce que j'apporte -->
+		<section id="apporte" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="apporte-heading">
+			<div class="max-w-7xl mx-auto relative z-10">
+				<div class="space-y-16 md:space-y-20 fade-in-up">
+					<div class="text-center space-y-6">
+						<h2 id="apporte-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">Ce que j'apporte</h2>
+					</div>
+					
+					<div class="relative">
+						<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#E5E0D8] dark:bg-warmgray-400/20 -translate-x-1/2"></div>
+						
+						<div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 relative">
+							<div class="space-y-6 group relative">
+								<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+								<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Piloter</h3>
+								<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Redonner une direction nette. Clarifier la vision. Ralentir le bruit. Accélérer l'impact.</p>
+							</div>
+							<div class="space-y-6 group relative">
+								<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+								<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Stabiliser</h3>
+								<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Rôles clairs, décisions claires, rythme clair. Système produit qui tient la vitesse. Moins de chaos, plus de traction.</p>
+							</div>
+							<div class="space-y-6 group relative">
+								<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+								<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Résoudre</h3>
+								<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Adoption, activation, rétention, usage. Les vrais leviers qui changent la trajectoire d'un SaaS.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — Comment se déroule la mission ? -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="mission-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-4xl mx-auto relative z-10">
+				<h2 id="mission-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
+					Comment se déroule la mission ?
+				</h2>
+				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Semaine 1 : Diagnostic et arbitrages</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">Vision, usage, décisions, équipe, signaux faibles.</p>
+					</div>
+					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Semaine 2 : Reclarification</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">Vision → direction → plan d'impact.</p>
+					</div>
+					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Semaine 3–6 : Leadership opérationnel</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">Cadre, rythme, décisions, structure, focus.</p>
+					</div>
+					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Semaine 6+ : Transmission</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">Votre équipe repart plus forte qu'avant mon arrivée.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Pourquoi moi ? -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="pourquoi-moi-heading">
+			<div class="max-w-4xl mx-auto">
+				<h2 id="pourquoi-moi-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
+					Pourquoi moi ?
+				</h2>
+				<div class="space-y-8 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="space-y-4">
+						<p><strong class="text-graphite dark:text-ivory font-medium">10 ans en Head/Lead Product.</strong></p>
+						<p>J'ai vécu :</p>
+						<ul class="space-y-3 ml-4">
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>adoption qui s'effondre</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>équipes en dérive</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>roadmap qui n'aligne plus</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>scaling trop rapide</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>churn qui explose</span>
+							</li>
+							<li class="flex items-start gap-4">
+								<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+								<span>perte d'impact</span>
+							</li>
+						</ul>
+						<p class="pt-4"><strong class="text-graphite dark:text-ivory font-medium">J'ai remis le produit dans le bon sens… plusieurs fois.</strong></p>
+						<p class="pt-2 italic">C'est ce que j'apporte chez vous.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6 — CTA final -->
+		<section class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-3xl space-y-10 relative z-10">
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">
+					Votre produit a besoin d'un leader, pas d'un framework.
+				</h2>
+				<p class="text-lg text-graphite dark:text-warmgray-300">Discutons de votre situation.</p>
+				<div>
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Discuter de votre situation produit">
+						Discuter de votre situation
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+

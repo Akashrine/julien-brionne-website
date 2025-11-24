@@ -1,0 +1,34 @@
+{
+	"name": "Julien Brionne | Product Copilot",
+	"short_name": "Product Copilot",
+	"description": "Hands-on Product Leader pour startups SaaS en croissance. Leadership produit opérationnel, coaching et diagnostic.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#FAF9F6",
+	"theme_color": "#C6A676",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/favicons/favicon-light.webp",
+			"sizes": "192x192",
+			"type": "image/webp",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/favicon-dark.webp",
+			"sizes": "192x192",
+			"type": "image/webp",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/favicons/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png",
+			"purpose": "any"
+		}
+	],
+	"categories": ["business", "productivity"],
+	"lang": "fr-FR",
+	"dir": "ltr"
+}
+

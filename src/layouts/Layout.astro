@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+import { getAllSchemas } from '../utils/schemas';
+import { GA4_MEASUREMENT_ID, GA4_ENABLED } from '../config/analytics';
+
+interface Props {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+}
+
+const { 
+	title = "Julien Brionne | Product Copilot — Leadership Produit pour Startups SaaS",
+	description = "Hands-on Product Leader depuis 10 ans. J'accompagne les startups SaaS en croissance pour remettre leur produit dans le bon sens. Leadership produit opérationnel, coaching et diagnostic.",
+	ogImage = "/_WOL6954-min.jpg"
+} = Astro.props;
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const fullOgImage = `${siteUrl}${ogImage}`;
+
+// Génération des JSON-LD Schema.org via helper
+const schemas = getAllSchemas({ siteUrl, description });
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- Favicons -->
+		<link rel="icon" type="image/webp" href="/favicons/favicon-light.webp" media="(prefers-color-scheme: light)" />
+		<link rel="icon" type="image/webp" href="/favicons/favicon-dark.webp" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" type="image/webp" href="/favicons/favicon-light.webp" />
+		<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+		
+		<!-- SEO Meta Tags -->
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="product leader, leadership produit, startup SaaS, accompagnement produit, coaching product management, diagnostic produit, pilotage produit, product copilot" />
+		<meta name="author" content="Julien Brionne" />
+		<link rel="canonical" href={canonicalUrl} />
+		
+		<!-- Manifest PWA -->
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#C6A676" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={fullOgImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:site_name" content="Julien Brionne | Product Copilot" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={fullOgImage} />
+		
+		<!-- Fonts: Playfair Display (Serif Premium) & Inter (Clean Sans) - Optimisées -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" as="style" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+		
+		<!-- DNS prefetch pour améliorer les temps de connexion -->
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		<link rel="dns-prefetch" href="https://app.lemcal.com" />
+		
+		<!-- Script critique pour éviter le flash blanc au chargement -->
+		<script is:inline>
+			(function() {
+				const storedTheme = localStorage.getItem('color-theme');
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const shouldBeDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+				
+				if (shouldBeDark) {
+					document.documentElement.classList.add('dark');
+					// Mettre à jour le favicon pour le dark mode
+					const favicon = document.querySelector('link[rel="icon"]');
+					if (favicon) favicon.href = '/favicons/favicon-dark.webp';
+				} else {
+					document.documentElement.classList.remove('dark');
+					// Mettre à jour le favicon pour le light mode
+					const favicon = document.querySelector('link[rel="icon"]');
+					if (favicon) favicon.href = '/favicons/favicon-light.webp';
+				}
+			})();
+		</script>
+		
+		<!-- JSON-LD Schema.org -->
+		<!-- IMPORTANT: Les schemas DOIVENT rester dans le HTML pour être indexés par Google -->
+		<script type="application/ld+json" set:html={JSON.stringify(schemas.person)} />
+		<script type="application/ld+json" set:html={JSON.stringify(schemas.professionalService)} />
+		<script type="application/ld+json" set:html={JSON.stringify(schemas.website)} />
+		<script type="application/ld+json" set:html={JSON.stringify(schemas.breadcrumb)} />
+		
+		{GA4_ENABLED && (
+			<>
+				<!-- Google Analytics 4 - Optimisé pour la performance -->
+				<script is:inline>
+					{`
+						// Initialiser dataLayer avant le chargement de gtag.js
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						
+						// Configuration GA4 avec anonymisation IP (RGPD-friendly)
+						gtag('config', '${GA4_MEASUREMENT_ID}', {
+							'anonymize_ip': true,
+							'cookie_flags': 'SameSite=None;Secure',
+							'page_path': '${Astro.url.pathname}',
+							'page_title': '${title}'
+						});
+					`}
+				</script>
+				{/* Script GA4 chargé en async pour ne pas bloquer le rendu */}
+				<script 
+					async 
+					src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
+				/>
+			</>
+		)}
+	</head>
+	<body class="flex flex-col min-h-screen font-sans antialiased transition-colors duration-500 bg-ivory text-graphite dark:bg-graphite dark:text-ivory">
+		<slot />
+		<script defer src="/scripts/main.js"></script>
+	</body>
+</html>
+

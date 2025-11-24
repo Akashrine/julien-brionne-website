@@ -1,0 +1,259 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+interface Props {
+	title: string;
+	description: string;
+	postTitle: string;
+	postDescription: string;
+	postDate: string;
+	coverImage?: string | null;
+	currentSlug?: string;
+	readingTime?: number;
+	tags?: string[];
+}
+
+const {
+	title,
+	description,
+	postTitle,
+	postDescription,
+	postDate,
+	coverImage,
+	currentSlug,
+	readingTime = 5,
+	tags = [],
+} = Astro.props;
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = coverImage ? `${siteUrl}${coverImage}` : `${siteUrl}/_WOL6954-min.jpg`;
+
+// JSON-LD Schema pour Article
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	"headline": postTitle,
+	"description": postDescription,
+	"author": {
+		"@type": "Person",
+		"name": "Julien Brionne"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Product Copilot"
+	},
+	"datePublished": postDate,
+	"dateModified": postDate,
+	"url": pageUrl,
+	"image": ogImage,
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": pageUrl
+	}
+};
+
+// Récupérer les articles liés
+let relatedPosts: CollectionEntry<'blog'>[] = [];
+if (currentSlug) {
+	const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+	relatedPosts = allPosts
+		.filter((post: CollectionEntry<'blog'>) => post.slug !== currentSlug)
+		.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+		.slice(0, 3);
+}
+
+// Formatage de la date
+const dateObj = new Date(postDate);
+const formattedDate = dateObj.toLocaleDateString('fr-FR', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric'
+});
+---
+
+<Layout title={title} description={description} ogImage={coverImage || undefined}>
+	<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+	
+	<Navbar />
+	
+	<!-- Barre de progression de lecture -->
+	<div id="reading-progress" class="fixed top-0 left-0 w-0 h-0.5 bg-sand z-50 transition-all duration-150 ease-out"></div>
+	
+	<main class="bg-ivory dark:bg-graphite">
+		<!-- SECTION 1 — HEADER CINÉMATIQUE -->
+		<header class="relative pt-24 md:pt-32 pb-12 md:pb-16 px-6 md:px-12">
+			<div class="max-w-4xl mx-auto text-center">
+				<!-- Métadonnées élégantes (mots-clés) -->
+				{tags.length > 0 && (
+					<div class="flex flex-wrap items-center justify-center gap-3 mb-8 md:mb-10 text-xs uppercase tracking-[0.2em] text-sand dark:text-sand-light font-sans">
+						{tags.map((tag, index) => (
+							<>
+								<span>{tag.toUpperCase()}</span>
+								{index < tags.length - 1 && (
+									<span class="text-sand/40 dark:text-sand/30">•</span>
+								)}
+							</>
+						))}
+					</div>
+				)}
+				
+				<!-- Titre H1 Immense -->
+				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory mb-8 md:mb-10 tracking-tight">
+					{postTitle}
+				</h1>
+				
+				<!-- Description / Chapeau -->
+				<p class="font-sans text-base md:text-lg leading-relaxed text-graphite/60 dark:text-ivory/60 max-w-2xl mx-auto mb-10 md:mb-12">
+					{postDescription}
+				</p>
+				
+				<!-- Bloc Auteur -->
+				<div class="flex items-center justify-center gap-4 pt-8">
+					<div class="w-12 h-12 rounded-full overflow-hidden bg-graphite/10 dark:bg-ivory/10 flex-shrink-0">
+						<img 
+							src="/_WOL6954-min.jpg" 
+							alt="Julien Brionne"
+							class="w-full h-full object-cover"
+						/>
+					</div>
+					<div class="text-left">
+						<p class="font-sans font-semibold text-sm text-graphite dark:text-ivory mb-0.5">
+							Julien Brionne
+						</p>
+						<p class="font-sans text-xs text-graphite/50 dark:text-ivory/50">
+							Product Copilot <span class="text-graphite/30 dark:text-ivory/30">•</span> {readingTime} min de lecture
+						</p>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- SECTION 2 — COVER IMAGE CINÉMATIQUE -->
+		{coverImage && (
+			<figure class="px-6 md:px-12 mb-12 md:mb-16">
+				<div class="max-w-7xl mx-auto">
+					<div class="aspect-[21/9] w-full overflow-hidden bg-graphite/5 relative group">
+						<img 
+							src={coverImage} 
+							alt={postTitle}
+							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02] grayscale-[0.1]"
+							loading="eager"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-graphite/20 via-transparent to-transparent"></div>
+					</div>
+					<figcaption class="mt-4 text-center font-sans text-xs italic text-graphite/50 dark:text-ivory/50 max-w-2xl mx-auto">
+						{postTitle}
+					</figcaption>
+				</div>
+			</figure>
+		)}
+
+		<!-- SECTION 3 — CONTENU ARTICLE -->
+		<article class="px-6 md:px-12 pb-16 md:pb-24">
+			<div class="max-w-3xl mx-auto relative">
+				<div class="article-content max-w-none relative">
+					<slot />
+				</div>
+				
+				<!-- Signature -->
+				<div class="mt-16 md:mt-20 pt-8 border-t border-graphite/10 dark:border-ivory/10">
+					<div class="flex items-start gap-4">
+						<div class="flex-1">
+							<p class="font-serif text-lg text-graphite dark:text-ivory mb-2">
+								Julien Brionne
+							</p>
+							<p class="font-sans text-sm text-graphite/60 dark:text-ivory/60 leading-relaxed">
+								Product Leader indépendant. J'aide les startups SaaS à retrouver une direction produit claire, une équipe stabilisée et un impact mesurable.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<!-- SECTION 4 — RELATED -->
+		{relatedPosts.length > 0 && (
+			<section class="px-6 md:px-12 pb-24 md:pb-32 border-t border-graphite/10 dark:border-ivory/10">
+				<div class="max-w-5xl mx-auto pt-16 md:pt-24">
+					<h2 class="font-serif text-3xl md:text-4xl text-center mb-12 text-graphite dark:text-ivory">
+						Articles connexes
+					</h2>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+						{relatedPosts.map((post) => {
+							const coverPath = post.data.cover 
+								? `/blog/${post.slug}/${post.data.cover}` 
+								: null;
+							const postDate = new Date(post.data.date);
+							const formattedDate = postDate.toLocaleDateString('fr-FR', {
+								year: 'numeric',
+								month: 'long',
+								day: 'numeric'
+							});
+							return (
+								<article class="group">
+									<a href={`/blog/${post.slug}`} class="block">
+										{coverPath && (
+											<div class="aspect-video w-full overflow-hidden bg-graphite/5 mb-4">
+												<img 
+													src={coverPath} 
+													alt={post.data.title}
+													class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+													loading="lazy"
+												/>
+											</div>
+										)}
+										<time class="font-sans text-xs text-graphite/60 dark:text-ivory/60 block mb-2">
+											{formattedDate}
+										</time>
+										<h3 class="font-serif text-xl md:text-2xl leading-tight text-graphite dark:text-ivory group-hover:text-sand dark:group-hover:text-sand-light transition-colors">
+											{post.data.title}
+										</h3>
+									</a>
+								</article>
+							);
+						})}
+					</div>
+				</div>
+			</section>
+		)}
+	</main>
+	
+	<Footer />
+	
+	<!-- Script pour la barre de progression -->
+	<script is:inline>
+		(function() {
+			const progressBar = document.getElementById('reading-progress');
+			if (!progressBar) return;
+			
+			function updateProgress() {
+				const windowHeight = window.innerHeight;
+				const documentHeight = document.documentElement.scrollHeight - windowHeight;
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+				const progress = (scrollTop / documentHeight) * 100;
+				
+				if (progressBar) {
+					progressBar.style.width = `${Math.min(progress, 100)}%`;
+				}
+			}
+			
+			let ticking = false;
+			window.addEventListener('scroll', () => {
+				if (!ticking) {
+					window.requestAnimationFrame(() => {
+						updateProgress();
+						ticking = false;
+					});
+					ticking = true;
+				}
+			});
+			
+			updateProgress();
+		})();
+	</script>
+</Layout>
+
