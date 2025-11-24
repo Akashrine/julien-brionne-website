@@ -109,18 +109,18 @@ const schemas = getAllSchemas({ siteUrl, description });
 			<>
 				<!-- Google Analytics 4 - Optimisé pour la performance -->
 				<script is:inline define:vars={{ ga4Id: GA4_MEASUREMENT_ID, pagePath: Astro.url.pathname, pageTitle: title }}>
-					// Initialiser dataLayer avant le chargement de gtag.js
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					
-					// Configuration GA4 avec anonymisation IP (RGPD-friendly)
+						// Initialiser dataLayer avant le chargement de gtag.js
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						
+						// Configuration GA4 avec anonymisation IP (RGPD-friendly)
 					gtag('config', ga4Id, {
-						'anonymize_ip': true,
-						'cookie_flags': 'SameSite=None;Secure',
+							'anonymize_ip': true,
+							'cookie_flags': 'SameSite=None;Secure',
 						'page_path': pagePath,
 						'page_title': pageTitle
-					});
+						});
 				</script>
 				{/* Script GA4 chargé en async pour ne pas bloquer le rendu */}
 				<script 

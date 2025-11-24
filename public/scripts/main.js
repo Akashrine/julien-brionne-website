@@ -181,11 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			updateThemeIcons(newIsDark);
 			
 			if (newIsDark) {
-				document.documentElement.classList.add('dark');
-				localStorage.setItem('color-theme', 'dark');
+					document.documentElement.classList.add('dark');
+					localStorage.setItem('color-theme', 'dark');
 			} else {
-				document.documentElement.classList.remove('dark');
-				localStorage.setItem('color-theme', 'light');
+					document.documentElement.classList.remove('dark');
+					localStorage.setItem('color-theme', 'light');
 			}
 			
 			updateFavicon(newIsDark);

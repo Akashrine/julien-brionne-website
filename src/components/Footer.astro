@@ -1,39 +1,58 @@
 ---
 ---
 
-<footer class="py-12 border-t border-sand/20 dark:border-sand/10 relative z-10 bg-ivory dark:bg-graphite transition-colors" role="contentinfo">
+<footer class="py-8 md:py-10 border-t border-sand/10 dark:border-sand/5 relative z-10 bg-ivory dark:bg-graphite transition-colors" role="contentinfo">
 	<div class="max-w-[1400px] mx-auto px-6 md:px-12">
-		<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4">
-			<span class="font-sans text-lg flex items-baseline gap-0.5 text-graphite dark:text-ivory">
-				<span class="font-medium">Julien</span>
-				<span class="font-bold">Brionne</span>
-				<span class="text-sand text-2xl leading-none">.</span>
-			</span>
+		<div class="flex flex-col gap-6 md:gap-8">
+			<!-- Première ligne : Logo et Réseaux sociaux -->
+			<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+				<span class="font-sans text-base md:text-lg flex items-baseline gap-0.5 text-graphite dark:text-ivory">
+					<span class="font-medium">Julien</span>
+					<span class="font-bold">Brionne</span>
+					<span class="text-sand text-xl md:text-2xl leading-none">.</span>
+				</span>
+				
+				<!-- Réseaux Sociaux et RSS -->
+				<div class="flex items-center gap-4">
+					<a href="/rss.xml" class="text-graphite/40 dark:text-ivory/40 hover:text-sand dark:hover:text-sand-light transition-colors duration-200 flex items-center justify-center w-5 h-5" aria-label="Flux RSS du blog">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.75-7.163-15.82-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
+						</svg>
+					</a>
+					<a href="https://www.linkedin.com/in/julienbrionne" target="_blank" rel="noopener noreferrer" class="text-graphite/40 dark:text-ivory/40 hover:text-linkedin transition-colors duration-200 flex items-center justify-center w-5 h-5" aria-label="Profil LinkedIn de Julien Brionne">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+							<path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+							<path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+						</svg>
+					</a>
+					<a href="https://substack.com/@productcopilot" target="_blank" rel="noopener noreferrer" class="text-graphite/40 dark:text-ivory/40 hover:text-substack transition-colors duration-200 flex items-center justify-center w-5 h-5" aria-label="Newsletter Substack de Julien Brionne">
+						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 448 511.471" preserveAspectRatio="xMidYMid meet">
+							<path d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
 			
-			<!-- Liens SEO satellites -->
-			<nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Liens ressources">
-				<a href="/head-of-product-montpellier" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Head of Product Montpellier</a>
-				<a href="/fractional-head-of-product" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Fractional Head of Product</a>
-				<a href="/fractional-cpo" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Fractional CPO</a>
-				<a href="/leadership-produit" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Leadership Produit</a>
-				<a href="/accompagnement-produit" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Accompagnement Produit</a>
-				<a href="/diagnostic-produit" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Diagnostic Produit</a>
-				<a href="/outils" class="text-softgray hover:text-sand dark:hover:text-sand-light transition-colors duration-300">Outils</a>
+			<!-- Deuxième ligne : Liens SEO satellites (discrets) -->
+			<nav class="flex flex-wrap gap-x-4 gap-y-1.5 text-xs md:text-sm" aria-label="Liens ressources">
+				<a href="/head-of-product-montpellier" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Head of Product Montpellier</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/fractional-head-of-product" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Fractional Head of Product</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/fractional-cpo" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Fractional CPO</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/leadership-produit" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Leadership Produit</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/accompagnement-produit" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Accompagnement Produit</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/diagnostic-produit" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Diagnostic Produit</a>
+				<span class="text-graphite/20 dark:text-ivory/20">·</span>
+				<a href="/outils" class="text-graphite/40 dark:text-ivory/40 hover:text-graphite dark:hover:text-ivory transition-colors duration-200">Outils</a>
 			</nav>
 			
-			<!-- Réseaux Sociaux -->
-			<div class="flex items-center gap-6">
-				<a href="https://www.linkedin.com/in/julienbrionne" target="_blank" rel="noopener noreferrer" class="text-softgray hover:text-linkedin transition-colors duration-300 flex items-center justify-center w-6 h-6" aria-label="Profil LinkedIn de Julien Brionne">
-					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-						<path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-						<path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-					</svg>
-				</a>
-				<a href="https://substack.com/@productcopilot" target="_blank" rel="noopener noreferrer" class="text-softgray hover:text-substack transition-colors duration-300 flex items-center justify-center w-6 h-6" aria-label="Newsletter Substack de Julien Brionne">
-					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 511.471" preserveAspectRatio="xMidYMid meet">
-						<path d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/>
-					</svg>
-				</a>
+			<!-- Troisième ligne : Copyright -->
+			<div class="text-xs text-graphite/30 dark:text-ivory/30 font-sans">
+				© {new Date().getFullYear()} Julien Brionne. Tous droits réservés.
 			</div>
 		</div>
 	</div>
