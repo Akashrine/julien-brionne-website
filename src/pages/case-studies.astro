@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { getPageBreadcrumbSchema } from '../utils/schemas';
-import { caseStudies } from '../data/caseStudies.js';
+import { getCollection } from 'astro:content';
+
+const caseStudies = await getCollection('case-studies');
 
 const title = "Études de cas — Comment je débloque les produits qui comptent | Julien Brionne";
 const description = "Trois études de cas détaillées : rétention conversationnelle, stabilisation d'équipe produit, activation et onboarding. Comment j'interviens pour débloquer l'impact réel.";
@@ -41,8 +43,10 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Études de c
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
 			<div class="max-w-7xl mx-auto relative z-10">
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-					{caseStudies.map((caseStudy, index) => (
-						<a href={`/case-study/${caseStudy.slug}`} class="group bg-[#F9F6F1] dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-xl p-8 md:p-10 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300 hover:shadow-lg fade-in-up" style={`transition-delay: ${0.1 * index}s`}>
+					{caseStudies.map((entry, index) => {
+						const caseStudy = entry.data;
+						return (
+							<a href={`/case-study/${entry.id}`} class="group bg-[#F9F6F1] dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-xl p-8 md:p-10 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300 hover:shadow-lg fade-in-up" style={`transition-delay: ${0.1 * index}s`}>
 							<div class="space-y-4">
 								<p class="font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-sand dark:text-sand-light font-semibold">
 									{caseStudy.label}
@@ -63,7 +67,8 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Études de c
 								</div>
 							</div>
 						</a>
-					))}
+						);
+					})}
 				</div>
 			</div>
 		</section>

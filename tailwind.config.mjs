@@ -37,6 +37,7 @@ export default {
 			backgroundImage: {
 				'hero-split': 'linear-gradient(to right, #FAF9F6 60%, #F2F1ED 60%)',
 				'hero-split-dark': 'linear-gradient(to right, #121212 60%, #1E1E1E 60%)',
+				'grid-pattern': 'repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(198, 166, 118, 0.15) 19px, rgba(198, 166, 118, 0.15) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(198, 166, 118, 0.15) 19px, rgba(198, 166, 118, 0.15) 20px)',
 			}
 		}
 	},

@@ -341,3 +341,18 @@ body {
 	border-top-color: rgba(198, 166, 118, 0.15);
 }
 
+/* Pattern de grille (papier millimétré) */
+.bg-grid-pattern {
+	background-image: 
+		repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(198, 166, 118, 0.25) 19px, rgba(198, 166, 118, 0.25) 40px),
+		repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(198, 166, 118, 0.25) 19px, rgba(198, 166, 118, 0.25) 40px);
+	background-size: 20px 20px;
+}
+
+.dark .bg-grid-pattern {
+	background-image: 
+		repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(212, 188, 148, 0.2) 19px, rgba(212, 188, 148, 0.2) 40px),
+		repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(212, 188, 148, 0.2) 19px, rgba(212, 188, 148, 0.2) 40px);
+	background-size: 20px 20px;
+}
+
