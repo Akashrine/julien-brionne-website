@@ -12,7 +12,19 @@ const blog = defineCollection({
 	}),
 });
 
+const caseStudies = defineCollection({
+	type: 'data',
+	schema: z.object({
+		slug: z.string(),
+		label: z.string(),
+		title: z.string(),
+		description: z.string(),
+		heroIntro: z.string(),
+	}),
+});
+
 export const collections = {
 	blog,
+	'case-studies': caseStudies,
 };
 
