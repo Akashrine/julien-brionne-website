@@ -427,24 +427,24 @@ export function getLeadershipProduitSchema(config: ServiceSchemaConfig) {
 					"@type": "Offer",
 					"itemOffered": {
 						"@type": "Service",
-						"name": "Pilotage",
-						"description": "Redonner une vision qui guide les décisions. Arbitrages clairs, rythme stable, direction nette"
+						"name": "Vision & Arbitrages",
+						"description": "Clarifier la vision produit, prendre les décisions difficiles, stabiliser les priorités. Vision claire, arbitrages nets, priorités stables"
 					}
 				},
 				{
 					"@type": "Offer",
 					"itemOffered": {
 						"@type": "Service",
-						"name": "Stabilisation",
-						"description": "Rôles clairs, rituels utiles, meilleure circulation de l'information, décisions sans friction"
+						"name": "Roadmap & Rituels",
+						"description": "Construire une roadmap lisible, installer des rituels décisionnels, aligner les équipes. Un cadre opérationnel qui fonctionne"
 					}
 				},
 				{
 					"@type": "Offer",
 					"itemOffered": {
 						"@type": "Service",
-						"name": "Résolution",
-						"description": "Activation, adoption, usage, churn. Tout ce qui annonce une perte de traction"
+						"name": "Organisation & Autonomie",
+						"description": "Clarifier les rôles, fluidifier les responsabilités, faire monter les PMs en autonomie. Coaching PMs et transmission progressive"
 					}
 				}
 			]
