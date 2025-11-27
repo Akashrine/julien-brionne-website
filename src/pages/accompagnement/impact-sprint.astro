@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import ScrollArrow from '../../components/ScrollArrow.astro';
 
 const title = "Impact Sprint — Débloquer adoption, activation et usage en 4 semaines | Julien Brionne";
-const description = "Un sprint de 4 semaines pour comprendre ce qui bloque réellement et remettre un mouvement clair et mesurable.";
+const description = "Impact Sprint de 4 semaines pour débloquer adoption, activation et usage. Identifier ce qui bloque réellement votre produit et remettre un plan d'impact clair, mesurable et actionnable.";
 ---
 
 <Layout title={title} description={description}>
@@ -36,122 +36,73 @@ const description = "Un sprint de 4 semaines pour comprendre ce qui bloque réel
 					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 leading-relaxed">
 						Retrouver un produit qui avance dans le bon sens.
 					</p>
+					<div class="pt-8 flex flex-col sm:flex-row gap-4">
+						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+						   data-lemcal-popup
+						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium text-center"
+						   aria-label="Discuter de votre situation">
+							Discuter de votre situation
+						</a>
+						<a href="/accompagnement/impact-sprint#contenu-section" 
+						   class="inline-block border-2 border-graphite dark:border-ivory text-graphite dark:text-ivory font-sans px-9 py-4 text-sm font-medium tracking-wide text-center hover:bg-graphite hover:text-ivory dark:hover:bg-ivory dark:hover:text-graphite transition-colors"
+						   aria-label="Commencer par un Impact Sprint">
+							Commencer par un Impact Sprint →
+						</a>
+					</div>
 				</div>
 			</div>
 			
-			<ScrollArrow targetId="pourquoi-section" />
+			<ScrollArrow targetId="pour-qui-section" />
 		</section>
 
-		<!-- SECTION 2 — Pourquoi commencer par un Impact Sprint (grille 2 colonnes) -->
-		<section id="pourquoi-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="pourquoi-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-7xl mx-auto relative z-10">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-					<!-- Colonne gauche — Texte -->
-					<div class="fade-in-up">
-						<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory mb-6">
-							Pourquoi commencer par un Impact Sprint ?
-						</h2>
-						<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-							<p>Quand une startup commence à perdre de l'impact, ce n'est presque jamais un problème de vitesse. <strong class="text-graphite dark:text-ivory">C'est un problème de lisibilité.</strong></p>
-							<p>Les métriques bougent, mais pas toujours dans la bonne direction. L'équipe fait de son mieux, mais ne sait plus où se concentrer. Les signaux contradictoires s'accumulent. On shippe, mais on n'avance plus vraiment.</p>
-							<p>Un Impact Sprint sert à une seule chose : comprendre ce qui bloque réellement, et remettre un mouvement clair et mesurable. Pas un audit théorique. Un travail terrain, précis, qui reconnecte le produit à la valeur.</p>
-						</div>
-					</div>
-					<!-- Colonne droite — Cartes -->
-					<div class="space-y-6 fade-in-up" style="transition-delay: 0.1s;">
-						<!-- Carte 1 -->
-						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								Lecture lucide
-							</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Comprendre ce qui décroche vraiment : adoption, activation, usage, comportements. Une photographie sans filtre ni vernis.
-							</p>
-						</div>
-						<!-- Carte 2 -->
-						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								Trois leviers d'impact
-							</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Pas une liste de 20 actions. Juste trois leviers simples, forts, mesurables, qui créent un mouvement immédiat.
-							</p>
-						</div>
-						<!-- Carte 3 -->
-						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								Plan d'impact opérationnel
-							</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Une boucle d'expérimentation et un plan simple qui remet du sens dans les décisions. Lisible. Tenable.
-							</p>
-						</div>
-					</div>
+		<!-- SECTION 2 — Pour qui ? -->
+		<section id="pour-qui-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20 border-t border-sand/10 dark:border-sand/5" aria-labelledby="pour-qui-heading">
+			<div class="max-w-4xl mx-auto relative z-10">
+				<div class="mb-12 fade-in-up">
+					<h2 id="pour-qui-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-8">
+						Pour qui ?
+					</h2>
 				</div>
+				<ul class="space-y-4 fade-in-up" style="transition-delay: 0.1s;">
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'adoption stagne ou baisse sans raison claire.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'activation ne progresse plus malgré les efforts.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'usage s'essouffle malgré les nouvelles features.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les priorités changent trop vite.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Trop d'intuitions, pas assez de certitudes.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les PMs compensent le manque de clarté.</span>
+					</li>
+					<li class="flex items-start gap-4">
+						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+						<span class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les signaux faibles sont ignorés.</span>
+					</li>
+				</ul>
 			</div>
 		</section>
 
-		<!-- SECTION 3 — Pour qui ? (aligné à droite) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="pour-qui-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="flex justify-end">
-					<div class="max-w-3xl text-right">
-						<div class="relative mb-8 fade-in-up">
-							<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-							<h2 id="pour-qui-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-								Pour qui ?
-							</h2>
-							<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
-								Ce Sprint est fait pour toi si :
-							</p>
-						</div>
-						<ul class="space-y-4 fade-in-up text-right" style="transition-delay: 0.1s;">
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'adoption stagne ou baisse</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'activation flotte, sans raison évidente</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'usage s'effrite malgré de nouvelles features</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">L'équipe a trop d'intuitions et pas assez de certitudes</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les signaux faibles sont ignorés ou mal interprétés</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Les priorités changent trop vite</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-							<li class="flex items-start gap-4 justify-end">
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Tu as l'impression "d'avancer sans avancer"</span>
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 4 — Ce que le Sprint débloque (grille 3 colonnes) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="debloque-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-7xl mx-auto relative z-10">
-				<div class="max-w-3xl mb-16 fade-in-up">
-					<div class="relative">
-						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-						<h2 id="debloque-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-							Ce que le Sprint débloque
-						</h2>
-					</div>
+		<!-- SECTION 3 — Ce que le Sprint débloque -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="debloque-heading">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-16 fade-in-up">
+					<h2 id="debloque-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Ce que le Sprint débloque
+					</h2>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 fade-in-up" style="transition-delay: 0.1s;">
 					<div class="space-y-4">
@@ -160,249 +111,213 @@ const description = "Un sprint de 4 semaines pour comprendre ce qui bloque réel
 							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Ce qui crée encore de la valeur</h3>
 						</div>
 						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Tu réalises ce qui fonctionne vraiment aujourd'hui, au-delà des métriques flatteuses. Souvent, ce n'est plus ce que tu pensais.
+							Identifier ce qui fonctionne vraiment aujourd'hui au-delà des métriques flatteuses.
 						</p>
 					</div>
 					<div class="space-y-4">
 						<div class="flex items-baseline gap-3 mb-4">
 							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">2.</span>
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Le comportement qui corrèle à ton impact</h3>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Le comportement corrélé à l'impact</h3>
 						</div>
 						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							On identifie le comportement clé qui fait tenir ton produit. Pas celui que tu mesures, mais celui qui compte.
+							Comprendre ce qui tient votre produit, pas ce que vous mesurez par habitude.
 						</p>
 					</div>
 					<div class="space-y-4">
 						<div class="flex items-baseline gap-3 mb-4">
 							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">3.</span>
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Le blocage qui empêche l'impact</h3>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Le blocage qui empêche ce comportement</h3>
 						</div>
 						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Frictions invisibles, charge cognitive, mauvaise intention, dilution… Le blocage réel n'est presque jamais là où on pensait.
+							Frictions invisibles, charge cognitive, intention brouillée, dilution des décisions.
 						</p>
 					</div>
 				</div>
 				<p class="text-center mt-12 text-lg md:text-xl text-graphite dark:text-warmgray-300 italic fade-in-up" style="transition-delay: 0.2s;">
-					Ce trio redonne une lisibilité opérationnelle.
+					Ce trio redonne une lisibilité opérationnelle immédiate.
 				</p>
 			</div>
 		</section>
 
-		<!-- SECTION 5 — Le contenu du Sprint (liste numérotée verticale) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="contenu-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="max-w-3xl mb-16 fade-in-up">
-					<div class="relative">
-						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-						<h2 id="contenu-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-							Le contenu du Sprint
-						</h2>
-					</div>
+		<!-- SECTION 4 — Pourquoi commencer par un Impact Sprint ? -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="pourquoi-heading">
+			<div class="max-w-4xl mx-auto relative z-10">
+				<div class="mb-12 fade-in-up">
+					<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-6">
+						Pourquoi commencer par un Impact Sprint ?
+					</h2>
 				</div>
-				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
-					<div class="flex gap-6 md:gap-8">
-						<div class="flex-shrink-0">
-							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">01</span>
-						</div>
-						<div class="flex-1">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Analyse adoption / activation / usage</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Étude des parcours, signaux, métriques, comportements réels. On cherche ce qui décroche, ce qui résiste, et où se cachent les signaux faibles.
-							</p>
-						</div>
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Parce que les équipes ne manquent pas de vitesse. Elles manquent de lisibilité.</p>
+					<p class="font-semibold text-graphite dark:text-ivory">Un Impact Sprint sert à :</p>
+					<ul class="space-y-3 ml-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span>lire le système sans filtre,</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span>clarifier ce qui compte vraiment,</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
+							<span>recentrer l'énergie sur la valeur.</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Preuves sociales -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="preuves-heading">
+			<div class="max-w-7xl mx-auto">
+				<div class="mb-12 fade-in-up">
+					<h2 id="preuves-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Preuves sociales
+					</h2>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">+1,5M€ d'ARR générés</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Scale-up B2B — adoption + time-to-value</p>
 					</div>
-					<div class="flex gap-6 md:gap-8">
-						<div class="flex-shrink-0">
-							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">02</span>
-						</div>
-						<div class="flex-1">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Insight Report</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Document clair : patterns, contradictions, zones de perte d'intention. C'est la photographie lucide de ton produit, sans filtre ni vernis.
-							</p>
-						</div>
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">+0,6 usage mensuel par utilisateur</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Mobilité — réduction frictions invisibles</p>
 					</div>
-					<div class="flex gap-6 md:gap-8">
-						<div class="flex-shrink-0">
-							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">03</span>
-						</div>
-						<div class="flex-1">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Trois leviers d'impact prioritaires</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Pas une liste de 20 actions. Juste trois leviers simples, forts, mesurables, qui créent un mouvement immédiat.
-							</p>
-						</div>
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">+0,6 NPS opérationnel</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Plateforme services</p>
 					</div>
-					<div class="flex gap-6 md:gap-8">
-						<div class="flex-shrink-0">
-							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">04</span>
-						</div>
-						<div class="flex-1">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Boucle d'expérimentation</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Formulation d'hypothèses, séquence de tests, critères de validation. Une boucle qui permet à l'équipe d'apprendre vite et bien.
-							</p>
-						</div>
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">+8 percent d'efficacité opérationnelle</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Support — charge cognitive réduite</p>
 					</div>
-					<div class="flex gap-6 md:gap-8">
-						<div class="flex-shrink-0">
-							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">05</span>
-						</div>
-						<div class="flex-1">
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Plan d'impact</h3>
-							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-								Une feuille de route resserrée. Lisible. Tenable. Connectée au comportement qui compte.
-							</p>
-						</div>
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">Rebond de rétention J30</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Plateforme sociale grand public (30M utilisateurs)</p>
+					</div>
+					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8">
+						<p class="text-lg md:text-xl font-semibold text-graphite dark:text-ivory mb-2">Hausse adoption et usage</p>
+						<p class="text-sm md:text-base text-graphite dark:text-warmgray-400">Solution B2B insights — parcours + PLG</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECTION 6 — Déroulé des 4 semaines (timeline verticale) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="deroule-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+		<!-- SECTION 6 — Contenu du Sprint -->
+		<section id="contenu-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20 border-t border-sand/10 dark:border-sand/5" aria-labelledby="contenu-heading">
 			<div class="max-w-5xl mx-auto relative z-10">
-				<div class="max-w-3xl mb-16 fade-in-up">
-					<div class="relative">
-						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-						<h2 id="deroule-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-							Déroulé des 4 semaines
-						</h2>
-					</div>
+				<div class="mb-12 fade-in-up">
+					<h2 id="contenu-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Contenu du Sprint
+					</h2>
 				</div>
-				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
-					<div class="flex gap-6 md:gap-8 relative">
-						<div class="flex-shrink-0 w-20 md:w-24">
-							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Semaine 1</div>
-							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Lire le système</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="space-y-8">
+						<div>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								<span class="text-sand dark:text-sand-light">01</span> — Analyse adoption / activation / usage
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Les comportements réels. Les signaux faibles. Les zones de résistance.
+							</p>
 						</div>
-						<div class="flex-1 pb-12 border-l-2 border-sand/20 dark:border-sand/15 pl-8 md:pl-12">
-							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Entretiens rapides</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Analyse du produit comme un utilisateur</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Étude data + signaux faibles</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Cartographie des comportements clés</span>
-								</li>
-							</ul>
-							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : premiers axes de dérive, premières tensions.</p>
+						<div>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								<span class="text-sand dark:text-sand-light">03</span> — Trois leviers d'impact
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Trois actions fortes. Mesurables. Tenables.
+							</p>
 						</div>
-					</div>
-					<div class="flex gap-6 md:gap-8 relative">
-						<div class="flex-shrink-0 w-20 md:w-24">
-							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Semaine 2</div>
-							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Comprendre la valeur</div>
-						</div>
-						<div class="flex-1 pb-12 border-l-2 border-sand/20 dark:border-sand/15 pl-8 md:pl-12">
-							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Diagnostic adoption / activation / usage</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Croisement quanti + quali</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Identification du comportement corrélé à la valeur</span>
-								</li>
-							</ul>
-							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : Insight Report.</p>
+						<div>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								<span class="text-sand dark:text-sand-light">05</span> — Plan d'impact
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Une trajectoire claire reliée au comportement qui compte.
+							</p>
 						</div>
 					</div>
-					<div class="flex gap-6 md:gap-8 relative">
-						<div class="flex-shrink-0 w-20 md:w-24">
-							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Semaine 3</div>
-							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Identifier les leviers</div>
+					<div class="space-y-8">
+						<div>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								<span class="text-sand dark:text-sand-light">02</span> — Insight Report
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Une photographie lucide et exploitable de votre produit.
+							</p>
 						</div>
-						<div class="flex-1 pb-12 border-l-2 border-sand/20 dark:border-sand/15 pl-8 md:pl-12">
-							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Exploration des patterns</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Formulation des hypothèses fortes</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Construction des trois leviers d'impact</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Début de la boucle d'expérimentation</span>
-								</li>
-							</ul>
-							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : les trois leviers et leurs hypothèses.</p>
-						</div>
-					</div>
-					<div class="flex gap-6 md:gap-8 relative">
-						<div class="flex-shrink-0 w-20 md:w-24">
-							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Semaine 4</div>
-							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Aligner et remettre en mouvement</div>
-						</div>
-						<div class="flex-1 pl-8 md:pl-12">
-							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Plan d'impact consolidé</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Séquence d'expérimentations</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Recommandations produit + équipe</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-									<span>Transmission à l'équipe produit / fondateurs</span>
-								</li>
-							</ul>
-							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : Plan d'impact et trajectoire d'expérimentation.</p>
+						<div>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								<span class="text-sand dark:text-sand-light">04</span> — Boucle d'expérimentation
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Hypothèses → tests → décisions.
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECTION 7 — Ce que tes équipes ressentent (citations en grille) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="ressentent-heading">
+		<!-- SECTION 7 — Déroulé des 4 semaines -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="deroule-heading">
 			<div class="max-w-5xl mx-auto">
-				<div class="max-w-3xl mb-16 fade-in-up">
-					<div class="relative">
-						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-						<h2 id="ressentent-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-							Ce que tes équipes ressentent après un Impact Sprint
-						</h2>
+				<div class="mb-12 fade-in-up">
+					<h2 id="deroule-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Déroulé des 4 semaines
+					</h2>
+				</div>
+				<div class="space-y-10 fade-in-up" style="transition-delay: 0.1s;">
+					<div>
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
+							Semaine 1 : Lire le système
+						</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Entretiens rapides · Analyse du produit comme un utilisateur · Étude data · Signaux faibles
+						</p>
 					</div>
+					<div>
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
+							Semaine 2 : Comprendre la valeur
+						</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Diagnostic adoption / activation / usage. Identification du comportement clé.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
+							Semaine 3 : Identifier les leviers
+						</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Construction des trois leviers · Hypothèses · Début de la boucle d'expérimentation.
+						</p>
+					</div>
+					<div>
+						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
+							Semaine 4 : Aligner et remettre en mouvement
+						</h3>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">
+							Plan d'impact final · Recommandations · Transmission à l'équipe.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 8 — Ce que les équipes ressentent -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="ressentent-heading">
+			<div class="max-w-5xl mx-auto relative z-10">
+				<div class="mb-12 fade-in-up">
+					<h2 id="ressentent-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Ce que les équipes ressentent
+					</h2>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 fade-in-up" style="transition-delay: 0.1s;">
 					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
 						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On sait où on va."</p>
-					</div>
-					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On sait ce qui compte."</p>
-					</div>
-					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On sait quoi arrêter."</p>
-					</div>
-					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
-						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On respire mieux."</p>
 					</div>
 					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
 						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On comprend enfin ce qui décroche."</p>
@@ -410,27 +325,26 @@ const description = "Un sprint de 4 semaines pour comprendre ce qui bloque réel
 					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
 						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"Les décisions redeviennent lisibles."</p>
 					</div>
+					<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
+						<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 italic leading-relaxed">"On respire mieux."</p>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECTION 8 — Mon rôle dans le Sprint (carte éditoriale) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="role-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-5xl mx-auto relative z-10">
+		<!-- SECTION 9 — Mon rôle dans le Sprint -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="role-heading">
+			<div class="max-w-5xl mx-auto">
 				<div class="border border-sand/20 dark:border-sand/15 bg-[#F9F6F1] dark:bg-graphite rounded-xl p-12 md:p-16 shadow-sm">
-					<div class="relative mb-8 fade-in-up">
-						<div class="absolute top-0 left-0 w-2 h-2 bg-sand rounded-full"></div>
-						<h2 id="role-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory ml-4 relative">
+					<div class="mb-8 fade-in-up">
+						<h2 id="role-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
 							Mon rôle dans le Sprint
 						</h2>
 					</div>
-					<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up ml-4" style="transition-delay: 0.1s;">
-						<p>Je n'apporte pas du process.</p>
-						<p class="font-semibold text-graphite dark:text-ivory">Je remets du discernement.</p>
+					<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+						<p>Je n'apporte pas du process. J'apporte du discernement.</p>
 						<div class="space-y-3 pt-4">
-							<p>Je lis ton produit comme un système.</p>
-							<p>Je m'appuie sur la data, les comportements, les signaux faibles, les tensions humaines.</p>
+							<p>Je lis le système humain et technique.</p>
 							<p>Je reformule ce que l'équipe n'arrive plus à dire.</p>
 							<p>Je simplifie jusqu'à ce que tout redevienne clair.</p>
 						</div>
@@ -439,59 +353,52 @@ const description = "Un sprint de 4 semaines pour comprendre ce qui bloque réel
 			</div>
 		</section>
 
-		<!-- SECTION 9 — Et après le Sprint ? (aligné à gauche) -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="apres-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="max-w-3xl">
-					<div class="relative mb-8 fade-in-up">
-						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-						<h2 id="apres-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-							Et après le Sprint ?
-						</h2>
-					</div>
-					<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
-						<p>L'Impact Sprint est une entrée.</p>
-						<p>Ensuite, selon la situation, on peut aller vers :</p>
-						<ul class="space-y-3 ml-4">
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1"><strong class="text-graphite dark:text-ivory">Diagnostic Produit</strong> si la dérive est structurelle</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1"><strong class="text-graphite dark:text-ivory">Leadership & Pilotage Produit</strong> si l'organisation doit être stabilisée</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1"><strong class="text-graphite dark:text-ivory">Coaching Leaders</strong> si l'équipe doit monter en autonomie</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1"><strong class="text-graphite dark:text-ivory">IA raisonnée</strong> si l'objectif est de réduire la charge</span>
-							</li>
-						</ul>
-						<p class="pt-4 italic">Mais on ne décide jamais ça avant le Sprint. On décide ça une fois que le brouillard est dissipé.</p>
-					</div>
+		<!-- SECTION 10 — Et après le Sprint ? -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="apres-heading">
+			<div class="max-w-4xl mx-auto relative z-10">
+				<div class="mb-8 fade-in-up">
+					<h2 id="apres-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">
+						Et après le Sprint ?
+					</h2>
+				</div>
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+					<p>Le Sprint est une entrée.</p>
+					<p>Selon ce que l'on découvre ensemble :</p>
+					<ul class="space-y-3 ml-4">
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+							<span>Leadership & Pilotage Produit,</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+							<span>Coaching Leaders Produit,</span>
+						</li>
+						<li class="flex items-start gap-4">
+							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
+							<span>ou structuration long terme.</span>
+						</li>
+					</ul>
+					<p class="pt-4 italic">On ne décide jamais avant. On décide quand le brouillard est dissipé.</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECTION 10 — CTA Final -->
-		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
+		<!-- SECTION 11 — CTA Final -->
+		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-white dark:bg-graphite-light fade-in-up border-t border-sand/10 dark:border-sand/5" aria-labelledby="cta-heading">
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
 			<div class="max-w-3xl space-y-6 relative z-10">
-				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
-					Prêt à débloquer usage et impact ?
+				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory mb-4">
+					Votre produit avance, mais plus dans le bon sens ?
 				</h2>
-				<p class="font-serif text-lg italic opacity-80 text-graphite dark:text-warmgray-300">
-					Discutons de ta situation.
+				<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 mb-6">
+					On peut remettre les choses au clair en 4 semaines.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
 					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
 					   data-lemcal-popup
 					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Prendre un rendez-vous pour discuter de votre situation">
-						Prendre un rendez-vous
+					   aria-label="Programmer un impact Sprint">
+						Programmer un impact Sprint
 					</a>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>

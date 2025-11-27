@@ -1,42 +1,48 @@
 ---
 ---
 
-<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="approach-heading">
-	<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+<section id="approche-section" class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite-light relative z-10 scroll-mt-20 border-t border-b border-sand/10 dark:border-sand/5" aria-labelledby="approach-heading">
+	<!-- Fond avec motif croisé discret -->
+	<div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, #C6A676 19px, #C6A676 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, #C6A676 19px, #C6A676 20px);"></div>
 	<div class="max-w-7xl mx-auto relative z-10">
-		<div class="space-y-16 md:space-y-20 fade-in-up">
+		<div class="space-y-12 md:space-y-16 fade-in-up">
 			<!-- En-tête avec titre et baseline -->
-			<div class="text-center space-y-6">
+			<div class="text-center space-y-6 mb-12 md:mb-16">
 				<h2 id="approach-heading" class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">Mon approche</h2>
-				<div class="max-w-4xl mx-auto">
-					<p class="text-lg md:text-xl text-graphite dark:text-warmgray-300 leading-relaxed">
-						Quand une startup commence à dériver, on ne se remet pas sur de bons rails avec plus de process.<br/>
-						On se remet sur de bons rails avec du discernement, du pilotage produit et des décisions tenables.
+				<div class="max-w-3xl mx-auto">
+					<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
+						Quand une startup commence à dériver, on ne se remet pas sur de bons rails avec plus de process. On se remet sur de bons rails avec du discernement, du pilotage produit et des décisions tenables.
 					</p>
 				</div>
 			</div>
 			
-			<!-- Grille des 3 piliers avec ligne verticale discrète -->
-			<div class="relative">
-				<!-- Ligne verticale discrète au centre (desktop uniquement) -->
-				<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#E5E0D8] dark:bg-warmgray-400/20 -translate-x-1/2"></div>
+			<!-- Grille 3 colonnes -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in-up" style="transition-delay: 0.1s;">
+				<!-- Piloter -->
+				<div class="space-y-6 group">
+					<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+					<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Piloter</h3>
+					<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+						Reconnecter vision, arbitrages et réalité terrain. Simplifier ce qui compte. Décider plus nettement.
+					</p>
+				</div>
 				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 relative">
-					<div class="space-y-6 group relative">
-						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
-						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Piloter</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Reconnecter vision, arbitrages et réalité terrain. Simplifier ce qui compte. Décider plus nettement.</p>
-					</div>
-					<div class="space-y-6 group relative">
-						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
-						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Stabiliser</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Clarifier les rôles. Réduire la surcharge. Installer un cadre de travail lisible, soutenable, aligné.</p>
-					</div>
-					<div class="space-y-6 group relative">
-						<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
-						<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Résoudre</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">Débloquer ce qui compte vraiment : adoption, activation, usage, valeur. Remettre le produit dans le bon sens.</p>
-					</div>
+				<!-- Stabiliser -->
+				<div class="space-y-6 group">
+					<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+					<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Stabiliser</h3>
+					<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+						Clarifier les rôles. Réduire la surcharge. Installer un cadre de travail lisible, soutenable, aligné.
+					</p>
+				</div>
+				
+				<!-- Résoudre -->
+				<div class="space-y-6 group">
+					<div class="w-16 h-[1px] bg-sand dark:bg-sand-light transition-all duration-500 group-hover:w-24"></div>
+					<h3 class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory font-medium">Résoudre</h3>
+					<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
+						Débloquer ce qui compte vraiment : adoption, activation, usage, valeur. Remettre le produit dans le bon sens.
+					</p>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,37 @@
+{
+  "$ref": "#/definitions/case-studies",
+  "definitions": {
+    "case-studies": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "heroIntro": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "label",
+        "title",
+        "description",
+        "heroIntro"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

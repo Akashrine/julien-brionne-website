@@ -4,8 +4,8 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollArrow from '../../components/ScrollArrow.astro';
 
-const title = "Leadership Produit — Remettre l'équipe dans le même sens | Julien Brionne";
-const description = "Je clarifie les rôles, aligne les décisions et stabilise votre système produit pour remettre votre équipe dans le même sens.";
+const title = "Leadership Produit — Piloter et stabiliser après une transition | Julien Brionne";
+const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitrages, roadmap, rituels décisionnels. Un pilotage concret, pas théorique.";
 ---
 
 <Layout title={title} description={description}>
@@ -26,153 +26,356 @@ const description = "Je clarifie les rôles, aligne les décisions et stabilise 
 			</div>
 			
 			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10 flex-1">
-				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+				<div class="lg:col-span-8 space-y-6 fade-in-up text-left" style="transition-delay: 0.1s;">
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
-						Leadership Produit — remettre l'équipe dans le même sens
+						Leadership et Pilotage Produit
 					</h1>
+					<p class="font-sans text-xl md:text-2xl text-graphite dark:text-warmgray-300 leading-relaxed">
+						Piloter et stabiliser après une transition critique.
+					</p>
+					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 leading-relaxed">
+						Intervention hands-on pendant 2 à 6 mois : vision, arbitrages, roadmap, rituels décisionnels. Un pilotage concret, pas théorique.
+					</p>
 				</div>
 			</div>
 			
-			<ScrollArrow targetId="probleme-section" />
+			<ScrollArrow targetId="quand-section" />
 		</section>
 
-		<!-- SECTION 2 — Le problème (carte éditoriale) -->
-		<section id="probleme-section" class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="probleme-heading">
+		<!-- SECTION 2 — Quand j'interviens (grille 2 colonnes) -->
+		<section id="quand-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="quand-heading">
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-5xl mx-auto relative z-10">
-				<div class="border border-sand/20 dark:border-sand/15 bg-[#F9F6F1] dark:bg-graphite rounded-xl p-12 shadow-sm max-w-3xl mx-auto">
-					<div class="relative mb-6 fade-in-up">
-						<div class="absolute top-0 left-0 w-2 h-2 bg-sand rounded-full"></div>
-						<h2 id="probleme-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory ml-4 relative">
-							<span class="absolute -left-8 top-1/2 -translate-y-1/2 w-24 h-[1px] bg-sand/20 dark:bg-sand/15 opacity-20"></span>
-							Le problème
-						</h2>
-						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4 ml-4">
-							Quand l'équipe se désaligne progressivement.
-						</p>
-					</div>
-					<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up ml-4" style="transition-delay: 0.1s;">
-						<p>Une équipe ne se désaligne jamais d'un coup. C'est progressif :</p>
-						<ul class="space-y-4 ml-4">
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1">décisions floues</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1">priorités instables</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1">rôles qui se chevauchent</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1">vision non partagée</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1">PMs qui compensent</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 3 — Objectif (aligné à droite) -->
-		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="objectif-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="flex justify-end">
-					<div class="max-w-3xl text-right">
-						<div class="relative mb-6 fade-in-up">
-							<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-							<h2 id="objectif-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-								Objectif
-							</h2>
-							<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
-								Créer un système où l'équipe respire.
-							</p>
-						</div>
-						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
-							Créer un système où les décisions sont claires et où l'équipe respire.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 4 — Ce que j'apporte (grille 2 colonnes) -->
-		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="apporte-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-5xl mx-auto relative z-10">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+			<div class="max-w-7xl mx-auto relative z-10">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
 					<!-- Colonne gauche — Texte -->
 					<div class="fade-in-up">
-						<div class="relative mb-6">
-							<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
-							<h2 id="apporte-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
-								Ce que j'apporte
-							</h2>
-							<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
-								Clarifier pour remettre l'équipe dans le bon sens.
+						<h2 id="quand-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory mb-6">
+							Quand j'interviens
+						</h2>
+						<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
+							<p>Après une levée de fond, une montée d'un PM au post de Head of Product, ou un gros changement organisationnel, le système produit doit être stabilisé rapidement.</p>
+							<p>Les décisions s'accélèrent, les priorités changent, les rôles se brouillent. L'équipe fait de son mieux mais manque de cadre opérationnel.</p>
+							<p class="font-semibold text-graphite dark:text-ivory">Un Leadership Produit sert à une seule chose :</p>
+							<p class="text-lg md:text-xl italic">installer un pilotage opérationnel qui tient, maintenant, pas dans 6 mois.</p>
+						</div>
+					</div>
+					<!-- Colonne droite — Cartes -->
+					<div class="space-y-6 fade-in-up" style="transition-delay: 0.1s;">
+						<!-- Carte 1 -->
+						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								Après levée de fond
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Les ambitions montent, les priorités changent, l'équipe doit scaler. Il faut un pilotage produit qui tient la route.
 							</p>
 						</div>
-						<ul class="space-y-4 mt-8">
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">cadre décisionnel</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">clarification des rôles</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">rythme stable</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">arbitrages</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">lisibilité pour le CEO</span>
-							</li>
-						</ul>
-					</div>
-					<!-- Colonne droite — Illustration -->
-					<div class="flex justify-center items-center fade-in-up" style="transition-delay: 0.1s;">
-						<img src="/leadership-Photoroom.webp" 
-							 alt="Leadership Produit" 
-							 class="w-48 md:w-64 h-auto opacity-90 dark:opacity-80"
-							 loading="lazy"
-							 width="256"
-							 height="256">
+						<!-- Carte 2 -->
+						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								Montée d'un PM au post de Head of Product
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Le passage de PM à Head of Product nécessite un cadre opérationnel solide. Vision, arbitrages, roadmap, rituels décisionnels.
+							</p>
+						</div>
+						<!-- Carte 3 -->
+						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
+								Gros changement organisationnel
+							</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Restructuration, fusion, pivot stratégique. Le système produit doit être stabilisé rapidement pour tenir le cap.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- SECTION 5 — CTA Final -->
-		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
+		<!-- SECTION 3 — Mon approche opérationnelle (grille 3 colonnes) -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="approche-heading">
+			<div class="max-w-7xl mx-auto">
+				<div class="max-w-3xl mb-16 fade-in-up">
+					<div class="relative">
+						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+						<h2 id="approche-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+							Mon approche opérationnelle
+						</h2>
+						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+							Je pilote, je ne conseille pas.
+						</p>
+					</div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="space-y-4">
+						<div class="flex items-baseline gap-3 mb-4">
+							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">1.</span>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Je tranche</h3>
+						</div>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+							Vision claire, arbitrages nets, priorités stables. Je prends les décisions, je ne les documente pas.
+						</p>
+					</div>
+					<div class="space-y-4">
+						<div class="flex items-baseline gap-3 mb-4">
+							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">2.</span>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Je structure</h3>
+						</div>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+							Roadmap lisible, rituels décisionnels qui tiennent, rôles clarifiés. Un cadre opérationnel qui fonctionne.
+						</p>
+					</div>
+					<div class="space-y-4">
+						<div class="flex items-baseline gap-3 mb-4">
+							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">3.</span>
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Je stabilise</h3>
+						</div>
+						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+							Coaching PMs, transmission progressive, équipe plus forte qu'avant mon arrivée. Pas de dépendance créée.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4 — Ce que je pilote (liste numérotée) -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pilote-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-5xl mx-auto relative z-10">
+				<div class="max-w-3xl mb-16 fade-in-up">
+					<div class="relative">
+						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+						<h2 id="pilote-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+							Ce que je pilote
+						</h2>
+						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+							Un pilotage concret, opérationnel, qui tient.
+						</p>
+					</div>
+				</div>
+				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="flex gap-6 md:gap-8">
+						<div class="flex-shrink-0">
+							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">01</span>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Vision et arbitrages</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Clarifier la vision produit, prendre les arbitrages difficiles, stabiliser les priorités. Des décisions nettes, pas floues.
+							</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8">
+						<div class="flex-shrink-0">
+							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">02</span>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Roadmap et priorités</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Construire une roadmap lisible, stable, qui aligne les équipes. Prioriser ce qui compte vraiment, arrêter ce qui ne sert plus.
+							</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8">
+						<div class="flex-shrink-0">
+							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">03</span>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Rituels décisionnels</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Installer des rituels qui tiennent : roadmap reviews, arbitrages produits, prioritisation. Un cadre de travail lisible et soutenable.
+							</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8">
+						<div class="flex-shrink-0">
+							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">04</span>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Clarification des rôles</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Rôles clairs, responsabilités nettes, collaboration fluide. Réduire la surcharge, installer un cadre de travail lisible.
+							</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8">
+						<div class="flex-shrink-0">
+							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">05</span>
+						</div>
+						<div class="flex-1">
+							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-3">Coaching PMs</h3>
+							<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+								Accompagner les PMs dans leurs décisions, leur priorisation, leur pilotage. Monter l'équipe en autonomie, pas créer une dépendance.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 5 — Déroulé (timeline verticale) -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="deroule-heading">
+			<div class="max-w-5xl mx-auto">
+				<div class="max-w-3xl mb-16 fade-in-up">
+					<div class="relative">
+						<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+						<h2 id="deroule-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+							Déroulé
+						</h2>
+						<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+							Intervention hands-on pendant 2 à 6 mois selon la situation.
+						</p>
+					</div>
+				</div>
+				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="flex gap-6 md:gap-8 relative">
+						<div class="flex-shrink-0 w-20 md:w-24">
+							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Mois 1-2</div>
+							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Stabilisation</div>
+						</div>
+						<div class="flex-1 pb-12 border-l-2 border-sand/20 dark:border-sand/15 pl-8 md:pl-12">
+							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Clarification vision et arbitrages prioritaires</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Construction roadmap lisible et stable</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Installation rituels décisionnels</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Clarification rôles et responsabilités</span>
+								</li>
+							</ul>
+							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : cadre opérationnel installé.</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8 relative">
+						<div class="flex-shrink-0 w-20 md:w-24">
+							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Mois 3-4</div>
+							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Pilotage</div>
+						</div>
+						<div class="flex-1 pb-12 border-l-2 border-sand/20 dark:border-sand/15 pl-8 md:pl-12">
+							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Pilotage opérationnel au quotidien</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Arbitrages produits réguliers</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Coaching PMs sur décisions et priorisation</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Optimisation rituels et processus</span>
+								</li>
+							</ul>
+							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : système produit stabilisé.</p>
+						</div>
+					</div>
+					<div class="flex gap-6 md:gap-8 relative">
+						<div class="flex-shrink-0 w-20 md:w-24">
+							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Mois 5-6</div>
+							<div class="text-sm text-graphite dark:text-warmgray-400 mt-1">Transmission</div>
+						</div>
+						<div class="flex-1 pl-8 md:pl-12">
+							<ul class="space-y-2 text-base md:text-lg text-graphite dark:text-warmgray-300">
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Transmission progressive au Head of Product</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Autonomisation de l'équipe produit</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Documentation des rituels et processus</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
+									<span>Support ponctuel si besoin</span>
+								</li>
+							</ul>
+							<p class="mt-4 font-semibold text-graphite dark:text-ivory italic">Sortie : équipe autonome et plus forte qu'avant.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 6 — Pour qui (aligné à droite) -->
+		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pour-qui-heading">
+			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<div class="max-w-5xl mx-auto relative z-10">
+				<div class="flex justify-end">
+					<div class="max-w-3xl text-right">
+						<div class="relative mb-8 fade-in-up">
+							<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-1 h-16 bg-sand/20 dark:bg-sand/15"></div>
+							<h2 id="pour-qui-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory relative">
+								Pour qui ?
+							</h2>
+							<p class="font-sans text-lg italic opacity-70 text-graphite dark:text-warmgray-300 mt-4">
+								Quand le système produit doit être stabilisé rapidement.
+							</p>
+						</div>
+						<ul class="space-y-4 fade-in-up text-right" style="transition-delay: 0.1s;">
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Startup après levée de fond</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">PM promu Head of Product</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Équipe après restructuration ou fusion</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Système produit qui craque sous la pression</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Décisions qui s'accumulent sans être prises</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+							<li class="flex items-start gap-4 justify-end">
+								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Roadmap qui n'aligne plus les équipes</span>
+								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 7 — CTA Final -->
+		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
-					Votre produit traverse un moment critique.
+					Prêt à stabiliser votre système produit ?
 				</h2>
 				<p class="font-serif text-lg italic opacity-80 text-graphite dark:text-warmgray-300">
-					Clarifions ensemble ce qui bloque.
-				</p>
-				<p class="text-base text-graphite dark:text-warmgray-300">
-					Un échange de 30 minutes pour comprendre votre situation et identifier les leviers immédiats.
+					Un Leadership Produit de 2 à 6 mois pour installer un pilotage opérationnel qui tient.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
 					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
 					   data-lemcal-popup
 					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Diagnostiquer votre situation produit">
-						Diagnostiquer votre situation
+					   aria-label="Demander un Leadership Produit">
+						Demander un Leadership Produit
 					</a>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
