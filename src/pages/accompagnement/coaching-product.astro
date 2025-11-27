@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import ScrollArrow from '../../components/ScrollArrow.astro';
 
 const title = "Coaching Product — Monter un PM en impact, pas en théorie | Julien Brionne";
 const description = "Un coaching opérationnel qui aide un PM ou un Head of Product à clarifier, décider, arbitrer et piloter avec impact.";
@@ -12,7 +13,7 @@ const description = "Un coaching opérationnel qui aide un PM ou un Head of Prod
 	<main>
 		
 		<!-- SECTION 1 — HERO -->
-		<section class="min-h-[90vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - Coaching Product">
+		<section class="min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Hero - Coaching Product">
 			<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
 			
 			<!-- SVG d'arrière-plan -->
@@ -24,17 +25,19 @@ const description = "Un coaching opérationnel qui aide un PM ou un Head of Prod
 				</svg>
 			</div>
 			
-			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10 flex-1">
 				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
 						Coaching Product — faire monter un PM en impact
 					</h1>
 				</div>
 			</div>
+			
+			<ScrollArrow targetId="probleme-section" />
 		</section>
 
 		<!-- SECTION 2 — Le problème (grille 2 colonnes) -->
-		<section class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="probleme-heading">
+		<section id="probleme-section" class="py-24 md:py-28 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="probleme-heading">
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
 			<div class="max-w-5xl mx-auto relative z-10">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">

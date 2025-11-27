@@ -1,0 +1,44 @@
+---
+interface Props {
+	targetId: string;
+	label?: string;
+}
+
+const { targetId, label = "Découvrir" } = Astro.props;
+---
+
+<a href={`#${targetId}`} 
+   class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 group cursor-pointer fade-in-up scroll-arrow" 
+   style="transition-delay: 0.3s;"
+   data-target-id={targetId}
+   aria-label={`Aller à la section suivante: ${label}`}>
+	<div class="flex flex-col items-center gap-2 animate-bounce-subtle">
+		<svg class="w-6 h-6 text-sand dark:text-sand-light transition-colors duration-300 group-hover:text-sand-dark dark:group-hover:text-sand" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+		</svg>
+		<span class="text-xs text-sand dark:text-sand-light opacity-70 uppercase tracking-wider font-sans">{label}</span>
+	</div>
+</a>
+
+<script>
+	// Scroll smooth vers la section cible au clic sur la flèche
+	document.addEventListener('DOMContentLoaded', () => {
+		const scrollArrows = document.querySelectorAll('.scroll-arrow');
+		scrollArrows.forEach((scrollArrow) => {
+			const targetId = scrollArrow.getAttribute('data-target-id');
+			if (targetId) {
+				scrollArrow.addEventListener('click', (e) => {
+					e.preventDefault();
+					const target = document.getElementById(targetId);
+					if (target) {
+						target.scrollIntoView({ 
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				});
+			}
+		});
+	});
+</script>
+
