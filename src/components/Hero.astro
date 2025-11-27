@@ -1,7 +1,8 @@
 ---
+import ScrollArrow from './ScrollArrow.astro';
 ---
 
-<section class="min-h-[95vh] flex items-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Section principale - Présentation">
+<section class="min-h-[95vh] flex flex-col items-center justify-center pt-32 pb-20 relative bg-ivory dark:bg-graphite overflow-hidden" aria-label="Section principale - Présentation">
 	<div class="absolute inset-0 bg-split-overlay pointer-events-none"></div>
 	
 	<!-- SVG d'arrière-plan : Courbes et Cercle sur toute la largeur -->
@@ -17,26 +18,27 @@
 		</svg>
 	</div>
 	
-	<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
+	<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10 flex-1">
 		<div class="lg:col-span-7 space-y-8 fade-in-up text-left pr-0 lg:pr-12" style="transition-delay: 0.1s;">
 			<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand font-semibold">
 				Piloter. Stabiliser. Résoudre.
 			</p>
 			<h1 class="font-serif text-5xl md:text-6xl lg:text-[5rem] leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
-				J'aide les startups SaaS à remettre leur produit dans le bon sens.
+				J'interviens quand une startup commence à dériver.
 			</h1>
 			<p class="font-sans text-softgray dark:text-warmgray-400 text-lg md:text-xl max-w-xl leading-relaxed pt-2">
-				Les produits qui comptent ont toujours un copilote.
+				On commence par débloquer l'impact. Ensuite seulement, on pilote et on stabilise.
 			</p>
 			<div class="pt-8">
-				<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-				   data-lemcal-popup
+				<a href="/accompagnement/impact-sprint" 
 				   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
-				   aria-label="Prendre rendez-vous pour discuter de votre situation produit">
-					Discuter de votre situation
+				   aria-label="Commencer par un Impact Sprint">
+					Commencer par un Impact Sprint
 				</a>
 			</div>
 		</div>
 	</div>
+	
+	<ScrollArrow targetId="situation-section" />
 </section>
 
