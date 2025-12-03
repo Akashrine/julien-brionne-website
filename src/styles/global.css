@@ -387,6 +387,10 @@ body {
 	padding-bottom: 0;
 }
 
+.hairline {
+	border-top: 1px solid rgba(198, 166, 118, 0.1);
+}
+
 /* Animations fade-in-up avec stagger pour la page approche */
 @keyframes fadeInUpApproche {
 	from {
