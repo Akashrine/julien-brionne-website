@@ -3,854 +3,316 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "L'approche Product Copilot — Clarifier. Aligner. Créer de l'impact. | Julien Brionne";
-const description = "Mon approche : remettre de la clarté là où elle manque, stabiliser ce qui déraille et concentrer toute l'énergie sur l'impact réel, pas la production de features.";
+const title = "L'approche Product Copilot — Clarté. Alignement. Création d'impact. | Julien Brionne";
+const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis votre système, je le stabilise et je le remets dans la bonne direction.";
 ---
 
 <Layout title={title} description={description}>
 	<Navbar />
-	<main>
-		
-		<!-- SECTION 1 — Hero / Manifeste -->
-		<section id="philosophie" class="pt-32 md:pt-40 pb-24 md:pb-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative scroll-mt-20" aria-label="Introduction - Approche Product Copilot">
-			<div class="max-w-4xl mx-auto text-center space-y-12 fade-in-up">
-				<div class="space-y-6">
-					<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
-						PHILOSOPHIE
+	<main class="pt-32 md:pt-40 pb-24 md:pb-32 px-6 md:px-12 bg-ivory dark:bg-graphite">
+		<div class="max-w-[1400px] mx-auto">
+			
+			<!-- TITRE PRINCIPAL -->
+			<header class="text-center mb-16 md:mb-20 fade-in-up">
+				<span class="text-xs font-mono text-sand dark:text-sand-light uppercase tracking-widest mb-4 block">Méthodologie</span>
+				<h1 class="font-serif text-5xl md:text-7xl text-graphite dark:text-ivory mb-6">
+					L'approche Product Copilot
+				</h1>
+				<p class="text-xl font-serif italic text-sand dark:text-sand-light mb-4">
+					Clarté. Alignement. Création d'impact.
+				</p>
+				<div class="max-w-2xl mx-auto space-y-4 mt-8">
+					<p class="text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+						Je ne plaque jamais une méthode sur votre chaos.
 					</p>
-					<h1 class="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory" style="font-size: 4.5rem;">
-						L'approche Product Copilot
-					</h1>
-					<p class="font-serif text-3xl md:text-4xl lg:text-5xl leading-[1.1] text-balance italic text-sand dark:text-sand-light">
-						Clarifier. Aligner. Créer de l'impact.
+					<p class="text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
+						Je lis votre système, je le stabilise et je le remets dans la bonne direction.
 					</p>
-				</div>
-				
-				<div class="max-w-2xl mx-auto space-y-6 text-left">
-					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
-						Un produit n'avance pas parce qu'on produit plus.
-					</p>
-					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
-						Il avance quand l'équipe décide mieux, ensemble.
-					</p>
-					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
-						Mon approche vise à remettre de la clarté là où elle manque, stabiliser ce qui déraille et concentrer toute l'énergie sur l'impact réel, pas sur la production de features.
+					<p class="text-lg text-graphite dark:text-warmgray-300 leading-relaxed font-medium">
+						Ce que je construis : de la clarté, de la structure, et des décisions qui tiennent.
 					</p>
 				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 2 — Quand un produit commence à perdre son sens -->
-		<section id="signaux" class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="signaux-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
-			<div class="max-w-7xl mx-auto relative z-10">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-					<!-- Colonne gauche -->
-					<div class="space-y-6 fade-in-up">
-						<h2 id="signaux-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-graphite dark:text-ivory">
-							Quand un produit commence à perdre son sens
-						</h2>
-						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
-							La plupart des équipes sentent que quelque chose se dérègle avant même de pouvoir le nommer.
-						</p>
-						<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 pt-2">
-							<p class="font-serif text-xl md:text-2xl italic leading-relaxed text-graphite dark:text-ivory">
-								Dans ces moments-là, un produit ne manque pas d'idées.<br>
-								Il manque de leadership produit.
-							</p>
-						</div>
-					</div>
-					
-					<!-- Colonne droite — Les signaux faibles -->
-					<div class="space-y-6 fade-in-up" style="transition-delay: 0.1s;">
-						<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
-							Les signaux faibles
-						</p>
-						<ul class="space-y-4">
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">la vision circule mal</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">les priorités changent trop vite</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">l'usage stagne et personne ne sait pourquoi</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">l'équipe compense au lieu de piloter</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">les décisions deviennent réactives</span>
-							</li>
-							<li class="flex items-start gap-4">
-								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">•</span>
-								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">la roadmap rassure… mais n'aligne plus</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 3 — La Clarity Map -->
-		<section id="clarity" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="clarity-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-12 fade-in-up">
-					<h2 id="clarity-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory mb-4">
-						La Clarity Map
-					</h2>
-					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 italic">
-						Lire le système avant d'essayer de le réparer.
-					</p>
-				</div>
-				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
-					<p>La Clarity Map n'est pas un audit.</p>
-					<p>C'est une photographie lucide du système :</p>
-					<p class="font-medium text-graphite dark:text-ivory pl-4 border-l-2 border-sand/30 dark:border-sand/20">
-						vision → stratégie → exécution → décisions → comportements → résultats.
-					</p>
-					<p class="pt-4">Elle sert à :</p>
-					<ul class="space-y-3 ml-4">
-						<li class="flex items-start gap-4">
-							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-							<span>faire émerger les zones de tension invisibles</span>
-						</li>
-						<li class="flex items-start gap-4">
-							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-							<span>repérer ce qui décroche réellement</span>
-						</li>
-						<li class="flex items-start gap-4">
-							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-							<span>clarifier les attentes non dites</span>
-						</li>
-						<li class="flex items-start gap-4">
-							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
-							<span>isoler les blocages qui empêchent l'impact</span>
-						</li>
-					</ul>
-					<p class="pt-4 font-medium text-graphite dark:text-ivory">
-						C'est mon point d'entrée dans chaque mission.<br>
-						Tout part de là.
-					</p>
-				</div>
-				<!-- Micro CTA -->
-				<div class="mt-12 fade-in-up" style="transition-delay: 0.2s;">
-					<a href="/accompagnement/impact-sprint" class="inline-flex items-center gap-2 font-sans text-base md:text-lg text-sand dark:text-sand-light hover:text-sand-light dark:hover:text-sand transition-colors">
-						→ Voir comment je commence avec un Impact Sprint
+				<div class="mt-10">
+					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
+					   data-lemcal-popup
+					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
+					   aria-label="Discuter de votre situation">
+						Discuter de votre situation
 					</a>
 				</div>
-			</div>
-		</section>
+			</header>
 
-		<!-- SECTION 4 — Avant / Après Clarity Map -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="avant-apres-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg p-8 md:p-12 shadow-sm fade-in-up">
-					<h2 id="avant-apres-heading" class="font-serif text-2xl md:text-3xl text-graphite dark:text-ivory mb-8 text-center">
-						Avant / Après Clarity Map
-					</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-						<!-- Avant -->
+			<div class="space-y-16 md:space-y-20">
+
+			<!-- BLOC 01 : DIAGNOSTIC -->
+			<section class="section-divider fade-in-up bg-ivory dark:bg-graphite p-10 md:p-16 rounded-lg w-full">
+				<!-- En-tête centré -->
+				<div class="text-center mb-10 md:mb-12">
+					<span class="text-5xl md:text-6xl font-serif text-sand/40 dark:text-sand/30 mb-4 block">01</span>
+					<h2 class="font-serif text-4xl md:text-5xl text-graphite dark:text-ivory mb-3">Lire le système</h2>
+					<p class="text-xs font-bold uppercase tracking-widest text-graphite dark:text-gray-400">COMPRENDRE AVANT D'AGIR</p>
+				</div>
+
+				<!-- Introduction à gauche -->
+				<div class="mb-10 md:mb-12 max-w-2xl">
+					<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory mb-4">
+						Ce n'est jamais un problème d'effort.
+					</h3>
+					<p class="text-base text-graphite dark:text-gray-300 leading-relaxed">
+						Quand un produit dérive, le vrai problème est systémique : vision qui circule mal, décisions lentes, PMs sur-sollicités. Avant d'agir, j'utilise deux lentilles pour lire la réalité.
+					</p>
+				</div>
+
+				<!-- Grille avec FRAME, SOC et Clarity Map -->
+				<!-- Grille FRAME + SOC + Clarity Map améliorée -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+	<!-- FRAME -->
+	<div class="bg-sand/10 dark:bg-sand/5 border border-sand/20 dark:border-sand/10 
+	            p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+		<h4 class="font-serif text-3xl text-sand dark:text-sand-light mb-3">FRAME</h4>
+		<p class="text-xs font-bold uppercase tracking-widest text-graphite/70 dark:text-ivory/70 mb-6">
+			Lecture du produit
+		</p>
+		<ul class="space-y-3 text-base text-graphite dark:text-gray-300 leading-relaxed">
+			<li><strong>Focus</strong> • Ce qui compte vraiment</li>
+			<li><strong>Risques</strong> • Angles morts, tensions</li>
+			<li><strong>Alignement</strong> • Vision → Stratégie → Exécution</li>
+			<li><strong>Mesure</strong> • Outcomes + signaux comportementaux</li>
+			<li><strong>Expérience</strong> • Vitesse d’apprentissage</li>
+		</ul>
+	</div>
+
+	<!-- Colonne droite -->
+	<div class="space-y-10">
+
+		<!-- SOC -->
+		<div class="bg-sand/10 dark:bg-sand/5 border border-sand/20 dark:border-sand/10 
+		            p-8 rounded-xl shadow-sm hover:shadow-md transition-all">
+			<h4 class="font-serif text-3xl text-sand dark:text-sand-light mb-3">SOC</h4>
+			<p class="text-xs font-bold uppercase tracking-widest text-graphite/70 dark:text-ivory/70 mb-6">
+				Lecture de l’organisation
+			</p>
+			<ul class="space-y-3 text-base text-graphite dark:text-gray-300 leading-relaxed">
+				<li><strong>Strategy</strong> • Bets, narratif, priorités</li>
+				<li><strong>Operations</strong> • Discovery, Delivery, Learning</li>
+				<li><strong>Communication</strong> • Qui sait quoi et quand</li>
+			</ul>
+		</div>
+
+		<!-- Clarity Map -->
+		<div class="bg-graphite text-ivory p-8 rounded-xl shadow-inner relative border-t-2 border-sand/40">
+			<h4 class="font-serif text-2xl text-sand mb-2">La Clarity Map™</h4>
+			<p class="text-xs font-bold uppercase tracking-widest text-sand-light mb-4 opacity-80">
+				Synthèse FRAME + SOC
+			</p>
+			<p class="text-base leading-relaxed text-gray-300">
+				Elle révèle la vision réelle, les tensions humaines, les frictions invisibles
+				et la cohérence entre stratégie, exécution et arbitrages.
+			</p>
+			<p class="mt-4 italic text-sand-light font-serif">
+				La question n'est plus "que faire ?" mais "où agir en premier ?"
+			</p>
+			<p class="mt-3 text-sm text-gray-400">
+				Elle identifie où agir en premier : Piloter, Stabiliser ou Résoudre.
+			</p>
+		</div>
+
+	</div>
+</div>
+
+			</section>
+
+			<!-- BLOC 02 : INTERVENTION -->
+			<section class="section-divider fade-in-up w-full p-10 md:p-16" style="transition-delay: 0.1s;">
+				<!-- En-tête centré -->
+				<div class="text-center mb-10 md:mb-12">
+					<span class="text-5xl md:text-6xl font-serif text-sand/40 dark:text-sand/30 mb-4 block">02</span>
+					<h2 class="font-serif text-4xl md:text-5xl text-graphite dark:text-ivory mb-3">Intervenir avec précision</h2>
+					<p class="text-xs font-bold uppercase tracking-widest text-graphite dark:text-gray-400">AGIR LÀ OÙ LE SYSTÈME SE DÉCONNECTE</p>
+				</div>
+
+				<!-- Mise en page alternée description/objectif -->
+				<div class="relative">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
+						<!-- Lignes verticales de séparation -->
+						<div class="hidden md:block absolute left-1/3 top-0 bottom-0 w-px bg-sand/10 dark:bg-sand/5 -translate-x-1/2"></div>
+						<div class="hidden md:block absolute right-1/3 top-0 bottom-0 w-px bg-sand/10 dark:bg-sand/5 translate-x-1/2"></div>
+
+						<!-- PILOTER -->
+						<div class="group p-0 bg-sand/10 dark:bg-sand/5 border border-sand/20 dark:border-sand/10 rounded-xl overflow-hidden hover:shadow-md transition-all fade-in-up" style="transition-delay: 0.1s;">
+							<!-- Bandeau coloré -->
+							<div class="h-1 bg-sand/30 dark:bg-sand/20"></div>
+							<div class="p-8 space-y-6">
+								<h3 class="font-serif text-2xl md:text-3xl">Piloter</h3>
+								<p class="text-xs font-bold uppercase tracking-widest text-sand">Quand la direction est floue</p>
+								<p class="text-sm text-graphite/80 dark:text-gray-300 leading-relaxed">
+									Piloter, ce n'est pas définir une vision. C'est transformer la vision en décisions concrètes,
+									identifier les bets stratégiques et rendre les arbitrages lisibles.
+								</p>
+								<div class="flex flex-wrap gap-3 text-sm">
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Focus Deck</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">OOP</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">POP</span>
+								</div>
+								<p class="font-serif italic text-base md:text-lg border-l-4 border-sand/60 dark:border-sand/40 pl-4 pt-2 text-graphite dark:text-ivory">
+									« Remettre un cap net et une boussole stratégique lisible. »
+								</p>
+							</div>
+						</div>
+					
+						<!-- STABILISER -->
+						<div class="group p-0 bg-sand/10 dark:bg-sand/5 border border-sand/20 dark:border-sand/10 rounded-xl overflow-hidden hover:shadow-md transition-all fade-in-up" style="transition-delay: 0.2s;">
+							<!-- Bandeau coloré plus clair -->
+							<div class="h-1 bg-sand/15 dark:bg-sand/10"></div>
+							<div class="p-8 space-y-6">
+								<h3 class="font-serif text-2xl md:text-3xl">Stabiliser</h3>
+								<p class="text-xs font-bold uppercase tracking-widest text-sand">Quand l'équipe n'avance plus</p>
+								<p class="text-sm text-graphite/80 dark:text-gray-300 leading-relaxed">
+									Je clarifie les rôles, je réduis la surcharge PM, je rétablis la confiance par la confrontation saine
+									et je crée un fonctionnement soutenable.
+								</p>
+								<div class="flex flex-wrap gap-3 text-sm">
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Team Blueprint</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Rituels utiles</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Conflits sains</span>
+								</div>
+								<p class="font-serif italic text-base md:text-lg border-l-4 border-sand/60 dark:border-sand/40 pl-4 pt-2 text-graphite dark:text-ivory">
+									« Restaurer un fonctionnement stable et prévisible. »
+								</p>
+							</div>
+						</div>
+					
+						<!-- RÉSOUDRE -->
+						<div class="group p-0 bg-sand/10 dark:bg-sand/5 border border-sand/20 dark:border-sand/10 rounded-xl overflow-hidden hover:shadow-md transition-all fade-in-up" style="transition-delay: 0.3s;">
+							<!-- Bandeau coloré légèrement différent -->
+							<div class="h-1 bg-sand/25 dark:bg-sand/15"></div>
+							<div class="p-8 space-y-6">
+								<h3 class="font-serif text-2xl md:text-3xl">Résoudre</h3>
+								<p class="text-xs font-bold uppercase tracking-widest text-sand">Quand l'impact décroche</p>
+								<p class="text-sm text-graphite/80 dark:text-gray-300 leading-relaxed">
+									Je lis les dynamiques d'usage, les comportements réels et les signaux faibles pour restaurer une
+									trajectoire cohérente et mesurable.
+								</p>
+								<div class="flex flex-wrap gap-3 text-sm">
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Copilot Map</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Diagnostic comportemental</span>
+									<span class="px-3 py-1.5 bg-white/50 dark:bg-white/5 border border-sand/20 dark:border-sand/10 rounded text-xs text-graphite dark:text-gray-300 hover:scale-[1.02] transition-transform">Boucles rapides</span>
+								</div>
+								<p class="font-serif italic text-base md:text-lg border-l-4 border-sand/60 dark:border-sand/40 pl-4 pt-2 text-graphite dark:text-ivory">
+									« Remettre le produit dans une dynamique saine. »
+								</p>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</section>
+
+			<!-- BLOC 03 : POS -->
+			<section class="section-divider fade-in-up w-full p-10 md:p-16" style="transition-delay: 0.2s;">
+				<!-- En-tête centré -->
+				<div class="text-center mb-10 md:mb-12">
+					<span class="text-5xl md:text-6xl font-serif text-sand/40 dark:text-sand/30 mb-4 block">03</span>
+					<h2 class="font-serif text-4xl md:text-5xl text-graphite dark:text-ivory mb-3">Le Système Final</h2>
+					<p class="text-xs font-bold uppercase tracking-widest text-graphite dark:text-gray-400">CE QUE JE LAISSE DERRIÈRE MOI</p>
+				</div>
+
+				<div class="bg-graphite text-ivory p-12 md:p-20 text-center rounded-xl relative shadow-xl">
+
+					<div class="relative z-20 space-y-12 max-w-3xl mx-auto">
+				
 						<div class="space-y-4">
-							<h3 class="font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium mb-4">Avant :</h3>
-							<ul class="space-y-3">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg text-graphite dark:text-warmgray-300">Priorités floues</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg text-graphite dark:text-warmgray-300">Décisions contradictoires</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg text-graphite dark:text-warmgray-300">Tensions CEO ↔ équipe</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg text-graphite dark:text-warmgray-300">Usage mal compris</span>
-								</li>
-							</ul>
+							<h3 class="font-serif text-3xl md:text-4xl mb-2 text-sand">Product Operating System™</h3>
+							<p class="text-base md:text-lg text-gray-300 leading-relaxed">
+								Un système vivant qui continue de fonctionner sans moi.
+							</p>
 						</div>
-						<!-- Après -->
-						<div class="space-y-4">
-							<h3 class="font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium mb-4">Après :</h3>
-							<ul class="space-y-3">
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg font-medium text-graphite dark:text-ivory">Cap lisible</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg font-medium text-graphite dark:text-ivory">Arbitrages assumés</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg font-medium text-graphite dark:text-ivory">Rituels stables</span>
-								</li>
-								<li class="flex items-start gap-3">
-									<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">•</span>
-									<span class="text-base md:text-lg font-medium text-graphite dark:text-ivory">Comportement clé identifié</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 5 — Architecture d'un Système Produit -->
-		<section id="architecture" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="architecture-heading">
-			<div class="max-w-7xl mx-auto">
-				<div class="mb-12 fade-in-up">
-					<h2 id="architecture-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory mb-4">
-						Architecture d'un système produit
-					</h2>
-				</div>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 fade-in-up" style="transition-delay: 0.1s;">
-					<!-- Card 1 -->
-					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
-							1. Voir le système (Clarity Map)
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Comprendre où ça décroche.
-						</p>
-					</div>
-					<!-- Card 2 -->
-					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
-							2. Lire le fonctionnement (SOC)
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Stratégie → Organisation → Communication.
-						</p>
-					</div>
-					<!-- Card 3 -->
-					<div class="bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg p-6 md:p-8 hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-4">
-							3. Installer un pilotage (FRAME + POS)
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Cadre de décisions, rituels, outils.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 6 — Ma philosophie de travail -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="philosophie-heading">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center space-y-6 mb-16 fade-in-up">
-					<h2 id="philosophie-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory">
-						Ma philosophie de travail
-					</h2>
-					<div class="max-w-3xl mx-auto space-y-4">
-						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300">
-							Pas de frameworks magiques.<br>
-							Pas de PowerPoint théorique.<br>
-							Pas de rituels ajoutés pour "mieux structurer".
-						</p>
-						<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 font-medium">
-							Mon approche tient en trois mouvements.
-						</p>
-					</div>
-				</div>
 				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in-up" style="transition-delay: 0.1s;">
-					<!-- Piloter -->
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Piloter</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
-							Reconnecter la vision, les arbitrages et la direction produit.<br>
-							Créer une lisibilité partagée.<br>
-							Faire circuler ce qui doit circuler.
+						<div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-5 text-left text-sm md:text-base font-mono pt-4">
+							<p class="opacity-90">• Direction lisible</p>
+							<p class="opacity-90">• Arbitrages nets</p>
+							<p class="opacity-90">• Organisation stable</p>
+							<p class="opacity-90">• Décisions prévisibles</p>
+							<p class="opacity-90">• Produit aligné</p>
+							<p class="opacity-90">• Apprentissage rapide</p>
+							<p class="opacity-90">• Équipe autonome</p>
+						</div>
+				
+						<p class="italic text-gray-400 text-base">
+							Piloter → Stabiliser → Résoudre. Ces leviers construisent votre POS.
 						</p>
+				
+						<a href="https://app.lemcal.com/@productcopilot/decouverte"
+						   class="inline-block border border-sand/80 text-sand px-10 py-4 
+								  tracking-widest uppercase text-xs hover:bg-sand hover:text-graphite transition-colors">
+							Installer ce système
+						</a>
+				
 					</div>
-					
-					<!-- Stabiliser -->
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Stabiliser</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
-							Créer un rythme.<br>
-							Clarifier les rôles.<br>
-							Réduire la surcharge cognitive.<br>
-							Faire ensemble, pas à côté.
-						</p>
-					</div>
-					
-					<!-- Résoudre -->
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Résoudre</h3>
-						<p class="leading-relaxed text-base md:text-lg text-graphite dark:text-warmgray-300">
-							Traiter les vrais leviers :<br>
-							adoption, activation, usage, churn, compréhension du problème client.<br>
-							L'impact, pas l'exécution.
-						</p>
-					</div>
+				
+					<div class="absolute inset-0 opacity-[0.08] bg-[radial-gradient(#C6A676_1px,transparent_1px)] bg-[size:18px_18px]"></div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<!-- SECTION 7 — La grille SOC -->
-		<section id="soc" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="soc-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-12 fade-in-up">
-					<h2 id="soc-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory mb-4">
-						La grille SOC
-					</h2>
-					<p class="font-sans text-lg md:text-xl text-graphite dark:text-warmgray-300 italic">
-						Lire où une organisation se dérègle.
+			<!-- SECTION STYLE D'INTERVENTION -->
+			<section class="section-divider fade-in-up w-full p-10 md:p-16" style="transition-delay: 0.3s;">
+				<!-- En-tête centré -->
+				<div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+					<span class="text-xs font-bold uppercase tracking-widest text-sand dark:text-sand-light mb-4 block">Ma manière d'intervenir</span>
+					<h2 class="font-serif text-4xl md:text-5xl text-graphite dark:text-ivory mb-4">Je n'applique jamais un modèle préconçu.</h2>
+					<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 mb-6">Je commence par comprendre votre réalité.</p>
+					<div class="w-24 h-0.5 bg-sand/30 dark:bg-sand/20 mx-auto mb-8"></div>
+					<p class="font-serif text-lg md:text-xl italic text-graphite dark:text-ivory">
+						Je ne viens pas ajouter un process.<br>
+						Je restaure un système.
 					</p>
 				</div>
-				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
-					<p>Le SOC n'est pas un framework.</p>
-					<p>C'est une grille de lecture qui révèle :</p>
-					<div class="space-y-6 pt-6">
+			
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-5xl mx-auto relative">
+					<!-- Ligne verticale de séparation -->
+					<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-sand/10 dark:bg-sand/5 -translate-x-1/2"></div>
+			
+					<div class="space-y-8">
 						<div>
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								S — Stratégie
-							</h3>
-							<p>Les paris sont-ils clairs ? Les décisions sont-elles alignées ?</p>
+							<h3 class="font-serif text-xl mb-2">Je reformule ce que l'équipe n'arrive plus à dire</h3>
+							<p class="text-sm opacity-80">Les tensions, les décalages, les non-dits.</p>
 						</div>
 						<div>
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								O — Organisation
-							</h3>
-							<p>Les rôles, rituels, arbitrages créent-ils du mouvement ou du bruit ?</p>
+							<h3 class="font-serif text-xl mb-2">J'apporte de la clarté, pas de la rigidité</h3>
+							<p class="text-sm opacity-80">Un cadre clair soulage. Il ne contraint pas.</p>
 						</div>
 						<div>
-							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
-								C — Communication
-							</h3>
-							<p>La vision atteint-elle réellement ceux qui doivent décider au quotidien ?</p>
+							<h3 class="font-serif text-xl mb-2">Je coupe le bruit</h3>
+							<p class="text-sm opacity-80">Votre organisation retrouve de la lisibilité.</p>
 						</div>
 					</div>
-					<p class="pt-4 font-medium text-graphite dark:text-ivory">
-						C'est l'architecture invisible qui fait tenir un produit.<br>
-						Ou qui le fait décrocher.
-					</p>
+			
+					<div class="space-y-8">
+						<div>
+							<h3 class="font-serif text-xl mb-2">Je pilote avec l'équipe</h3>
+							<p class="text-sm opacity-80">Je suis dans le système, pas à l'extérieur.</p>
+						</div>
+						<div>
+							<h3 class="font-serif text-xl mb-2">Je crée un espace où l'on peut penser</h3>
+							<p class="text-sm opacity-80">Quand la pression retombe, les décisions redeviennent nettes.</p>
+						</div>
+						<div>
+							<h3 class="font-serif text-xl mb-2">Je laisse un système qui fonctionne sans moi</h3>
+							<p class="text-sm opacity-80">Objectif : autonomie, pas dépendance.</p>
+						</div>
+					</div>
+			
 				</div>
+			
+			</section>
+			
+
 			</div>
-		</section>
+		</div>
 
-		<!-- SECTION 8 — FRAME -->
-		<section id="frame" class="py-24 md:py-32 px-6 md:px-12 bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="frame-heading">
-			<div class="absolute inset-0 opacity-[0.1] pointer-events-none" style="background-image: radial-gradient(circle, #C6A676 1px, transparent 1px); background-size: 20px 20px;"></div>
-			<div class="max-w-7xl mx-auto relative z-10">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
-					<!-- Colonne gauche — Texte -->
-					<div class="space-y-6 fade-in-up">
-						<h2 id="frame-heading" class="font-serif text-4xl md:text-5xl lg:text-6xl text-sand">
-							FRAME
-						</h2>
-						<p class="font-sans text-lg md:text-xl text-ivory">
-							Le cadre qui rend le système lisible.
-						</p>
-						<p class="font-sans text-base md:text-lg text-ivory/80 italic">
-							Le système qui rend les décisions lisibles.
-						</p>
-						<div class="w-16 h-[1px] bg-sand"></div>
-						<p class="font-sans text-base md:text-lg leading-relaxed text-warmgray-300">
-							Je ne crois pas aux frameworks imposés.<br>
-							Je crois aux cadres qui aident une équipe à voir plus clair.
-						</p>
-						<p class="font-sans text-base md:text-lg leading-relaxed text-warmgray-300">
-							FRAME structure notre travail commun.
-						</p>
-					</div>
-					
-					<!-- Colonne droite — Grille FRAME -->
-					<div class="grid grid-cols-3 gap-4 md:gap-6 fade-in-up" style="transition-delay: 0.1s;">
-						<!-- F — Focus -->
-						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
-							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">F</div>
-							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Focus</h3>
-							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
-								Ce qui compte vraiment. Les choix. Les renoncements.
-							</p>
-						</div>
-						
-						<!-- R — Risques -->
-						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
-							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">R</div>
-							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Risques</h3>
-							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
-								Ce qui met le produit en danger. Les zones d'ombre, les angles morts.
-							</p>
-						</div>
-						
-						<!-- A — Alignement -->
-						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
-							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">A</div>
-							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Alignement</h3>
-							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
-								Vision → stratégie → exécution. Tout bouge dans le même sens.
-							</p>
-						</div>
-						
-						<!-- M — Mesure -->
-						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
-							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">M</div>
-							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Mesure</h3>
-							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
-								Outcomes, KPIs, comportements. Ce qu'on célèbre et ce qu'on arrête.
-							</p>
-						</div>
-						
-						<!-- E — Expérience -->
-						<div class="bg-graphite-light border border-sand/20 rounded-lg p-4 md:p-5 hover:border-sand/40 transition-all duration-300">
-							<div class="text-4xl md:text-5xl font-serif text-sand mb-3">E</div>
-							<h3 class="font-sans text-sm md:text-base text-ivory font-semibold mb-2 uppercase tracking-wide">Expérience</h3>
-							<p class="font-sans text-xs md:text-sm text-warmgray-300 leading-relaxed">
-								Apprendre plus vite. Boucles courtes. Décisions meilleures.
-							</p>
-						</div>
-						
-						<!-- Citation FRAME -->
-						<div class="flex items-center">
-							<p class="font-serif text-sm md:text-base italic leading-relaxed text-warmgray-300">
-								"FRAME ne remplace pas une équipe.<br>
-								Il lui redonne la capacité d'avancer."
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 9 — Les outils Copilot -->
-		<section id="outils" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="outils-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-12 fade-in-up">
-					<h2 id="outils-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory">
-						Les outils Copilot
-					</h2>
-				</div>
-				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">
-							The Focus Deck
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							L'outil pour visualiser ce qui compte, ce qu'on arrête, et ce qu'on protège.
-						</p>
-					</div>
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">
-							The Product One Page
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							La version la plus lisible d'un produit : problème, comportement, stratégie, leviers, métriques.<br>
-							Une page → une vision partagée.
-						</p>
-					</div>
-					<div class="space-y-4">
-						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">
-							The Product Operating System (POS)
-						</h3>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Ce que je laisse derrière moi :<br>
-							un système vivant qui permet à l'équipe de prendre les bonnes décisions sans moi.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 10 — Pourquoi mon approche fonctionne -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="pourquoi-heading">
-			<div class="max-w-5xl mx-auto">
-				<div class="mb-12 fade-in-up">
-					<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl text-graphite dark:text-ivory">
-						Pourquoi ça fonctionne
-					</h2>
-				</div>
-				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
-					<div class="flex items-center gap-4">
-						<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl flex-shrink-0 w-6 text-center">→</span>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Je lis les systèmes humains et techniques
-						</p>
-					</div>
-					<div class="flex items-center gap-4">
-						<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl flex-shrink-0 w-6 text-center">→</span>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Je simplifie le complexe sans le dénaturer
-						</p>
-					</div>
-					<div class="flex items-center gap-4">
-						<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl flex-shrink-0 w-6 text-center">→</span>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Je tranche, j'aligne, je stabilise
-						</p>
-					</div>
-					<div class="flex items-center gap-4">
-						<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl flex-shrink-0 w-6 text-center">→</span>
-						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300 leading-relaxed">
-							Je construis des systèmes qui tiennent quand je pars
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 11 — Ce qu'un Product Leader doit vraiment apporter -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="product-leader-heading">
-			<div class="max-w-7xl mx-auto">
-				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-					<!-- Colonne gauche (5 cols) — Titre STICKY -->
-					<div class="lg:col-span-5">
-						<div class="sticky top-24 fade-in-up">
-							<h2 id="product-leader-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-graphite dark:text-ivory mb-6">
-								Ce qu'un Product Leader doit vraiment apporter
-							</h2>
-							<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite/60 dark:text-warmgray-400">
-								Au-delà de la gestion, c'est une question de posture.
-							</p>
-						</div>
-					</div>
-					
-					<!-- Colonne droite (7 cols) — Liste scrollable -->
-					<div class="lg:col-span-7 space-y-12 md:space-y-16">
-						<div class="group fade-in-up" style="transition-delay: 0.1s;">
-							<div class="flex items-baseline gap-4 mb-3">
-								<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl font-medium">01.</span>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-graphite dark:text-ivory">De la clarté, pas de la confusion</h3>
-							</div>
-							<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 pl-12 md:pl-16">
-								Transformer le bruit ambiant en signaux clairs.
-							</p>
-						</div>
-						
-						<div class="group fade-in-up" style="transition-delay: 0.2s;">
-							<div class="flex items-baseline gap-4 mb-3">
-								<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl font-medium">02.</span>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-graphite dark:text-ivory">Des arbitrages, pas des compromis</h3>
-							</div>
-							<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 pl-12 md:pl-16">
-								Dire non à 80 percent des idées pour protéger les 20 percent qui comptent.
-							</p>
-						</div>
-						
-						<div class="group fade-in-up" style="transition-delay: 0.3s;">
-							<div class="flex items-baseline gap-4 mb-3">
-								<span class="text-sand dark:text-sand-light font-serif text-2xl md:text-3xl font-medium">03.</span>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-graphite dark:text-ivory">Du rythme, pas de la pression</h3>
-							</div>
-							<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 pl-12 md:pl-16">
-								Installer une cadence qui génère de l'énergie, pas de l'épuisement.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 12 — Ce que je ne fais pas -->
-		<section class="py-24 md:py-32 px-6 md:px-12 bg-graphite text-ivory relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="anti-position-heading">
-			<div class="max-w-7xl mx-auto">
-				<h2 id="anti-position-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-12 text-center text-ivory fade-in-up">
-					Ce que je ne fais pas
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-					<!-- Carte 1 -->
-					<div class="bg-graphite-light border border-ivory/10 hover:border-red-400/50 transition-all duration-300 p-6 md:p-8 rounded-lg fade-in-up group">
-						<div class="flex items-start gap-4">
-							<span class="text-red-400 text-2xl md:text-3xl font-bold flex-shrink-0">✕</span>
-							<div>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-ivory mb-3">Consulting théorique</h3>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Carte 2 -->
-					<div class="bg-graphite-light border border-ivory/10 hover:border-red-400/50 transition-all duration-300 p-6 md:p-8 rounded-lg fade-in-up group" style="transition-delay: 0.1s;">
-						<div class="flex items-start gap-4">
-							<span class="text-red-400 text-2xl md:text-3xl font-bold flex-shrink-0">✕</span>
-							<div>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-ivory mb-3">Politique interne</h3>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Carte 3 -->
-					<div class="bg-graphite-light border border-ivory/10 hover:border-red-400/50 transition-all duration-300 p-6 md:p-8 rounded-lg fade-in-up group" style="transition-delay: 0.2s;">
-						<div class="flex items-start gap-4">
-							<span class="text-red-400 text-2xl md:text-3xl font-bold flex-shrink-0">✕</span>
-							<div>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-ivory mb-3">Management de transition passif</h3>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Carte 4 -->
-					<div class="bg-graphite-light border border-ivory/10 hover:border-red-400/50 transition-all duration-300 p-6 md:p-8 rounded-lg fade-in-up group" style="transition-delay: 0.3s;">
-						<div class="flex items-start gap-4">
-							<span class="text-red-400 text-2xl md:text-3xl font-bold flex-shrink-0">✕</span>
-							<div>
-								<h3 class="font-serif text-xl md:text-2xl font-medium text-ivory mb-3">Dogmatisme méthodologique</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 13 — La vérité -->
-		<section class="py-32 md:py-40 px-6 md:px-12 bg-ivory dark:bg-graphite text-center relative z-10 border-t border-sand/10 dark:border-sand/5" aria-labelledby="verite-heading">
-			<div class="max-w-5xl mx-auto space-y-8 fade-in-up">
-				<p class="font-sans text-xs md:text-sm tracking-[0.25em] uppercase text-graphite/50 dark:text-ivory/50 font-semibold">
-					LA VÉRITÉ
-				</p>
-				<blockquote class="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] text-balance text-graphite dark:text-ivory space-y-4">
-					<p class="mb-4">
-						"Un produit n'est pas une suite de fonctionnalités.
-					</p>
-					<p class="italic text-sand dark:text-sand-light">
-						C'est un système de décisions."
-					</p>
-				</blockquote>
-				<p class="font-sans text-base md:text-lg text-graphite/60 dark:text-ivory/60 max-w-2xl mx-auto">
-					Je vous aide à rendre ce système plus performant.
-				</p>
-			</div>
-		</section>
-
-		<!-- SECTION 14 — Mon rôle dans l'équipe -->
-		<section id="role" class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="role-heading">
-			<div class="max-w-4xl mx-auto">
-				<h2 id="role-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-16 text-center text-graphite dark:text-ivory fade-in-up">
-					Mon rôle dans l'équipe
-				</h2>
-				
-				<div class="relative border-l-2 border-sand/30 dark:border-sand/20 ml-6 md:ml-12 space-y-16 md:space-y-20 fade-in-up">
-					<!-- Étape 1 — Partenaire du CEO -->
-					<div class="relative pl-8 md:pl-12">
-						<div class="absolute -left-[9px] md:-left-[13px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-sand border-4 border-white dark:border-graphite"></div>
-						<h3 class="font-serif text-2xl md:text-3xl font-medium text-graphite dark:text-ivory mb-3">Partenaire du CEO</h3>
-						<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-							Je traduis la vision business en réalité produit.<br>
-							Je suis votre tiers de confiance pour challenger et structurer.
-						</p>
-					</div>
-					
-					<!-- Étape 2 — Capitaine pour l'Équipe -->
-					<div class="relative pl-8 md:pl-12">
-						<div class="absolute -left-[9px] md:-left-[13px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-sand border-4 border-white dark:border-graphite"></div>
-						<h3 class="font-serif text-2xl md:text-3xl font-medium text-graphite dark:text-ivory mb-3">Capitaine pour l'équipe</h3>
-						<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-							Je protège l'équipe du bruit.<br>
-							Je donne le cap.<br>
-							Je débloque les obstacles.
-						</p>
-					</div>
-					
-					<!-- Étape 3 — Architecte du Système -->
-					<div class="relative pl-8 md:pl-12">
-						<div class="absolute -left-[9px] md:-left-[13px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-sand border-4 border-white dark:border-graphite"></div>
-						<h3 class="font-serif text-2xl md:text-3xl font-medium text-graphite dark:text-ivory mb-3">Architecte du système</h3>
-						<p class="font-sans text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-							J'installe les rituels, la culture, la mécanique décisionnelle.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 15 — La trajectoire -->
-		<section id="trajectoire" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="trajectoire-heading">
-			<div class="max-w-5xl mx-auto">
-				<!-- Comparatif Avant / Après -->
-				<div class="bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg p-8 md:p-12 shadow-sm mb-12 fade-in-up">
-					<h2 id="trajectoire-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 md:mb-12 text-center text-graphite dark:text-ivory">
-						La trajectoire
-					</h2>
-					<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12">
-						<!-- Colonne gauche — Avant -->
-						<div class="flex-1">
-							<ul class="space-y-3">
-								<li class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">• Vision dispersée</li>
-								<li class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">• Rôles flous</li>
-								<li class="font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">• Décisions tardives</li>
-							</ul>
-						</div>
-						
-						<!-- Flèche -->
-						<div class="text-3xl md:text-4xl text-sand dark:text-sand-light font-serif flex-shrink-0 self-center">→</div>
-						
-						<!-- Colonne droite — Après -->
-						<div class="flex-1">
-							<ul class="space-y-3">
-								<li class="font-sans text-base md:text-lg font-medium text-graphite dark:text-ivory">• Direction lisible</li>
-								<li class="font-sans text-base md:text-lg font-medium text-graphite dark:text-ivory">• Responsabilités nettes</li>
-								<li class="font-sans text-base md:text-lg font-medium text-graphite dark:text-ivory">• Arbitrages assumés</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Message final -->
-				<div class="text-center space-y-8 fade-in-up" style="transition-delay: 0.1s;">
-					<p class="font-sans text-lg md:text-xl leading-relaxed text-graphite dark:text-warmgray-300 max-w-2xl mx-auto">
-						Un produit ne se remet pas sur les rails avec plus de process.<br>
-						Il se remet sur les rails avec de la clarté, du leadership solide et des décisions qui tiennent la route.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 16 — FAQ Approche -->
-		<section id="faq" class="py-24 md:py-32 px-6 md:px-12 bg-white dark:bg-graphite-light relative z-10 border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="faq-heading">
-			<div class="max-w-4xl mx-auto relative z-10">
-				<h2 id="faq-heading" class="font-serif text-3xl md:text-4xl mb-12 md:mb-16 text-center text-graphite dark:text-ivory fade-in-up">
-					FAQ Approche
-				</h2>
-				
-				<div class="space-y-4 fade-in-up" style="transition-delay: 0.1s;">
-					
-					<!-- Question 1 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>En quoi votre approche diffère d'un audit produit classique ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p>Un audit produit classique documente ce qui existe. Mon approche révèle ce qui manque.</p>
-								<p>La Clarity Map n'est pas une liste de problèmes. C'est une photographie du système qui fait apparaître les tensions invisibles, les attentes non dites, les blocages qui empêchent l'impact.</p>
-								<p class="font-medium text-graphite dark:text-ivory">La différence :</p>
-								<p>Un audit vous dit "voici ce qui ne va pas".<br>
-								Mon approche vous dit "voici pourquoi ça ne tient pas, et comment le remettre sur les rails".</p>
-							</div>
-						</div>
-					</details>
-
-					<!-- Question 2 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>Est-ce adapté pour une équipe très junior ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p>Oui, mais différemment.</p>
-								<p>Pour une équipe junior, je ne viens pas "faire le travail à leur place". Je viens installer un cadre qui leur permet d'apprendre en faisant, avec des rituels clairs, des décisions assumées, et une vision lisible.</p>
-								<p>L'objectif reste le même : remettre le produit dans le bon sens. Mais la transmission est plus importante, et le coaching plus présent.</p>
-							</div>
-						</div>
-					</details>
-
-					<!-- Question 3 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>Est-ce que vous imposez une méthodologie ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p>Non.</p>
-								<p>Je n'impose pas Scrum, Shape Up, SAFe ou autre. Je m'adapte à ce qui fonctionne déjà dans votre contexte.</p>
-								<p>FRAME n'est pas une méthodologie. C'est un cadre de lecture qui structure notre travail commun. Il s'adapte à votre équipe, pas l'inverse.</p>
-								<p class="font-medium text-graphite dark:text-ivory">Mon approche :</p>
-								<p>Comprendre ce qui fonctionne → Renforcer ce qui fonctionne → Corriger ce qui décroche.</p>
-							</div>
-						</div>
-					</details>
-
-					<!-- Question 4 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>Quel lien entre Clarity Map et Impact Sprint ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p>L'Impact Sprint commence toujours par une Clarity Map.</p>
-								<p>C'est mon point d'entrée : comprendre le système avant d'agir. La Clarity Map révèle les tensions, les blocages, les signaux faibles.</p>
-								<p>Ensuite, l'Impact Sprint se concentre sur les leviers d'impact identifiés : adoption, activation, usage, churn.</p>
-								<p class="font-medium text-graphite dark:text-ivory">La séquence :</p>
-								<p>Clarity Map → Identification des leviers → Impact Sprint → Résultats mesurables.</p>
-							</div>
-						</div>
-					</details>
-
-					<!-- Question 5 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>Peut-on utiliser FRAME sans vous ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p>FRAME n'est pas un outil que je "laisse" derrière moi. C'est un cadre que j'utilise pendant notre collaboration pour structurer le travail.</p>
-								<p>Ce que je laisse derrière moi, c'est le Product Operating System (POS) : les rituels, la culture, la mécanique décisionnelle qui permet à l'équipe de prendre les bonnes décisions sans moi.</p>
-								<p>FRAME est un moyen. Le POS est le résultat.</p>
-							</div>
-						</div>
-					</details>
-
-					<!-- Question 6 -->
-					<details class="group bg-white dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
-						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
-							<span class="flex items-center justify-between gap-4">
-								<span>Comment savoir si on a un problème d'alignement ?</span>
-								<span class="text-sand dark:text-sand-light text-2xl leading-none flex-shrink-0 transition-transform duration-300 group-open:rotate-45">+</span>
-							</span>
-						</summary>
-						<div class="px-6 md:px-8 pb-6 md:pb-8 pt-0">
-							<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300">
-								<p class="font-medium text-graphite dark:text-ivory">Les signaux :</p>
-								<ul class="space-y-2 ml-4">
-									<li class="flex items-start gap-3">
-										<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-										<span>Chacun a sa propre version de la vision</span>
-									</li>
-									<li class="flex items-start gap-3">
-										<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-										<span>Les décisions sont contradictoires</span>
-									</li>
-									<li class="flex items-start gap-3">
-										<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-										<span>La roadmap n'aligne plus les équipes</span>
-									</li>
-									<li class="flex items-start gap-3">
-										<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-										<span>Les PMs compensent au lieu de piloter</span>
-									</li>
-									<li class="flex items-start gap-3">
-										<span class="text-sand dark:text-sand-light font-serif text-lg mt-0.5 flex-shrink-0">—</span>
-										<span>Les priorités changent trop vite</span>
-									</li>
-								</ul>
-								<p class="pt-2 italic">Un problème d'alignement, c'est quand l'équipe avance, mais plus dans le même sens.</p>
-							</div>
-						</div>
-					</details>
-
-				</div>
-			</div>
-		</section>
-
-		<!-- SECTION 17 — CTA Final -->
-		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up border-t border-sand/10 dark:border-sand/5 scroll-mt-20" aria-labelledby="cta-heading">
+		<!-- CTA Final -->
+		<section id="contact" class="py-20 md:py-24 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up mt-12 md:mt-16" aria-labelledby="cta-heading">
 			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
@@ -866,8 +328,8 @@ const description = "Mon approche : remettre de la clarté là où elle manque, 
 					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
 					   data-lemcal-popup
 					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Parler de votre situation">
-						Parler de votre situation
+					   aria-label="Discuter de votre situation">
+						Discuter de votre situation
 					</a>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
@@ -878,13 +340,3 @@ const description = "Mon approche : remettre de la clarté là où elle manque, 
 	<Footer />
 </Layout>
 
-<style>
-	/* Style pour masquer le marker natif de details/summary */
-	details summary::-webkit-details-marker {
-		display: none;
-	}
-	
-	details summary::marker {
-		display: none;
-	}
-</style>
