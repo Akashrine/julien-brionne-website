@@ -31,7 +31,9 @@ const {
 
 const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
 const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
-const ogImage = coverImage ? `${siteUrl}${coverImage}` : `${siteUrl}/_WOL6954-min.jpg`;
+// Utiliser l'image OG générée dynamiquement pour les articles de blog
+const ogImagePath = currentSlug ? `/og/blog-${currentSlug}.png` : (coverImage || '/_WOL6954-min.jpg');
+const ogImage = `${siteUrl}${ogImagePath}`;
 
 // JSON-LD Schema pour Article
 const articleSchema = {
@@ -50,7 +52,7 @@ const articleSchema = {
 	"datePublished": postDate,
 	"dateModified": postDate,
 	"url": pageUrl,
-	"image": ogImage,
+	"image": ogImage, // Image OG générée dynamiquement
 	"mainEntityOfPage": {
 		"@type": "WebPage",
 		"@id": pageUrl
@@ -76,7 +78,7 @@ const formattedDate = dateObj.toLocaleDateString('fr-FR', {
 });
 ---
 
-<Layout title={title} description={description} ogImage={coverImage || undefined}>
+<Layout title={title} description={description} ogImage={ogImagePath}>
 	<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 	
 	<Navbar />
