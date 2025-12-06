@@ -17,7 +17,11 @@ const {
 
 const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
-const fullOgImage = `${siteUrl}${ogImage}`;
+// Normaliser l'URL de l'image OG pour éviter les doubles slashes
+// Assurer que siteUrl ne se termine pas par / et que ogImage commence par /
+const cleanSiteUrl = siteUrl.replace(/\/$/, '');
+const normalizedOgImage = ogImage.startsWith('/') ? ogImage : `/${ogImage}`;
+const fullOgImage = `${cleanSiteUrl}${normalizedOgImage}`;
 
 // Génération des JSON-LD Schema.org via helper
 const schemas = getAllSchemas({ siteUrl, description });
