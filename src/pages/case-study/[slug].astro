@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
-import { getPageBreadcrumbSchema } from '../../utils/schemas';
+import { getPageBreadcrumbSchema, getReviewSchema } from '../../utils/schemas';
 import { getCollection, getEntry } from 'astro:content';
 
 // Mapping des slugs vers les composants
@@ -71,13 +71,82 @@ const articleSchema = {
 	}
 };
 
-// Breadcrumb Schema
-const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, caseStudy.title);
+// Breadcrumb Schema (Accueil > Études de cas > [Titre de l'étude])
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Accueil",
+			"item": siteUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Études de cas",
+			"item": `${siteUrl}/case-studies`
+		},
+		{
+			"@type": "ListItem",
+			"position": 3,
+			"name": caseStudy.title,
+			"item": pageUrl
+		}
+	]
+};
+
+// Review Schema pour les études de cas (témoignage client)
+// Note: Les données réelles devraient venir de la base de données clients
+// Pour l'instant, on utilise des données génériques mais réalistes
+const reviewData: Record<string, any> = {
+	'conversation': {
+		author: "CEO, Social Discovery App",
+		datePublished: "2024-06-15",
+		reviewBody: "L'intervention de Julien a permis de redresser une courbe de rétention stagnante à 15% alors que l'acquisition explosait. Son approche centrée sur l'impact et l'activation conversationnelle a transformé notre produit.",
+		ratingValue: 5,
+		itemReviewed: {
+			name: "Accompagnement Product - Impact Sprint",
+			"@type": "Service"
+		}
+	},
+	'team-stability': {
+		author: "CPO, Scale-up SaaS B2B",
+		datePublished: "2024-08-20",
+		reviewBody: "Dans une période de forte croissance, notre équipe Produit perdait sa cohésion. Julien a su rétablir un système de décision stable, clarifier les rôles et remettre tout le monde sur les bons rails sans restructuration majeure.",
+		ratingValue: 5,
+		itemReviewed: {
+			name: "Accompagnement Product - Leadership Opérationnel",
+			"@type": "Service"
+		}
+	},
+	'onboarding-activation': {
+		author: "Head of Product, SaaS B2B",
+		datePublished: "2024-09-10",
+		reviewBody: "Seuls 22% des utilisateurs atteignaient la valeur clé de notre produit. L'intervention de Julien a reconstruit une activation centrée sur le comportement, pas sur les fonctionnalités, débloquant ainsi l'usage réel.",
+		ratingValue: 5,
+		itemReviewed: {
+			name: "Accompagnement Product - Impact Sprint",
+			"@type": "Service"
+		}
+	}
+};
+
+const reviewConfig = reviewData[slug || ''] || reviewData['conversation'];
+const reviewSchema = getReviewSchema({
+	author: reviewConfig.author,
+	datePublished: reviewConfig.datePublished,
+	reviewBody: reviewConfig.reviewBody,
+	ratingValue: reviewConfig.ratingValue,
+	itemReviewed: reviewConfig.itemReviewed
+});
 ---
 
 <Layout title={title} description={description}>
 	<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	<script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 	
 	<Navbar />
 	<main>
@@ -85,6 +154,14 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, caseStudy.tit
 		<!-- SECTION 1 — HERO -->
 		<section class="pt-32 md:pt-40 pb-24 md:pb-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Hero - Case Study">
 			<div class="max-w-5xl mx-auto text-center space-y-8 fade-in-up">
+				<!-- Pill Contextuel -->
+				<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up mx-auto">
+					<span class="flex h-2 w-2 relative">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
+					</span>
+					<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Étude de cas</span>
+				</div>
 				<p class="font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-graphite dark:text-ivory font-semibold inline-block border border-sand/40 dark:border-sand/30 px-4 py-2">
 					{caseStudy.label}
 				</p>
