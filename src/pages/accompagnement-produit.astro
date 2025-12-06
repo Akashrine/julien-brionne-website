@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import ContextualPill from '../components/ContextualPill.astro';
+import Button from '../components/Button.astro';
+import BackgroundOverlay from '../components/BackgroundOverlay.astro';
 import { getAccompagnementProduitSchema, getPageBreadcrumbSchema } from '../utils/schemas';
 
 const title = "Accompagnements Produit — Reprendre le contrôle de votre produit, étape par étape | Julien Brionne";
@@ -50,15 +53,9 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 			</div>
 			
 			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
-				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left delay-100">
 					<!-- Pill Contextuel -->
-					<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up">
-						<span class="flex h-2 w-2 relative">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-						</span>
-						<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Accompagnements</span>
-					</div>
+					<ContextualPill text="Accompagnements" variant="left" marginBottom="sm" />
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
 						Accompagnements Produit — Reprendre le contrôle de votre produit, étape par étape
 					</h1>
@@ -66,12 +63,14 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 						Des missions structurées pour piloter, stabiliser et renforcer votre système produit.
 					</p>
 					<div class="pt-8 flex flex-wrap gap-4">
-						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-						   data-lemcal-popup
-						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
-						   aria-label="Planifier un appel">
-							Planifier un appel
-						</a>
+						<Button 
+							href="https://app.lemcal.com/@productcopilot/decouverte"
+							text="Planifier un appel"
+							variant="primary"
+							size="sm"
+							lemcal={true}
+							ariaLabel="Planifier un appel"
+						/>
 					</div>
 				</div>
 			</div>
@@ -79,12 +78,12 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 
 		<!-- SECTION 2 — Diagnostic Produit -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="diagnostic-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="diagnostic-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					1. Diagnostic Produit
 				</h2>
-				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Comprendre ce qui freine l'impact.</p>
 					<p>Faire apparaître les tensions et les décisions manquantes.</p>
 					<p>Remettre de la clarté.</p>
@@ -98,7 +97,7 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 				<h2 id="impact-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					2. Impact Sprint
 				</h2>
-				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Redonner rapidement de la traction.</p>
 					<p>Usage, activation, adoption, churn.</p>
 					<p>Les leviers qui changent la trajectoire.</p>
@@ -108,12 +107,12 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 
 		<!-- SECTION 4 — Leadership Opérationnel -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="leadership-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="leadership-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					3. Leadership Opérationnel
 				</h2>
-				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Piloter l'équipe.</p>
 					<p>Clarifier les rôles.</p>
 					<p>Stabiliser les décisions.</p>
@@ -128,7 +127,7 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 				<h2 id="coaching-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					4. Coaching Product
 				</h2>
-				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Accompagner un PM, un Head ou un Lead.</p>
 					<p>Faire monter en impact, pas juste en compétences.</p>
 				</div>
@@ -137,12 +136,12 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 
 		<!-- SECTION 6 — IA Raisonnée -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="ia-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="ia-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					5. IA Raisonnée
 				</h2>
-				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Ajouter de l'IA là où elle crée de la valeur, pas du bruit.</p>
 				</div>
 			</div>
@@ -156,12 +155,14 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Accompagneme
 				</h2>
 				<p class="text-xl md:text-2xl text-graphite dark:text-warmgray-300">Vous avez besoin d'un copilote.</p>
 				<div>
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Planifier un appel">
-						Planifier un appel
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Planifier un appel"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Planifier un appel"
+					/>
 				</div>
 			</div>
 		</section>

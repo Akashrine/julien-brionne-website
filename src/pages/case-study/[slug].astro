@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import ContextualPill from '../../components/ContextualPill.astro';
+import Button from '../../components/Button.astro';
+import BackgroundOverlay from '../../components/BackgroundOverlay.astro';
 import { getPageBreadcrumbSchema, getReviewSchema } from '../../utils/schemas';
 import { getCollection, getEntry } from 'astro:content';
 
@@ -141,6 +144,15 @@ const reviewSchema = getReviewSchema({
 	ratingValue: reviewConfig.ratingValue,
 	itemReviewed: reviewConfig.itemReviewed
 });
+
+// Mapping des pills contextuelles selon le slug
+const pillTextMap: Record<string, string> = {
+	'conversation': 'SOCIAL DISCOVERY',
+	'team-stability': 'SAAS B2B',
+	'onboarding-activation': 'SAAS B2B',
+};
+
+const pillText = pillTextMap[slug || ''] || 'Étude de cas';
 ---
 
 <Layout title={title} description={description}>
@@ -155,16 +167,7 @@ const reviewSchema = getReviewSchema({
 		<section class="pt-32 md:pt-40 pb-24 md:pb-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Hero - Case Study">
 			<div class="max-w-5xl mx-auto text-center space-y-8 fade-in-up">
 				<!-- Pill Contextuel -->
-				<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up mx-auto">
-					<span class="flex h-2 w-2 relative">
-						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-						<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-					</span>
-					<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Étude de cas</span>
-				</div>
-				<p class="font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-graphite dark:text-ivory font-semibold inline-block border border-sand/40 dark:border-sand/30 px-4 py-2">
-					{caseStudy.label}
-				</p>
+				<ContextualPill text={pillText} variant="center" marginBottom="sm" />
 				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory">
 					{caseStudy.title}
 				</h1>
@@ -182,7 +185,7 @@ const reviewSchema = getReviewSchema({
 
 		<!-- SECTION 7 — CTA Final -->
 		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
 					Votre produit traverse un moment critique.
@@ -194,12 +197,14 @@ const reviewSchema = getReviewSchema({
 					Un échange de 30 minutes pour comprendre votre situation et identifier les leviers immédiats.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Diagnostiquer votre situation produit">
-						Diagnostiquer votre situation
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Diagnostiquer votre situation"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Diagnostiquer votre situation produit"
+					/>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
 			</div>

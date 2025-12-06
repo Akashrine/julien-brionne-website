@@ -16,7 +16,7 @@ const { src, alt, caption, side = 'left', width = '300px' } = Astro.props;
 		alt={alt}
 		class="w-full h-auto object-cover"
 		loading="lazy"
-		style={`width: ${width};`}
+		style={`--img-width: ${width}; width: var(--img-width);`}
 	/>
 	{caption && (
 		<figcaption class="mt-2 font-sans text-xs italic text-graphite/50 dark:text-ivory/50">

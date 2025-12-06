@@ -3,6 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollArrow from '../../components/ScrollArrow.astro';
+import ContextualPill from '../../components/ContextualPill.astro';
+import Button from '../../components/Button.astro';
+import BackgroundOverlay from '../../components/BackgroundOverlay.astro';
 
 const title = "Leadership Produit — Piloter et stabiliser après une transition | Julien Brionne";
 const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitrages, roadmap, rituels décisionnels. Un pilotage concret, pas théorique.";
@@ -26,15 +29,9 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 			</div>
 			
 			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10 flex-1">
-				<div class="lg:col-span-8 space-y-6 fade-in-up text-left" style="transition-delay: 0.1s;">
+				<div class="lg:col-span-8 space-y-6 fade-in-up text-left delay-100">
 					<!-- Pill Contextuel -->
-					<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up">
-						<span class="flex h-2 w-2 relative">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-						</span>
-						<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Offre Stratégique • 2-6 Mois</span>
-					</div>
+					<ContextualPill text="Offre Stratégique • 2-6 Mois" variant="left" marginBottom="sm" />
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
 						Leadership et Pilotage Produit
 					</h1>
@@ -52,7 +49,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 
 		<!-- SECTION 2 — Quand j'interviens (grille 2 colonnes) -->
 		<section id="quand-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="quand-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-7xl mx-auto relative z-10">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
 					<!-- Colonne gauche — Texte -->
@@ -68,7 +65,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 						</div>
 					</div>
 					<!-- Colonne droite — Cartes -->
-					<div class="space-y-6 fade-in-up" style="transition-delay: 0.1s;">
+					<div class="space-y-6 fade-in-up delay-100">
 						<!-- Carte 1 -->
 						<div class="border-l-4 border-sand dark:border-sand-light pl-6 py-4">
 							<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
@@ -115,7 +112,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 						</p>
 					</div>
 				</div>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 fade-in-up delay-100">
 					<div class="space-y-4">
 						<div class="flex items-baseline gap-3 mb-4">
 							<span class="font-serif text-4xl md:text-5xl text-sand dark:text-sand-light font-medium">1.</span>
@@ -149,7 +146,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 
 		<!-- SECTION 4 — Ce que je pilote (liste numérotée) -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pilote-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-5xl mx-auto relative z-10">
 				<div class="max-w-3xl mb-16 fade-in-up">
 					<div class="relative">
@@ -162,7 +159,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 						</p>
 					</div>
 				</div>
-				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-12 fade-in-up delay-100">
 					<div class="flex gap-6 md:gap-8">
 						<div class="flex-shrink-0">
 							<span class="font-serif text-3xl md:text-4xl text-sand dark:text-sand-light font-medium">01</span>
@@ -236,7 +233,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 						</p>
 					</div>
 				</div>
-				<div class="space-y-12 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-12 fade-in-up delay-100">
 					<div class="flex gap-6 md:gap-8 relative">
 						<div class="flex-shrink-0 w-20 md:w-24">
 							<div class="font-serif text-lg md:text-xl text-sand dark:text-sand-light font-medium uppercase tracking-wider">Mois 1-2</div>
@@ -324,7 +321,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 
 		<!-- SECTION 6 — Pour qui (aligné à droite) -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pour-qui-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-5xl mx-auto relative z-10">
 				<div class="flex justify-end">
 					<div class="max-w-3xl text-right">
@@ -337,7 +334,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 								Quand le système produit doit être stabilisé rapidement.
 							</p>
 						</div>
-						<ul class="space-y-4 fade-in-up text-right" style="transition-delay: 0.1s;">
+						<ul class="space-y-4 fade-in-up text-right delay-100">
 							<li class="flex items-start gap-4 justify-end">
 								<span class="flex-1 font-sans text-base md:text-lg text-graphite dark:text-warmgray-300">Startup après levée de fond</span>
 								<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-left font-medium">—</span>
@@ -370,7 +367,7 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 
 		<!-- SECTION 7 — CTA Final -->
 		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
 					Prêt à stabiliser votre système produit ?
@@ -379,12 +376,14 @@ const description = "Intervention hands-on pendant 2 à 6 mois : vision, arbitra
 					Un Leadership Produit de 2 à 6 mois pour installer un pilotage opérationnel qui tient.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Demander un Leadership Produit">
-						Demander un Leadership Produit
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Demander un Leadership Produit"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Demander un Leadership Produit"
+					/>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
 			</div>

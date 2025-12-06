@@ -1,8 +1,9 @@
 ---
+import BackgroundOverlay from './BackgroundOverlay.astro';
 ---
 
 <section id="situation-section" class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10 scroll-mt-20" aria-labelledby="situation-heading">
-	<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+	<BackgroundOverlay variant="sand" />
 	<div class="max-w-7xl mx-auto relative z-10">
 		<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start relative">
 			
@@ -22,7 +23,7 @@
 			<div class="hidden md:block absolute left-[33.333%] top-0 bottom-0 w-px bg-[#E5E0D8] dark:bg-warmgray-400/30"></div>
 			
 			<!-- Colonne droite (60%) -->
-			<div class="md:col-span-8 md:col-start-5 fade-in-up" style="transition-delay: 0.2s;">
+			<div class="md:col-span-8 md:col-start-5 fade-in-up delay-200">
 				<ul class="space-y-5 text-base md:text-lg text-graphite dark:text-warmgray-200">
 					<li class="flex items-start gap-4 group transition-colors duration-300 hover:text-graphite-light dark:hover:text-ivory">
 						<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right transition-all duration-300 group-hover:translate-x-1 font-medium">—</span>

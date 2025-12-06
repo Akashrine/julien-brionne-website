@@ -1,5 +1,6 @@
 ---
 // Composant de contenu pour l'étude de cas "team-stability"
+import BackgroundOverlay from '../BackgroundOverlay.astro';
 ---
 
 <!-- SECTION 1 — Avant → Après -->
@@ -64,7 +65,7 @@
 			</div>
 			
 			<!-- Colonne Après -->
-			<div class="fade-in-up space-y-6 pl-0 md:pl-8" style="transition-delay: 0.1s;">
+			<div class="fade-in-up space-y-6 pl-0 md:pl-8 delay-100">
 				<div class="mb-8">
 					<span class="font-sans text-xs md:text-sm tracking-[0.15em] uppercase text-sand dark:text-sand-light font-semibold inline-block border border-sand/40 dark:border-sand/30 px-4 py-2">
 						Après
@@ -138,7 +139,7 @@
 		</div>
 
 		<!-- Droite : Les Signaux (Liste) -->
-			<div class="lg:col-span-7 bg-white dark:bg-graphite-light p-8 md:p-12 border border-sand/10 relative fade-in-up" style="transition-delay: 0.1s;">
+			<div class="lg:col-span-7 bg-white dark:bg-graphite-light p-8 md:p-12 border border-sand/10 relative fade-in-up delay-100">
 			<div class="absolute top-0 left-0 w-full h-1 bg-sand"></div>
 			<h3 class="font-bold text-sm uppercase tracking-widest text-sand mb-8">Les signaux visibles</h3>
 			
@@ -384,7 +385,7 @@
 <!-- SECTION 7 — Résultats -->
 <section class="py-32 md:py-40 bg-graphite text-ivory px-6 relative overflow-hidden">
 	<!-- Background pattern -->
-	<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#C6A676 1px, transparent 1px); background-size: 20px 20px;"></div>
+	<BackgroundOverlay variant="dots" opacity="10" />
 
 	<div class="max-w-5xl mx-auto relative z-10 fade-in-up">
 		<h2 class="font-serif text-3xl md:text-4xl mb-12 text-center">4. Résultats</h2>

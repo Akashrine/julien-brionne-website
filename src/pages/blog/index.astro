@@ -2,6 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import ContextualPill from '../../components/ContextualPill.astro';
+import Button from '../../components/Button.astro';
+import BackgroundOverlay from '../../components/BackgroundOverlay.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -19,13 +22,7 @@ const description = "Articles sur le leadership produit, la stratégie produit, 
 		<section class="pt-32 md:pt-40 pb-24 md:pb-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Hero - Blog">
 			<div class="max-w-4xl mx-auto text-center space-y-6 fade-in-up">
 				<!-- Pill Contextuel -->
-				<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up mx-auto">
-					<span class="flex h-2 w-2 relative">
-						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-						<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-					</span>
-					<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Blog</span>
-				</div>
+				<ContextualPill text="Blog" variant="center" marginBottom="sm" />
 				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory">
 					Réflexions sur le Product Leadership
 				</h1>
@@ -58,7 +55,7 @@ const description = "Articles sur le leadership produit, la stratégie produit, 
 							});
 							
 							return (
-								<article class="group fade-in-up" style={`transition-delay: ${0.1 * index}s`}>
+								<article class="group fade-in-up" style={`--delay: ${0.1 * index}s; transition-delay: var(--delay);`}>
 									<a href={`/blog/${post.slug}`} class="block h-full">
 										<div class="bg-[#F9F6F1] dark:bg-graphite border border-sand/20 dark:border-sand/15 rounded-xl overflow-hidden hover:border-sand/40 dark:hover:border-sand/30 transition-all duration-300 hover:shadow-lg h-full flex flex-col">
 											{coverPath && (
@@ -100,7 +97,7 @@ const description = "Articles sur le leadership produit, la stratégie produit, 
 
 		<!-- SECTION 3 — CTA Final -->
 		<section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite fade-in-up" aria-labelledby="cta-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory">
 					Votre produit traverse un moment critique.
@@ -112,12 +109,14 @@ const description = "Articles sur le leadership produit, la stratégie produit, 
 					Un échange de 30 minutes pour comprendre votre situation et identifier les leviers immédiats.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Diagnostiquer votre situation produit">
-						Diagnostiquer votre situation
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Diagnostiquer votre situation"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Diagnostiquer votre situation produit"
+					/>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
 			</div>

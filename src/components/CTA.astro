@@ -1,8 +1,10 @@
 ---
+import Button from './Button.astro';
+import BackgroundOverlay from './BackgroundOverlay.astro';
 ---
 
 <section id="contact" class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="contact-heading">
-	<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+	<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-6 relative z-10">
 				<h2 id="contact-heading" class="font-serif text-3xl md:text-4xl leading-tight text-graphite dark:text-ivory mb-4">
 					Votre produit commence à dériver.
@@ -11,11 +13,13 @@
 					Je peux vous aider à retrouver une direction nette et un produit qui repart dans le bon sens.
 				</p>
 				<div class="flex flex-col items-center gap-6 pt-4">
-					<a href="/accompagnement/impact-sprint" 
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Commencer par un Impact Sprint">
-						Commencer par un Impact Sprint →
-					</a>
+					<Button 
+						href="/accompagnement/impact-sprint"
+						text="Commencer par un Impact Sprint →"
+						variant="primary"
+						size="md"
+						ariaLabel="Commencer par un Impact Sprint"
+					/>
 					<div class="w-16 h-0.5 bg-sand mx-auto opacity-40"></div>
 				</div>
 			</div>
