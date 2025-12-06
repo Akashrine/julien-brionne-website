@@ -1,0 +1,25 @@
+---
+interface Props {
+	text: string;
+	variant?: 'left' | 'center';
+	marginBottom?: 'sm' | 'md';
+}
+
+const { 
+	text, 
+	variant = 'left',
+	marginBottom = 'md'
+} = Astro.props;
+
+const marginClass = marginBottom === 'sm' ? 'mb-6' : 'mb-8';
+const centerClass = variant === 'center' ? 'mx-auto' : '';
+---
+
+<div class={`${marginClass} inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up ${centerClass}`}>
+	<span class="flex h-2 w-2 relative">
+		<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
+		<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
+	</span>
+	<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">{text}</span>
+</div>
+

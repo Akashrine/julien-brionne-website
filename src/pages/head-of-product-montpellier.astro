@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import ContextualPill from '../components/ContextualPill.astro';
+import Button from '../components/Button.astro';
+import BackgroundOverlay from '../components/BackgroundOverlay.astro';
 
 const title = "Head of Product à Montpellier — Leadership Produit Hands-on pour Startups SaaS | Julien Brionne";
 const description = "Head of Product basé à Montpellier. J'aide les startups montpelliéraines à remettre leur produit dans le bon sens. Vision, arbitrages, pilotage, adoption et usage. Leadership produit opérationnel.";
@@ -25,15 +28,9 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 			</div>
 			
 			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
-				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left delay-100">
 					<!-- Pill Contextuel -->
-					<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up">
-						<span class="flex h-2 w-2 relative">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-						</span>
-						<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Offre Stratégique • 2-6 Mois</span>
-					</div>
+					<ContextualPill text="Offre Stratégique • 2-6 Mois" variant="left" marginBottom="sm" />
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
 						Head of Product à Montpellier - Leadership Produit Hands-on pour Startups SaaS
 					</h1>
@@ -41,12 +38,14 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 						J'aide les startups montpelliéraines à remettre leur produit dans le bon sens. Vision, arbitrages, pilotage, adoption et usage.
 					</p>
 					<div class="pt-8 flex flex-wrap gap-4">
-						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-						   data-lemcal-popup
-						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
-						   aria-label="Discuter de votre situation produit">
-							Discuter de votre situation
-						</a>
+						<Button 
+							href="https://app.lemcal.com/@productcopilot/decouverte"
+							text="Discuter de votre situation"
+							variant="primary"
+							size="sm"
+							lemcal={true}
+							ariaLabel="Discuter de votre situation produit"
+						/>
 						<a href="#approche" 
 						   class="inline-block border border-sand/30 dark:border-sand/20 text-graphite dark:text-ivory font-sans px-9 py-4 text-sm font-medium tracking-wide hover:border-sand/50 dark:hover:border-sand/30 transition-colors duration-300"
 						   aria-label="Comprendre mon approche">
@@ -59,12 +58,12 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 
 		<!-- SECTION 2 — Pourquoi un Head of Product à Montpellier ? -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pourquoi-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					Pourquoi un Head of Product à Montpellier ?
 				</h2>
-				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p>Quand la croissance crée plus de tension que de traction, votre produit perd son sens. Les signaux sont clairs :</p>
 					<ul class="space-y-4 ml-4">
 						<li class="flex items-start gap-4">
@@ -135,12 +134,12 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 
 		<!-- SECTION 4 — Pourquoi me choisir ? -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="choisir-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="choisir-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
 					Pourquoi me choisir ?
 				</h2>
-				<div class="space-y-8 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-8 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<div class="space-y-4">
 						<p><strong class="text-graphite dark:text-ivory font-medium">10 ans d'expérience produit</strong> chez Heetch, WizVille, Waalaxy et plusieurs SaaS en croissance.</p>
 						<p><strong class="text-graphite dark:text-ivory font-medium">Anti-feature factory.</strong> Je ne construis pas des features, je construis de l'impact. Usage, activation, valeur.</p>
@@ -168,13 +167,13 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 
 		<!-- SECTION 6 — Mes accompagnements -->
 		<section class="py-24 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="accompagnements-heading">
-			<div class="absolute inset-0 opacity-[0.08] dark:opacity-[0.1] pointer-events-none" style="background-image: radial-gradient(circle, #C6A676 1px, transparent 1px); background-size: 20px 20px;"></div>
+			<BackgroundOverlay variant="dots-circle" opacity="08" />
 			
 			<div class="max-w-7xl mx-auto relative z-10">
 				<h2 id="accompagnements-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">Mes accompagnements</h2>
 				<p class="text-lg text-graphite dark:text-warmgray-300 mb-16 fade-in-up max-w-3xl">Je ne vends pas des jours / homme, je construis des systèmes produits durables.</p>
 				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 fade-in-up" style="transition-delay: 0.2s;">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 fade-in-up delay-200">
 					
 					<!-- Colonne 1 -->
 					<div class="flex flex-col gap-10 md:gap-12">
@@ -312,12 +311,12 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 
 		<!-- SECTION 7 — Exemples de résultats -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="resultats-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="resultats-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
 					Exemples de résultats
 				</h2>
-				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-8 fade-in-up delay-100">
 					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
 						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Heetch</h3>
 						<p class="text-base md:text-lg text-graphite dark:text-warmgray-300">Adoption + vision produit clarifiée. Remise en cohérence du système produit.</p>
@@ -341,7 +340,7 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 					Questions fréquentes
 				</h2>
 				
-				<div class="space-y-4 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-4 fade-in-up delay-100">
 					<details class="group bg-white dark:bg-graphite-light border border-sand/20 dark:border-sand/15 rounded-lg overflow-hidden transition-all duration-300 hover:border-sand/30 dark:hover:border-sand/25">
 						<summary class="px-6 md:px-8 py-5 md:py-6 cursor-pointer list-none font-serif text-lg md:text-xl text-graphite dark:text-ivory font-medium hover:text-sand dark:hover:text-sand-light transition-colors duration-300">
 							<span class="flex items-center justify-between gap-4">
@@ -377,18 +376,20 @@ const description = "Head of Product basé à Montpellier. J'aide les startups m
 
 		<!-- SECTION 9 — CTA final -->
 		<section class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-10 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">
 					Votre produit traverse un moment critique. C'est le moment d'agir.
 				</h2>
 				<div>
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Discuter de votre situation produit">
-						Discuter de votre situation
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Discuter de votre situation"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Discuter de votre situation produit"
+					/>
 				</div>
 			</div>
 		</section>

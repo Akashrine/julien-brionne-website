@@ -1,8 +1,9 @@
 ---
+import BackgroundOverlay from './BackgroundOverlay.astro';
 ---
 
 <section class="py-24 px-6 md:px-12 bg-ivory dark:bg-graphite relative z-10" aria-labelledby="services-heading">
-	<div class="absolute inset-0 opacity-[0.08] dark:opacity-[0.1] pointer-events-none" style="background-image: radial-gradient(circle, #C6A676 1px, transparent 1px); background-size: 20px 20px;"></div>
+	<BackgroundOverlay variant="dots-circle" opacity="08" />
 	
 	<div class="max-w-4xl mx-auto relative z-10">
 		<h2 id="services-heading" class="font-serif text-3xl md:text-4xl mb-4 fade-in-up text-graphite dark:text-ivory">Mes accompagnements</h2>
@@ -10,7 +11,7 @@
 			Un seul point d'entrée. Une trajectoire claire pour remettre votre produit dans le bon sens.
 		</p>
 		
-		<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+		<div class="space-y-8 fade-in-up delay-100">
 			<div class="border-l-2 border-sand dark:border-sand-light pl-6 md:pl-8 py-2">
 				<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium mb-2">
 					<a href="/accompagnement/impact-sprint" class="hover:text-sand dark:hover:text-sand-light transition-colors">0. Impact Sprint — 4 semaines</a>
@@ -40,7 +41,7 @@
 			</div>
 		</div>
 		
-		<p class="text-sm md:text-base text-graphite dark:text-warmgray-400 mt-12 text-center italic fade-in-up" style="transition-delay: 0.2s;">
+		<p class="text-sm md:text-base text-graphite dark:text-warmgray-400 mt-12 text-center italic fade-in-up delay-200">
 			La trajectoire : Impact Sprint → Leadership → Coaching.
 		</p>
 	</div>

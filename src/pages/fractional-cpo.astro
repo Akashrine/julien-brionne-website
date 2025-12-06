@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import ContextualPill from '../components/ContextualPill.astro';
+import Button from '../components/Button.astro';
+import BackgroundOverlay from '../components/BackgroundOverlay.astro';
 import { getFractionalCPOSchema, getPageBreadcrumbSchema } from '../utils/schemas';
 
 const title = "Fractional CPO — Vision, Stratégie et Pilotage Produit pour Startups en Croissance | Julien Brionne";
@@ -49,15 +52,9 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 			</div>
 			
 			<div class="max-w-[1400px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full relative z-10">
-				<div class="lg:col-span-8 space-y-8 fade-in-up text-left" style="transition-delay: 0.1s;">
+				<div class="lg:col-span-8 space-y-8 fade-in-up text-left delay-100">
 					<!-- Pill Contextuel -->
-					<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up">
-						<span class="flex h-2 w-2 relative">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
-						</span>
-						<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Offre Stratégique • 2-6 Mois</span>
-					</div>
+					<ContextualPill text="Offre Stratégique • 2-6 Mois" variant="left" marginBottom="sm" />
 					<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance font-medium text-graphite dark:text-ivory">
 						Fractional CPO — Vision, Stratégie et Pilotage Produit pour Startups en Croissance
 					</h1>
@@ -65,12 +62,14 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 						La clarté stratégique d'un CPO senior, avec la flexibilité d'un modèle fractional.
 					</p>
 					<div class="pt-8 flex flex-wrap gap-4">
-						<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-						   data-lemcal-popup
-						   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-9 py-4 text-sm font-medium tracking-wide btn-premium"
-						   aria-label="Discuter de votre situation produit">
-							Discuter de votre situation
-						</a>
+						<Button 
+							href="https://app.lemcal.com/@productcopilot/decouverte"
+							text="Discuter de votre situation"
+							variant="primary"
+							size="sm"
+							lemcal={true}
+							ariaLabel="Discuter de votre situation produit"
+						/>
 					</div>
 				</div>
 			</div>
@@ -78,12 +77,12 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 
 		<!-- SECTION 2 — Pourquoi un Fractional CPO ? -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pourquoi-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="pourquoi-heading" class="font-serif text-3xl md:text-4xl mb-8 fade-in-up text-graphite dark:text-ivory">
 					Pourquoi un Fractional CPO ?
 				</h2>
-				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<p class="font-medium text-graphite dark:text-ivory">Parce que votre produit arrive à un moment où l'instinct ne suffit plus.</p>
 					<p class="pt-2">Les symptômes :</p>
 					<ul class="space-y-4 ml-4">
@@ -150,12 +149,12 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 
 		<!-- SECTION 4 — Pour qui ? -->
 		<section class="py-24 md:py-32 px-6 md:px-12 bg-ivory dark:bg-graphite-light relative z-10" aria-labelledby="pour-qui-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-4xl mx-auto relative z-10">
 				<h2 id="pour-qui-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
 					Pour qui ?
 				</h2>
-				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-6 text-base md:text-lg leading-relaxed text-graphite dark:text-warmgray-300 fade-in-up delay-100">
 					<ul class="space-y-4 ml-4">
 						<li class="flex items-start gap-4">
 							<span class="text-sand dark:text-sand-light font-serif text-lg md:text-xl mt-0.5 flex-shrink-0 w-4 text-right font-medium">—</span>
@@ -188,7 +187,7 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 				<h2 id="methode-heading" class="font-serif text-3xl md:text-4xl mb-12 fade-in-up text-graphite dark:text-ivory">
 					Méthode
 				</h2>
-				<div class="space-y-8 fade-in-up" style="transition-delay: 0.1s;">
+				<div class="space-y-8 fade-in-up delay-100">
 					<div class="border-l-2 border-sand/30 dark:border-sand/20 pl-6 md:pl-8 space-y-2">
 						<h3 class="font-serif text-xl md:text-2xl text-graphite dark:text-ivory font-medium">Diagnostic stratégique</h3>
 					</div>
@@ -213,19 +212,21 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Fractional C
 
 		<!-- SECTION 6 — CTA final -->
 		<section class="py-32 px-6 md:px-12 flex flex-col justify-center items-center text-center relative z-0 bg-ivory dark:bg-graphite-light fade-in-up" aria-labelledby="cta-heading">
-			<div class="absolute inset-0 bg-sand/5 pointer-events-none"></div>
+			<BackgroundOverlay variant="sand" />
 			<div class="max-w-3xl space-y-10 relative z-10">
 				<h2 id="cta-heading" class="font-serif text-3xl md:text-5xl leading-tight text-graphite dark:text-ivory">
 					Votre produit manque peut-être de fonctionnalités.
 				</h2>
 				<p class="text-xl md:text-2xl text-graphite dark:text-warmgray-300">Mais il manque surtout de clarté.</p>
 				<div>
-					<a href="https://app.lemcal.com/@productcopilot/decouverte" 
-					   data-lemcal-popup
-					   class="inline-block bg-graphite dark:bg-ivory text-ivory dark:text-graphite font-sans px-10 py-5 text-sm font-medium tracking-wide btn-premium"
-					   aria-label="Discuter de votre situation produit">
-						Réservons un échange
-					</a>
+					<Button 
+						href="https://app.lemcal.com/@productcopilot/decouverte"
+						text="Réservons un échange"
+						variant="primary"
+						size="md"
+						lemcal={true}
+						ariaLabel="Discuter de votre situation produit"
+					/>
 				</div>
 			</div>
 		</section>

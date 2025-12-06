@@ -1,0 +1,54 @@
+---
+interface Props {
+	href: string;
+	text: string;
+	variant?: 'primary' | 'secondary' | 'outline';
+	size?: 'sm' | 'md' | 'lg';
+	lemcal?: boolean;
+	center?: boolean;
+	ariaLabel?: string;
+	slot?: any;
+}
+
+const { 
+	href, 
+	text,
+	variant = 'primary',
+	size = 'md',
+	lemcal = false,
+	center = false,
+	ariaLabel,
+	slot
+} = Astro.props;
+
+// Classes de taille
+const sizeClasses = {
+	sm: 'px-9 py-4',
+	md: 'px-10 py-5',
+	lg: 'px-12 py-5'
+};
+
+// Classes de variant
+const variantClasses = {
+	primary: 'bg-graphite dark:bg-ivory text-ivory dark:text-graphite btn-premium',
+	secondary: 'bg-graphite dark:bg-ivory text-ivory dark:text-graphite btn-premium',
+	outline: 'border-2 border-graphite dark:border-ivory text-graphite dark:text-ivory hover:bg-graphite hover:text-ivory dark:hover:bg-ivory dark:hover:text-graphite transition-colors'
+};
+
+const baseClasses = 'inline-block font-sans text-sm font-medium tracking-wide';
+const centerClass = center ? 'text-center' : '';
+const sizeClass = sizeClasses[size];
+const variantClass = variantClasses[variant];
+
+const allClasses = `${baseClasses} ${sizeClass} ${variantClass} ${centerClass}`.trim();
+---
+
+<a 
+	href={href}
+	{...(lemcal && { 'data-lemcal-popup': true })}
+	class={allClasses}
+	aria-label={ariaLabel || text}
+>
+	{slot || text}
+</a>
+

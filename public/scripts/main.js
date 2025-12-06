@@ -223,6 +223,99 @@ document.addEventListener('DOMContentLoaded', () => {
 		updateThemeImages(isDarkOnLoad);
 	}
 
+	// ===== NAVBAR - MENU MOBILE =====
+	const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const hamburgerIcon = document.getElementById('hamburger-icon');
+	const closeIcon = document.getElementById('close-icon');
+	
+	if (mobileMenuToggle && mobileMenu) {
+		mobileMenuToggle.addEventListener('click', () => {
+			const isOpen = !mobileMenu.classList.contains('hidden');
+			
+			if (isOpen) {
+				// Fermer le menu
+				mobileMenu.classList.add('hidden');
+				hamburgerIcon?.classList.remove('hidden');
+				closeIcon?.classList.add('hidden');
+				mobileMenuToggle.setAttribute('aria-expanded', 'false');
+			} else {
+				// Ouvrir le menu
+				mobileMenu.classList.remove('hidden');
+				hamburgerIcon?.classList.add('hidden');
+				closeIcon?.classList.remove('hidden');
+				mobileMenuToggle.setAttribute('aria-expanded', 'true');
+			}
+		});
+		
+		// Fermer le menu quand on clique sur un lien
+		const mobileLinks = mobileMenu.querySelectorAll('a');
+		mobileLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				mobileMenu.classList.add('hidden');
+				hamburgerIcon?.classList.remove('hidden');
+				closeIcon?.classList.add('hidden');
+				mobileMenuToggle.setAttribute('aria-expanded', 'false');
+			});
+		});
+		
+		// Fermer le menu quand on clique en dehors
+		document.addEventListener('click', (e) => {
+			if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+				mobileMenu.classList.add('hidden');
+				hamburgerIcon?.classList.remove('hidden');
+				closeIcon?.classList.add('hidden');
+				mobileMenuToggle.setAttribute('aria-expanded', 'false');
+			}
+		});
+	}
+
+	// ===== SCROLL ARROW - SCROLL SMOOTH =====
+	const scrollArrows = document.querySelectorAll('.scroll-arrow');
+	scrollArrows.forEach((scrollArrow) => {
+		const targetId = scrollArrow.getAttribute('data-target-id');
+		if (targetId) {
+			scrollArrow.addEventListener('click', (e) => {
+				e.preventDefault();
+				const target = document.getElementById(targetId);
+				if (target) {
+					target.scrollIntoView({ 
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			});
+		}
+	});
+
+	// ===== READING PROGRESS BAR =====
+	const progressBar = document.getElementById('reading-progress');
+	if (progressBar) {
+		function updateProgress() {
+			const windowHeight = window.innerHeight;
+			const documentHeight = document.documentElement.scrollHeight - windowHeight;
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const progress = (scrollTop / documentHeight) * 100;
+			
+			if (progressBar) {
+				progressBar.style.width = `${Math.min(progress, 100)}%`;
+			}
+		}
+		
+		let ticking = false;
+		window.addEventListener('scroll', () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					updateProgress();
+					ticking = false;
+				});
+				ticking = true;
+			}
+		});
+		
+		updateProgress();
+	}
+
 	// ===== NAVBAR - SCROLL ET LOGO =====
 	const navbar = document.getElementById('navbar');
 	const navbarInner = document.getElementById('navbar-inner');

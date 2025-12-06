@@ -1,0 +1,38 @@
+---
+interface Props {
+	variant?: 'sand' | 'dots' | 'dots-sm' | 'dots-circle' | 'grid' | 'lines';
+	opacity?: 'default' | '03' | '05' | '08' | '10';
+}
+
+const { 
+	variant = 'sand',
+	opacity = 'default'
+} = Astro.props;
+
+// Classes de variant
+const variantClasses = {
+	sand: 'bg-sand/5',
+	dots: 'bg-pattern-dots',
+	'dots-sm': 'bg-pattern-dots-sm',
+	'dots-circle': 'bg-pattern-dots-circle',
+	grid: 'bg-pattern-grid',
+	lines: 'bg-pattern-lines'
+};
+
+// Classes d'opacité
+const opacityClasses = {
+	default: '', // Pour bg-sand/5, pas besoin d'opacité supplémentaire
+	'03': 'pattern-opacity-03',
+	'05': 'pattern-opacity-05',
+	'08': 'pattern-opacity-08',
+	'10': 'pattern-opacity-10'
+};
+
+const variantClass = variantClasses[variant];
+const opacityClass = opacityClasses[opacity];
+
+const allClasses = `absolute inset-0 ${variantClass} ${opacityClass} pointer-events-none`.trim();
+---
+
+<div class={allClasses}></div>
+

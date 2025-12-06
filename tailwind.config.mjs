@@ -34,6 +34,13 @@ export default {
 				serif: ['"Playfair Display"', 'serif'],
 				sans: ['"Inter"', 'sans-serif'],
 			},
+			transitionDelay: {
+				'100': '0.1s',
+				'200': '0.2s',
+				'300': '0.3s',
+				'400': '0.4s',
+				'500': '0.5s',
+			},
 			backgroundImage: {
 				'hero-split': 'linear-gradient(to right, #FAF9F6 60%, #F2F1ED 60%)',
 				'hero-split-dark': 'linear-gradient(to right, #121212 60%, #1E1E1E 60%)',
