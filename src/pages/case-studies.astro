@@ -26,9 +26,14 @@ const breadcrumbSchema = getPageBreadcrumbSchema(siteUrl, pageUrl, "Études de c
 		<!-- SECTION 1 — HERO -->
 		<section class="pt-32 md:pt-40 pb-24 md:pb-28 px-6 md:px-12 bg-ivory dark:bg-graphite relative" aria-label="Hero - Études de cas">
 			<div class="max-w-3xl mx-auto text-center space-y-6 fade-in-up">
-				<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand dark:text-sand-light font-semibold">
-					ÉTUDES DE CAS
-				</p>
+				<!-- Pill Contextuel -->
+				<div class="mb-6 inline-flex items-center gap-3 px-4 py-1.5 border border-sand/30 rounded-full bg-ivory/80 dark:bg-graphite/80 backdrop-blur-sm fade-in-up mx-auto">
+					<span class="flex h-2 w-2 relative">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sand opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-sand"></span>
+					</span>
+					<span class="text-xs font-mono uppercase tracking-widest text-sand font-medium">Études de cas</span>
+				</div>
 				<h1 class="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-balance font-medium text-graphite dark:text-ivory">
 					Comment je débloque les produits qui comptent.
 				</h1>
