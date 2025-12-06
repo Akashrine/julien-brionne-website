@@ -453,6 +453,70 @@ export function getLeadershipProduitSchema(config: ServiceSchemaConfig) {
 }
 
 /**
+ * FAQPage Schema pour les pages avec FAQ
+ */
+export interface FAQItem {
+	question: string;
+	answer: string;
+}
+
+export function getFAQPageSchema(siteUrl: string, pageUrl: string, faqItems: FAQItem[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": faqItems.map((item) => ({
+			"@type": "Question",
+			"name": item.question,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": item.answer
+			}
+		}))
+	};
+}
+
+/**
+ * Review Schema pour les études de cas et témoignages
+ */
+export interface ReviewConfig {
+	author: string;
+	datePublished: string;
+	reviewBody: string;
+	ratingValue: number;
+	bestRating?: number;
+	worstRating?: number;
+	itemReviewed?: {
+		name: string;
+		"@type": string;
+	};
+}
+
+export function getReviewSchema(config: ReviewConfig) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"author": {
+			"@type": "Person",
+			"name": config.author
+		},
+		"datePublished": config.datePublished,
+		"reviewBody": config.reviewBody,
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": config.ratingValue,
+			"bestRating": config.bestRating || 5,
+			"worstRating": config.worstRating || 1
+		},
+		...(config.itemReviewed && {
+			"itemReviewed": {
+				"@type": config.itemReviewed["@type"],
+				"name": config.itemReviewed.name
+			}
+		})
+	};
+}
+
+/**
  * Génère tous les schemas JSON-LD pour une page
  */
 export function getAllSchemas(config: SchemaConfig) {
