@@ -9,12 +9,59 @@ import Bio from '../components/Bio.astro';
 import CTA from '../components/CTA.astro';
 import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
+import { getFAQPageSchema } from '../utils/schemas';
 
 const title = "Product Copilot pour SaaS en croissance | Julien Brionne";
 const description = "Quand la vitesse crée du bruit et que le produit perd son sens, je remets l'équipe, la stratégie et le produit dans le même sens. Hands-on Product Leader pour startups SaaS en croissance.";
+
+const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
+const pageUrl = siteUrl;
+
+// FAQ Schema pour SEO
+const faqItems = [
+	{
+		question: "Comment savoir si mon produit manque de direction ou de clarté ?",
+		answer: "Quand tu passes plus de temps à expliquer le produit qu'à le faire avancer, c'est un signal. Plus concrètement : les décisions sont floues ou changent trop vite, la roadmap n'aligne plus les équipes, chacun a sa propre version de la vision, les PMs compensent à la place du produit, la stratégie tient sur des slogans mais pas sur des arbitrages. Un produit manque de clarté quand l'équipe avance, mais plus dans le même sens."
+	},
+	{
+		question: "À quel moment faire appel à un Fractional Head of Product ?",
+		answer: "Quand la croissance crée plus de tension que de traction. Les moments typiques : la vision se délite, l'adoption ou l'usage chutent, les PMs sont débordés et ne pilotent plus, les rôles se grisent et les décisions se dispersent, votre produit produit du bruit et pas d'impact. Un Fractional Head of Product sert à remettre l'ensemble du système produit sur ses rails, rapidement, sans attendre un recrutement long ou incertain."
+	},
+	{
+		question: "Quelle différence entre un Head of Product et un Product Coach ?",
+		answer: "Un Head of Product pilote. Un Product Coach accompagne. Un coach te donne des outils. Un Head of Product prend des décisions, clarifie, arbitre, structure, priorise. Moi, je fais les deux, mais toujours côté opérationnel, jamais côté théorique. Je ne suis pas là pour faire grandir la team : je suis là pour remettre le produit dans le bon sens, maintenant."
+	},
+	{
+		question: "Qu'est-ce qui provoque une baisse d'adoption ou d'usage ?",
+		answer: "Trois causes principales : la promesse n'aligne plus l'expérience (l'utilisateur comprend le pourquoi mais pas le comment), l'activation casse quelque part (onboarding trop long, valeur trop lente, friction trop forte), le produit a dérivé (trop de features, pas assez de focus, vision brouillée). L'usage baisse rarement à cause d'une feature. C'est presque toujours un problème de clarté, pas d'outils."
+	},
+	{
+		question: "Pourquoi les équipes produit se désalignent en période de croissance ?",
+		answer: "Parce que chacun optimise pour sa réalité, pas pour la réalité du produit. Les devs optimisent la livraison, les PMs optimisent la roadmap, les sales optimisent la conversion, le CEO optimise la vitesse. La croissance amplifie ce phénomène : plus il y a de bruit, plus chacun compense. Résultat : le produit perd son sens, et l'équipe perd son alignement."
+	},
+	{
+		question: "Combien de temps faut-il pour remettre un produit dans le bon sens ?",
+		answer: "Entre 4 semaines et 3 mois, selon la situation. 4 semaines pour : réduire le bruit, remettre une direction nette, retrouver du focus. 2 à 3 mois pour : stabiliser les rôles, ancrer une vision claire, installer des rituels qui tiennent, reprendre le contrôle de l'adoption ou de l'usage. Au-delà, ce n'est plus du rattrapage. C'est du scaling propre."
+	},
+	{
+		question: "Travailles-tu avec les équipes existantes ou en parallèle ?",
+		answer: "Toujours avec les équipes. Jamais à côté. Jamais au-dessus. Je travaille avec les PMs, avec les leads, avec les devs, avec le CEO ou le CPO. L'objectif : ne jamais créer une dépendance, mais laisser une équipe plus forte qu'avant mon arrivée."
+	},
+	{
+		question: "Quelle place occupe l'IA dans ton approche produit ?",
+		answer: "Une place claire : là où elle crée de la valeur, pas du bruit. Je n'intègre jamais l'IA pour faire de l'IA. Je l'intègre quand : elle clarifie, elle accélère, elle décharge, elle raisonne, elle améliore l'usage. L'IA raisonnée, c'est le juste niveau, au bon endroit, pour l'impact, pas pour l'effet."
+	},
+	{
+		question: "Quelle est la différence entre un framework et un leadership produit opérationnel ?",
+		answer: "Un framework structure. Un leadership produit pilote. Un framework ne sauve jamais une équipe en crise. Il documente juste la crise. Un leadership opérationnel : tranche, simplifie, clarifie, stabilise, remet le produit dans le bon sens. Dans ces moments-là, vous n'avez pas besoin d'un framework, vous avez besoin d'un copilote."
+	}
+];
+
+const faqSchema = getFAQPageSchema(siteUrl, pageUrl, faqItems);
 ---
 
 <Layout title={title} description={description}>
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 	<Navbar />
 	<main>
 		<Hero />
