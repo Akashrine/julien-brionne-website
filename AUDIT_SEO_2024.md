@@ -428,3 +428,6 @@ const fullOgImage = `${siteUrl}${ogImage}`;
 **Audit réalisé le :** Décembre 2024  
 **Prochaine révision :** Après implémentation des images OG automatiques
 
+
+
+
