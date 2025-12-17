@@ -217,3 +217,6 @@ L'implémentation des images Open Graph dynamiques fonctionne correctement :
 
 **Prochaine action recommandée :** Tester le partage sur les réseaux sociaux pour valider le rendu visuel.
 
+
+
+

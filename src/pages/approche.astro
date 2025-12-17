@@ -7,7 +7,7 @@ import Button from '../components/Button.astro';
 import BackgroundOverlay from '../components/BackgroundOverlay.astro';
 
 const title = "L'approche Product Copilot — Clarté. Alignement. Création d'impact. | Julien Brionne";
-const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis votre système, je le stabilise et je le remets dans la bonne direction.";
+const description = "Je n'applique pas une méthode. J'aide à comprendre pourquoi un système dérive et à remettre des décisions qui tiennent dans le temps.";
 ---
 
 <Layout title={title} description={description}>
@@ -26,14 +26,13 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                     Clarté. Alignement. Création d'impact.
                 </p>
                 <p class="text-lg text-softgray dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                    Je ne plaque jamais une méthode sur votre chaos. Je lis votre système, je le stabilise et je le remets dans la bonne direction. <br>Ce que je construis : de la clarté, de la structure, et des décisions qui tiennent.
+                    Je n'applique pas une méthode. J'aide à comprendre pourquoi un système dérive et à remettre des décisions qui tiennent dans le temps. <br>Cette approche existe pour éviter de décider trop vite ou trop tard.
                 </p>
                 <div class="mt-8">
-                    <a href="https://app.lemcal.com/@productcopilot/decouverte" 
-                       data-lemcal-popup
+                    <a href="/accompagnement/impact-sprint" 
                        class="inline-block border-b border-sand text-graphite dark:text-ivory font-medium pb-1 hover:text-sand transition-colors"
-                       aria-label="Discuter de votre situation">
-                        Discuter de votre situation →
+                       aria-label="Découvrir l'Impact Sprint">
+                        Découvrir l'Impact Sprint →
                     </a>
                 </div>
             </header>
@@ -55,10 +54,10 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                     <div class="lg:col-span-4">
                         <h3 class="text-xl font-serif text-graphite dark:text-ivory mb-4">Lire le système avant d'agir.</h3>
                         <p class="text-softgray dark:text-gray-400 text-sm leading-relaxed mb-4">
-                            Quand un produit dérive, ce n'est jamais un problème d'effort. Le vrai problème est toujours systémique : vision qui circule différemment, décisions lentes, PM sur-sollicités, usages qui stagnent.
+                            Quand un produit dérive, les problèmes visibles sont rarement les causes réelles. Vision qui circule différemment, décisions lentes, PM sur-sollicités, usages qui stagnent — ce sont des symptômes, pas des causes.
                         </p>
                         <p class="text-softgray dark:text-gray-400 text-sm leading-relaxed">
-                            Avant d'agir, je lis le système tel qu'il fonctionne réellement. Pour cela, j'utilise trois lentilles complémentaires.
+                            Ces cadres servent à lire, pas à structurer mécaniquement. Ils révèlent ce qui bloque vraiment avant d'agir.
                         </p>
                     </div>
 
@@ -69,7 +68,7 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         <div class="bg-white dark:bg-white/5 p-8 border border-sand/20 relative">
                             <h3 class="font-mono text-xl text-sand mb-4">FRAME</h3>
                             <p class="text-sm font-bold text-graphite dark:text-ivory mb-2 uppercase tracking-wide">Lire la dynamique produit</p>
-                            <p class="text-xs text-softgray mb-6 italic">FRAME révèle la vérité que la roadmap ne montre pas.</p>
+                            <p class="text-xs text-softgray mb-6 italic">Une lentille pour lire ce que la roadmap ne montre pas.</p>
                             <ul class="space-y-3 text-sm text-softgray dark:text-gray-400 border-t border-sand/10 pt-4 font-mono">
                                 <li class="flex gap-3"><span class="font-bold text-graphite dark:text-ivory w-4">F</span> Focus (ce qui compte vraiment)</li>
                                 <li class="flex gap-3"><span class="font-bold text-graphite dark:text-ivory w-4">R</span> Risques (angles morts, zones d'ombre)</li>
@@ -83,7 +82,7 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         <div class="bg-white dark:bg-white/5 p-8 border border-sand/20 relative">
                             <h3 class="font-mono text-xl text-sand mb-4">SOC</h3>
                             <p class="text-sm font-bold text-graphite dark:text-ivory mb-2 uppercase tracking-wide">Lire la dynamique organisationnelle</p>
-                            <p class="text-xs text-softgray mb-6 italic">Comment une organisation décide, collabore et exécute.</p>
+                            <p class="text-xs text-softgray mb-6 italic">Comment une organisation décide réellement, collabore et exécute.</p>
                             <ul class="space-y-3 text-sm text-softgray dark:text-gray-400 border-t border-sand/10 pt-4 font-mono">
                                 <li class="flex gap-3"><span class="font-bold text-graphite dark:text-ivory w-4">S</span> Strategy (bets, priorités, narratif)</li>
                                 <li class="flex gap-3"><span class="font-bold text-graphite dark:text-ivory w-4">O</span> Operations (discovery, delivery, learning)</li>
@@ -103,7 +102,7 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                             <p class="text-xs text-sand uppercase tracking-widest mt-1">La photographie lucide du système</p>
                         </div>
                         <div class="md:w-2/3 text-sm text-softgray dark:text-gray-400 leading-relaxed border-l border-sand/20 pl-8">
-                            <p class="mb-4">Synthèse des lectures FRAME + SOC. Elle montre avec lucidité :</p>
+                            <p class="mb-4">Synthèse des lectures FRAME + SOC. Un outil de clarification décisionnelle qui rend explicites les arbitrages implicites :</p>
                             <ul class="list-disc list-inside space-y-1 mb-4 pl-2">
                                 <li>La vision telle qu'elle est réellement comprise</li>
                                 <li>Les tensions humaines et structurelles</li>
@@ -111,7 +110,7 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                                 <li>La cohérence entre stratégie, exécution et arbitrages</li>
                             </ul>
                             <p class="font-medium text-graphite dark:text-ivory">
-                                Elle ne donne pas de solutions. Elle révèle ce qui compte — et où agir immédiatement (Piloter, Stabiliser ou Résoudre).
+                                Elle ne donne pas de solutions. Elle révèle ce qui compte — et où agir seulement si le diagnostic le justifie.
                             </p>
                         </div>
                     </div>
@@ -138,23 +137,23 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         </div>
                         <div class="lg:col-span-4">
                             <p class="text-sm text-graphite dark:text-gray-300 leading-relaxed mb-4">
-                                <strong>Objectif :</strong> Remettre un cap net, des arbitrages assumés et une boussole stratégique lisible.
+                                <strong>Quand intervenir :</strong> Après avoir tranché le bon problème. Quand le diagnostic montre qu'il faut remettre un cap net et des arbitrages assumés.
                             </p>
                             <div class="text-sm text-softgray dark:text-gray-400 leading-relaxed space-y-4">
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Reconnecter la vision au réel</strong>
-                                    La vision telle qu'elle circule réellement → reconnectée aux enjeux business et aux capacités du moment.
+                                    La vision telle qu'elle circule réellement → reconnectée aux enjeux business et aux capacités du moment. Une décision sur ce qui compte vraiment.
                                 </div>
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Identifier les bets stratégiques</strong>
-                                    Quelques paris clairs qui guident les prochains mois.
+                                    Quelques paris clairs qui guident les prochains mois. Une décision sur où investir l'énergie.
                                 </div>
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Transformer les bets en décisions</strong>
-                                    Ce qu'on fait. Ce qu'on ne fait plus. Et pourquoi.
+                                    Ce qu'on fait. Ce qu'on ne fait plus. Et pourquoi. Des décisions nettes et assumées.
                                 </div>
                             </div>
-                            <p class="text-xs italic text-sand mt-6">"Piloter, ce n'est pas définir une vision. C'est la transformer en décisions nettes et opérantes."</p>
+                            <p class="text-xs italic text-sand mt-6">"Piloter, ce n'est pas définir une vision. C'est prendre des décisions qui tiennent dans le temps."</p>
                         </div>
                         <div class="lg:col-span-5 bg-white dark:bg-white/5 p-6 border border-sand/10">
                             <span class="text-xs font-bold text-sand uppercase mb-4 block">Outils utilisés</span>
@@ -188,23 +187,23 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         </div>
                         <div class="lg:col-span-4 space-y-6">
                             <p class="text-sm text-graphite dark:text-gray-300 leading-relaxed mb-4">
-                                <strong>Objectif :</strong> Restaurer un fonctionnement sain, lisible et soutenable.
+                                <strong>Quand intervenir :</strong> Après avoir tranché le bon problème. Quand le diagnostic montre qu'il faut restaurer un fonctionnement sain et des décisions prévisibles.
                             </p>
                             <div class="text-sm text-softgray dark:text-gray-400 leading-relaxed space-y-4">
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Clarifier les rôles & responsabilités</strong>
-                                    Éliminer les zones floues et les tensions implicites.
+                                    Éliminer les zones floues et les tensions implicites. Des décisions sur qui décide quoi.
                                 </div>
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Réduction de la surcharge PM</strong>
-                                    Protéger la posture → réduire bruit, interruptions, dépendances cachées.
+                                    Protéger la posture → réduire bruit, interruptions, dépendances cachées. Une décision sur ce qu'on arrête de faire.
                                 </div>
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Reconnecter les humains</strong>
-                                    Feedback, confrontation saine, confiance réciproque.
+                                    Feedback, confrontation saine, confiance réciproque. Des décisions sur comment l'équipe fonctionne.
                                 </div>
                             </div>
-                            <p class="text-xs italic text-sand mt-6">"Stabiliser, c'est remettre l'équipe en état d'avancer ensemble."</p>
+                            <p class="text-xs italic text-sand mt-6">"Stabiliser, c'est remettre l'équipe en état d'avancer ensemble grâce à des décisions claires."</p>
                         </div>
                         <div class="lg:col-span-5 bg-white dark:bg-white/5 p-6 border border-sand/10">
                             <span class="text-xs font-bold text-sand uppercase mb-4 block">Outils utilisés</span>
@@ -233,15 +232,15 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         </div>
                         <div class="lg:col-span-4 space-y-6">
                             <p class="text-sm text-graphite dark:text-gray-300 leading-relaxed mb-4">
-                                <strong>Objectif :</strong> Remettre le produit dans une trajectoire cohérente et mesurable.
+                                <strong>Quand intervenir :</strong> Après avoir tranché le bon problème. Quand le diagnostic montre qu'il faut remettre le produit dans une trajectoire cohérente.
                             </p>
                             <div class="text-sm text-softgray dark:text-gray-400 leading-relaxed space-y-4">
                                 <div>
                                     <strong class="text-graphite dark:text-ivory block mb-1">Recentrer le produit sur la valeur</strong>
-                                    L'objectif : chaque initiative produit → un changement de comportement mesurable.
+                                    Une décision sur ce qui crée vraiment de la valeur. Chaque initiative produit → un changement de comportement mesurable. Une décision sur où investir l'énergie.
                                 </div>
                             </div>
-                            <p class="text-xs italic text-sand mt-6">"Résoudre, c'est comprendre pourquoi l'impact décroche — et le remettre dans le bon sens."</p>
+                            <p class="text-xs italic text-sand mt-6">"Résoudre, c'est comprendre pourquoi l'impact décroche — et décider ce qu'on fait pour le remettre dans le bon sens."</p>
                         </div>
                         <div class="lg:col-span-5 bg-white dark:bg-white/5 p-6 border border-sand/10">
                             <span class="text-xs font-bold text-sand uppercase mb-4 block">Outils utilisés</span>
@@ -280,7 +279,7 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                     <div class="relative z-10 max-w-3xl mx-auto">
                         <h3 class="font-serif text-4xl md:text-5xl mb-6 text-sand">Product Operating System™</h3>
                         <p class="text-lg text-softgray dark:text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto">
-                            Le POS est ce que je laisse derrière moi : un système vivant, autonome, lisible, cohérent, qui continue de fonctionner sans moi.
+                            Le POS n'est pas un système plaqué. C'est ce qui reste quand je n'ai plus besoin d'être là : un système vivant, autonome, lisible, cohérent, qui continue de fonctionner sans dépendance.
                         </p>
                         
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left text-sm font-mono border-t border-sand/20 dark:border-white/10 pt-8">
@@ -293,15 +292,14 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                             <div class="flex gap-2 items-center text-graphite dark:text-ivory"><span class="text-sand">✓</span> Équipe autonome</div>
                         </div>
                         <div class="mt-8 text-xs text-softgray dark:text-gray-500">
-                            Piloter → Stabiliser → Résoudre. Ces trois leviers construisent un système durable : votre Product Operating System.
+                            Piloter → Stabiliser → Résoudre. Ces trois leviers construisent un système durable seulement quand le diagnostic le justifie. Votre Product Operating System : autonome, pas dépendant.
                         </div>
 
                         <div class="mt-16">
-                            <a href="https://app.lemcal.com/@productcopilot/decouverte"
-                               data-lemcal-popup
+                            <a href="/accompagnement/impact-sprint"
                                class="inline-block border border-sand text-sand px-8 py-3 text-sm font-bold uppercase tracking-widest hover:bg-sand hover:text-ivory dark:hover:text-graphite transition-colors"
-                               aria-label="Installer ce système">
-                                Installer ce système
+                               aria-label="Découvrir l'Impact Sprint">
+                                Découvrir l'Impact Sprint
                             </a>
                         </div>
                     </div>
@@ -318,31 +316,31 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
                     <div>
                         <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je n'applique jamais un modèle préconçu</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Je commence par comprendre votre réalité.</p>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Je commence par comprendre votre réalité. Je lis le système avant d'agir.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je reformule ce que l'équipe n'arrive plus à dire</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Les tensions, les décalages, les non-dits.</p>
+                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je reformule avec lucidité ce que l'équipe n'arrive plus à dire</h4>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Les tensions, les décalages, les non-dits. Une confrontation douce pour clarifier.</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-graphite dark:text-ivory mb-2">J'apporte de la clarté, pas de la rigidité</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Un cadre clair soulage. Il ne contraint pas.</p>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Un cadre clair soulage. Il ne contraint pas. Il permet de décider.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je coupe le bruit</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Votre organisation retrouve de la lisibilité.</p>
+                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je coupe le bruit pour rendre les décisions lisibles</h4>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Votre organisation retrouve de la lisibilité. Les décisions redeviennent possibles.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je pilote avec l'équipe</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Pas en observateur externe : je suis dans le système, avec vous.</p>
+                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je prends une part active dans les décisions</h4>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Pas en observateur externe : je suis dans le système, avec vous. Je tranche quand il faut.</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je crée un espace où l'on peut penser</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Quand la pression retombe, les décisions redeviennent lisibles.</p>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Quand la pression retombe, les décisions redeviennent lisibles. L'espace pour trancher s'ouvre.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je laisse un système qui fonctionne sans moi</h4>
-                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Objectif : autonomie, pas dépendance.</p>
+                        <h4 class="font-bold text-graphite dark:text-ivory mb-2">Je laisse un système autonome qui fonctionne sans moi</h4>
+                        <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">Objectif : autonomie, pas dépendance. Des décisions qui tiennent dans le temps.</p>
                     </div>
                 </div>
             </section>
@@ -355,15 +353,15 @@ const description = "Je ne plaque jamais une méthode sur votre chaos. Je lis vo
                         Votre produit traverse un moment critique ?
                     </h2>
                     <p class="text-lg text-softgray dark:text-gray-400 mb-10">
-                        Clarifions ensemble ce qui bloque. Un échange de 30 minutes pour identifier les leviers immédiats.
+                        L'Impact Sprint identifie le mauvais problème et force une décision claire en 4 semaines. Vérifiez si vous êtes en train de résoudre le bon problème avant que les décisions ne coûtent trop cher.
                     </p>
                     <Button 
                         href="https://app.lemcal.com/@productcopilot/decouverte"
-                        text="Discuter de votre situation"
+                        text="Programmer un diagnostic de décision"
                         variant="primary"
                         size="lg"
                         lemcal={true}
-                        ariaLabel="Discuter de votre situation"
+                        ariaLabel="Programmer un diagnostic de décision"
                     />
                 </div>
             </section>

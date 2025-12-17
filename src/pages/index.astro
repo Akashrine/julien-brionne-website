@@ -11,8 +11,8 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 import { getFAQPageSchema } from '../utils/schemas';
 
-const title = "Product Copilot pour SaaS en croissance | Julien Brionne";
-const description = "Quand la vitesse crée du bruit et que le produit perd son sens, je remets l'équipe, la stratégie et le produit dans le même sens. Hands-on Product Leader pour startups SaaS en croissance.";
+const title = "Impact Sprint — Diagnostic stratégique produit | Julien Brionne";
+const description = "Quand la roadmap déborde, le vrai risque n'est pas d'avancer lentement. C'est d'avancer dans la mauvaise direction. Impact Sprint : 4 semaines pour identifier le mauvais problème produit et forcer une décision claire.";
 
 const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
 const pageUrl = siteUrl;
@@ -69,10 +69,10 @@ const faqSchema = getFAQPageSchema(siteUrl, pageUrl, faqItems);
 		<div class="py-8 px-6 md:px-12 bg-ivory dark:bg-graphite">
 			<div class="max-w-[1400px] mx-auto text-center">
 				<p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase text-sand font-semibold mb-2">
-					Piloter. Stabiliser. Résoudre.
+					Diagnostic. Décision. Focus.
 				</p>
 				<p class="font-sans text-xs md:text-sm text-graphite dark:text-warmgray-400">
-					La méthode Product Copilot pour remettre un système dans le bon sens.
+					Identifier le mauvais problème produit avant qu'il ne coûte trop cher.
 				</p>
 			</div>
 		</div>

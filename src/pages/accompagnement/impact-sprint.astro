@@ -6,8 +6,8 @@ import ScrollArrow from '../../components/ScrollArrow.astro';
 import ContextualPill from '../../components/ContextualPill.astro';
 import BackgroundOverlay from '../../components/BackgroundOverlay.astro';
 
-const title = "Impact Sprint — Débloquer adoption, activation et usage en 4 semaines | Julien Brionne";
-const description = "Impact Sprint de 4 semaines pour débloquer adoption, activation et usage. Identifier ce qui bloque réellement votre produit et remettre un plan d'impact clair.";
+const title = "Impact Sprint — Trancher le bon problème | Julien Brionne";
+const description = "Impact Sprint : 4 semaines pour identifier le mauvais problème produit et forcer une décision claire. Diagnostic orienté décision pour CEOs de SaaS B2B post-Seed / Série A.";
 ---
 
 <Layout title={title} description={description}>
@@ -40,21 +40,24 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
                         Impact Sprint
                     </h1>
                     <p class="font-sans text-xl md:text-2xl text-softgray dark:text-gray-400 font-light leading-relaxed max-w-2xl mx-auto">
-                        Débloquer adoption, activation et usage.<br class="hidden md:block" />
-                        <span class="text-graphite dark:text-ivory font-medium mt-2 block">Retrouver un produit qui avance dans le bon sens.</span>
+                        Trancher sans comprendre est dangereux.<br class="hidden md:block" />
+                        <span class="text-graphite dark:text-ivory font-medium mt-2 block">Ne pas trancher l'est encore plus.</span>
+                    </p>
+                    <p class="font-sans text-base md:text-lg text-softgray dark:text-gray-400 leading-relaxed max-w-2xl mx-auto pt-4">
+                        Vous êtes CEO d'une SaaS B2B en croissance. Les décisions produit deviennent coûteuses. Les mois passent sur des problèmes qui ne sont peut-être pas les bons. L'Impact Sprint identifie le mauvais problème et force une décision claire, en 4 semaines.
                     </p>
                     
                     <div class="pt-10 flex flex-col sm:flex-row gap-6 justify-center items-center">
                         <a href="https://app.lemcal.com/@productcopilot/decouverte" 
                            data-lemcal-popup
                            class="group relative inline-flex h-12 items-center justify-center overflow-hidden bg-graphite dark:bg-ivory px-8 font-sans font-bold text-ivory dark:text-graphite transition-all duration-300 hover:bg-sand dark:hover:bg-sand hover:text-white dark:hover:text-white text-xs uppercase tracking-widest w-full sm:w-auto min-w-[200px]"
-                           aria-label="Discuter de votre situation">
-                            <span class="mr-2">Discuter</span>
+                           aria-label="Vérifier si vous résolvez le bon problème">
+                            <span class="mr-2">Vérifier si vous résolvez le bon problème</span>
                             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
                         <a href="#contenu-section" 
                            class="text-xs font-bold uppercase tracking-widest border-b border-transparent hover:border-sand transition-all pb-1 text-graphite dark:text-ivory">
-                            Découvrir le programme
+                            Comment ça se passe
                         </a>
                     </div>
                 </div>
@@ -73,15 +76,15 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
                 <!-- Sticky Left Title -->
                 <div class="lg:sticky lg:top-32 fade-in-up">
                     <h2 class="font-serif text-3xl md:text-5xl text-graphite dark:text-ivory mb-8">
-                        Pour qui ?
+                        Pourquoi l'Impact Sprint existe
                     </h2>
                     <p class="text-lg text-softgray dark:text-gray-300 mb-8 leading-relaxed max-w-md">
-                        Ce sprint est conçu pour les équipes qui sentent que la machine se grippe, sans savoir exactement où appuyer pour relancer la mécanique.
+                        Ce moment est dangereux. Les équipes avancent mais dérivent. Ajouter des ressources ne résout rien. La décision est bloquée.
                     </p>
                     <div class="p-8 bg-white dark:bg-white/5 border-l-2 border-sand shadow-sm relative overflow-hidden group">
                         <div class="absolute -right-4 -top-4 text-9xl font-serif text-sand/10 pointer-events-none">"</div>
                         <p class="font-serif italic text-xl relative z-10 text-graphite dark:text-ivory">
-                            Trop d'intuitions, pas assez de certitudes.
+                            Le coût du flou dépasse le coût de la décision.
                         </p>
                     </div>
                 </div>
@@ -89,12 +92,12 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
                 <!-- Technical Grid Right -->
                 <div class="grid grid-cols-1 gap-0 bg-white dark:bg-white/5 border border-sand/10 fade-in-up delay-200">
                     {[
-                        "L'adoption stagne ou baisse sans raison claire.",
-                        "L'activation ne progresse plus malgré les efforts.",
-                        "L'usage s'essouffle malgré les nouvelles features.",
-                        "Les priorités changent trop vite (Thrashing).",
-                        "Les PMs compensent le manque de clarté par du delivery.",
-                        "Les signaux faibles sont noyés dans le bruit."
+                        "La roadmap est pleine, mais vous ne savez plus si c'est la bonne.",
+                        "Les décisions changent. Ce qui était prioritaire hier ne l'est plus aujourd'hui.",
+                        "L'usage stagne malgré les features qui sortent.",
+                        "Les PMs sont épuisés à compenser, pas à piloter.",
+                        "Chaque choix produit coûte plus cher qu'avant.",
+                        "Le temps perdu devient un risque business."
                     ].map((item) => (
                         <div class="flex items-start gap-4 p-6 border-b border-sand/10 hover:bg-ivory dark:hover:bg-white/10 transition-colors group last:border-0">
                             <span class="text-sand text-xl font-mono group-hover:translate-x-1 transition-transform">↘</span>
@@ -110,41 +113,41 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
             <div class="max-w-7xl mx-auto">
                 <div class="mb-20 text-center fade-in-up">
                     <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-4">
-                        Ce que le Sprint débloque
+                        Ce que le Sprint permet de trancher
                     </h2>
-                    <p class="text-softgray font-mono text-sm uppercase tracking-wider">Objectif : Lisibilité Opérationnelle</p>
+                    <p class="text-softgray font-mono text-sm uppercase tracking-wider">Décisions, pas livrables</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-sand/20 fade-in-up delay-100">
                     <!-- Item 1 -->
                     <div class="p-10 border-b md:border-b-0 md:border-r border-sand/20 hover:bg-sand/5 dark:hover:bg-white/10 transition-all duration-300 group">
                         <span class="text-5xl font-serif text-sand/20 group-hover:text-sand/50 transition-colors mb-6 block">01</span>
-                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">La Valeur Réelle</h3>
+                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">Quel problème on attaque vraiment</h3>
                         <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">
-                            Identifier ce qui fonctionne vraiment aujourd'hui au-delà des métriques flatteuses (Vanity Metrics).
+                            Identifier le nœud réel, pas le symptôme. Ce qui bloque vraiment votre produit, pas ce qui semble bloquer.
                         </p>
                     </div>
                     <!-- Item 2 -->
                     <div class="p-10 border-b md:border-b-0 md:border-r border-sand/20 hover:bg-sand/5 dark:hover:bg-white/10 transition-all duration-300 group">
                         <span class="text-5xl font-serif text-sand/20 group-hover:text-sand/50 transition-colors mb-6 block">02</span>
-                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">Le Comportement Clé</h3>
+                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">Ce qu'on arrête de faire</h3>
                         <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">
-                            Comprendre ce qui tient votre produit. Ce n'est pas ce que vous mesurez par habitude, c'est ce que l'utilisateur fait vraiment.
+                            Clarifier ce qui ne sert plus. Ce qu'on accepte de ne PAS résoudre maintenant. Où on arrête d'investir l'énergie produit.
                         </p>
                     </div>
                     <!-- Item 3 -->
                     <div class="p-10 hover:bg-sand/5 dark:hover:bg-white/10 transition-all duration-300 group">
                         <span class="text-5xl font-serif text-sand/20 group-hover:text-sand/50 transition-colors mb-6 block">03</span>
-                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">Le Blocage Invisible</h3>
+                        <h3 class="font-bold text-lg mb-3 text-graphite dark:text-ivory">Où investir l'énergie</h3>
                         <p class="text-sm text-softgray dark:text-gray-400 leading-relaxed">
-                            Frictions invisibles, charge cognitive trop haute, intention brouillée, dilution des décisions produit.
+                            Un cap stratégique clair. Un focus qui évite de perdre du temps sur le mauvais problème. Une décision assumée.
                         </p>
                     </div>
                 </div>
 
                 <div class="mt-16 text-center max-w-2xl mx-auto fade-in-up delay-200">
                     <p class="text-lg font-serif italic text-graphite dark:text-ivory">
-                        "Les équipes ne manquent pas de vitesse. Elles manquent de lisibilité. Le Sprint sert à lire le système sans filtre."
+                        "Le Sprint ne résout pas tout. Il force une décision sur ce qui compte vraiment."
                     </p>
                 </div>
             </div>
@@ -180,7 +183,7 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
         <section id="contenu-section" class="py-32 px-6 md:px-12 bg-ivory dark:bg-graphite relative">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-24 fade-in-up">
-                    <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-4">Déroulé des 4 semaines</h2>
+                    <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-4">Comment ça se passe — 4 semaines</h2>
                     <p class="text-softgray">Un rythme intensif, conçu pour ne pas paralyser votre roadmap actuelle.</p>
                 </div>
                 
@@ -192,23 +195,23 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
                     {[
                         {
                             phase: "Semaine 1",
-                            title: "Lire le système",
-                            desc: "Entretiens rapides · Analyse du produit 'à froid' · Étude data · Détection des signaux faibles."
+                            title: "Lecture du système",
+                            desc: "Entretiens clés avec l'équipe. Analyse du produit à froid. Lecture des signaux : produit, organisation, business. Premières hypothèses."
                         },
                         {
                             phase: "Semaine 2",
-                            title: "Comprendre la valeur",
-                            desc: "Diagnostic adoption & activation. Isolation du comportement clé utilisateur. Où est la friction ?"
+                            title: "Confrontation des hypothèses",
+                            desc: "Analyse des données réelles. Confrontation des intuitions avec la réalité terrain. Identification des tensions invisibles."
                         },
                         {
                             phase: "Semaine 3",
-                            title: "Identifier les leviers",
-                            desc: "Construction des trois leviers · Hypothèses critiques · Amorçage de la boucle d'expérimentation."
+                            title: "Clarification du nœud réel",
+                            desc: "Isolation du problème qui bloque vraiment. Ce qui coûte déjà trop cher. Ce qu'on arrête. Ce sur quoi on se concentre."
                         },
                         {
                             phase: "Semaine 4",
-                            title: "Aligner & Relancer",
-                            desc: "Plan d'impact final · Recommandations stratégiques · Transmission à l'équipe pour exécution."
+                            title: "Décision explicite",
+                            desc: "Décision claire et assumée. Cap stratégique pour les 3 prochains mois. Roadmap allégée. Cadre de pilotage lisible. Transmission à l'équipe."
                         }
                     ].map((week, index) => (
                         <div class={`relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center group ${index % 2 === 0 ? '' : 'md:rtl'}`}>
@@ -231,41 +234,67 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
             </div>
         </section>
 
-        <!-- SECTION 6 — LIVRABLES (Bento Grid) -->
+        <!-- SECTION 6 — CE QUE VOUS AVEZ À LA FIN -->
         <section class="py-24 px-6 md:px-12 bg-ivory dark:bg-graphite-light border-t border-sand/10">
             <div class="max-w-5xl mx-auto fade-in-up">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                    <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">Livrables Concrets</h2>
-                    <span class="text-xs font-mono text-softgray uppercase tracking-wider">Pas de slides inutiles. Que de l'actionnable.</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory">Ce que vous avez à la fin</h2>
+                    <span class="text-xs font-mono text-softgray uppercase tracking-wider">Le Sprint se termine. La dépendance n'est pas créée.</span>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Grand Bloc -->
                     <div class="md:col-span-2 bg-white dark:bg-white/5 p-8 border border-sand/10 hover:border-sand/30 transition-colors group">
-                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Document 01</span>
-                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Audit Adoption / Activation</h3>
-                        <p class="text-sm text-softgray">Les comportements réels. Les signaux faibles. Les zones de résistance. Une analyse data sans concession pour arrêter de se mentir.</p>
+                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Résultat 01</span>
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Une décision claire et assumée</h3>
+                        <p class="text-sm text-softgray">Le problème à résoudre en premier. Ce qu'on arrête de faire. Ce qu'on accepte de ne PAS résoudre maintenant. Une décision nette, pas une liste de recommandations.</p>
                     </div>
                     
                     <!-- Petit Bloc -->
                     <div class="bg-white dark:bg-white/5 p-8 border border-sand/10 hover:border-sand/30 transition-colors group">
-                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Document 02</span>
-                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Insight Report</h3>
-                        <p class="text-sm text-softgray">Une photographie lucide et exploitable.</p>
+                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Résultat 02</span>
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Un cap stratégique</h3>
+                        <p class="text-sm text-softgray">Pour les 3 prochains mois. Un focus qui évite de perdre du temps sur le mauvais problème.</p>
                     </div>
 
                     <!-- Petit Bloc -->
                     <div class="bg-white dark:bg-white/5 p-8 border border-sand/10 hover:border-sand/30 transition-colors group">
-                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Stratégie</span>
-                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">3 Leviers d'Impact</h3>
-                        <p class="text-sm text-softgray">Trois actions fortes. Mesurables. Tenables.</p>
+                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Résultat 03</span>
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Une roadmap allégée</h3>
+                        <p class="text-sm text-softgray">Ce qui compte vraiment. Ce qui peut attendre. Ce qui ne sert plus.</p>
                     </div>
 
                     <!-- Grand Bloc -->
                     <div class="md:col-span-2 bg-white dark:bg-white/5 p-8 border border-sand/10 hover:border-sand/30 transition-colors group">
-                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Roadmap Tactique</span>
-                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Plan d'Impact</h3>
-                        <p class="text-sm text-softgray">Une trajectoire claire reliée au comportement qui compte. Hypothèses → tests → décisions. Pour redonner le volant à l'équipe.</p>
+                        <span class="font-mono text-xs text-sand uppercase mb-3 block opacity-70 group-hover:opacity-100">Résultat 04</span>
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Un cadre de pilotage lisible et une équipe réalignée</h3>
+                        <p class="text-sm text-softgray">Un cap clair autour duquel l'équipe se réaligne. Des critères de décision simples. Un cadre qui tient sans dépendance externe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6B — CE QUE CE N'EST PAS -->
+        <section class="py-24 px-6 md:px-12 bg-ivory dark:bg-graphite border-t border-sand/10">
+            <div class="max-w-4xl mx-auto fade-in-up">
+                <h2 class="font-serif text-3xl md:text-4xl text-graphite dark:text-ivory mb-8 text-center">Ce que ce n'est pas</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-white/5 p-6 border border-sand/10">
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Ce n'est pas du coaching</h3>
+                        <p class="text-sm text-softgray">Je ne fais pas grandir votre équipe. Je tranche un problème de décision produit.</p>
+                    </div>
+                    <div class="bg-white dark:bg-white/5 p-6 border border-sand/10">
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Ce n'est pas un audit PowerPoint</h3>
+                        <p class="text-sm text-softgray">Pas de slides inutiles. Que de l'actionnable. Une décision, pas un rapport.</p>
+                    </div>
+                    <div class="bg-white dark:bg-white/5 p-6 border border-sand/10">
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Ce n'est pas une mission longue déguisée</h3>
+                        <p class="text-sm text-softgray">Le Sprint se termine en 4 semaines. La suite dépend du diagnostic, jamais imposée.</p>
+                    </div>
+                    <div class="bg-white dark:bg-white/5 p-6 border border-sand/10">
+                        <h3 class="font-bold text-lg mb-2 text-graphite dark:text-ivory">Ce n'est pas une promesse de croissance magique</h3>
+                        <p class="text-sm text-softgray">Le Sprint évite de résoudre le mauvais problème. Il ne garantit pas une croissance immédiate.</p>
                     </div>
                 </div>
             </div>
@@ -276,21 +305,26 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
             <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 fade-in-up">
                 
                 <div class="space-y-8">
-                    <h3 class="font-serif text-3xl text-sand">Mon rôle dans le Sprint</h3>
-                    <p class="text-xl text-graphite dark:text-ivory font-medium leading-relaxed">Je n'apporte pas du process pour faire joli. J'apporte du discernement.</p>
-                    <ul class="space-y-4 text-softgray dark:text-gray-400">
-                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Je lis le système humain et technique sans biais politique.</span></li>
-                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Je reformule ce que l'équipe n'arrive plus à dire aux fondateurs.</span></li>
-                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Je simplifie jusqu'à ce que la prochaine étape devienne évidente.</span></li>
+                    <h3 class="font-serif text-3xl text-sand">Pour qui</h3>
+                    <ul class="space-y-3 text-softgray dark:text-gray-400">
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>CEOs SaaS B2B post-Seed / Série A</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Équipe produit ≥ 8–10 personnes</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Roadmap saturée, décisions instables</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span>Pression croissante côté CEO</span></li>
                     </ul>
                 </div>
 
                 <div class="space-y-8 lg:border-l lg:border-sand/20 lg:pl-12">
                     <h3 class="font-serif text-3xl text-sand">Et après ?</h3>
-                    <p class="text-xl text-graphite dark:text-ivory font-medium">Le Sprint est une entrée, pas une fin en soi.</p>
-                    <p class="text-softgray dark:text-gray-400 text-sm leading-relaxed">Selon ce que l'on découvre, la suite peut prendre trois formes : Leadership & Pilotage (Fractional CPO), Coaching d'équipe, ou une structuration process long terme.</p>
+                    <p class="text-xl text-graphite dark:text-ivory font-medium">Le Sprint est une entrée. La suite dépend du diagnostic.</p>
+                    <p class="text-softgray dark:text-gray-400 text-sm leading-relaxed mb-4">Parfois le Sprint suffit. Parfois un accompagnement est pertinent. Jamais imposé. Toujours conditionné à la décision prise.</p>
+                    <ul class="space-y-3 text-softgray dark:text-gray-400 text-sm">
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span><strong>Leadership & Pilotage</strong> (2 à 6 mois) : si le diagnostic montre qu'il faut stabiliser l'organisation produit</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span><strong>Coaching ciblé</strong> (6 à 8 semaines) : si le diagnostic montre qu'il faut faire grandir vos PMs</span></li>
+                        <li class="flex gap-3 items-start"><span class="text-sand mt-2 h-1.5 w-1.5 rounded-full bg-sand block flex-shrink-0"></span><span><strong>Structuration spécifique</strong> : si le diagnostic montre qu'une structuration est nécessaire</span></li>
+                    </ul>
                     <div class="pt-6 border-t border-sand/10">
-                        <p class="text-graphite dark:text-ivory italic font-serif">"On ne décide jamais avant. On décide quand le brouillard est dissipé."</p>
+                        <p class="text-graphite dark:text-ivory italic font-serif">"Mais toujours comme conséquence d'une décision claire. Jamais par défaut."</p>
                     </div>
                 </div>
 
@@ -302,12 +336,12 @@ const description = "Impact Sprint de 4 semaines pour débloquer adoption, activ
             <BackgroundOverlay variant="lines" opacity="10" />
             <div class="relative z-10 max-w-3xl mx-auto fade-in-up">
                 <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
-                    Votre produit avance,<br>mais plus dans le bon sens ?
+                    Identifier la décision qui coûte déjà trop cher
                 </h2>
-                <p class="text-lg md:text-xl text-gray-400 mb-12 font-light">Arrêtons les features. Remettons les choses au clair en 4 semaines.</p>
+                <p class="text-lg md:text-xl text-gray-400 mb-12 font-light">Vérifiez si vous êtes en train de résoudre le bon problème avant que les mois ne passent sur la mauvaise direction.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
                     <a href="https://app.lemcal.com/@productcopilot/decouverte" target="_blank" class="inline-block bg-ivory text-graphite font-sans px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-sand hover:text-ivory transition-colors">
-                        Programmer un diagnostic
+                        Programmer un diagnostic de décision
                     </a>
                 </div>
             </div>

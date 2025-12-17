@@ -188,3 +188,6 @@ Inspecter le HTML généré pour vérifier que les balises `<meta property="og:i
 **Statut :** ✅ Implémentation terminée et fonctionnelle  
 **Prochaine étape :** Tests et validation
 
+
+
+
