@@ -11,11 +11,12 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 import { getFAQPageSchema } from '../utils/schemas';
 
-const title = "Impact Sprint — Diagnostic stratégique produit | Julien Brionne";
+const title = "Product Copilot — Diagnostic stratégique produit pour SaaS B2B | Julien Brionne";
 const description = "Quand la roadmap déborde, le vrai risque n'est pas d'avancer lentement. C'est d'avancer dans la mauvaise direction. Impact Sprint : 4 semaines pour identifier le mauvais problème produit et forcer une décision claire.";
 
 const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
 const pageUrl = siteUrl;
+const ogImage = "/diagnostic-Photoroom.webp";
 
 // FAQ Schema pour SEO
 const faqItems = [
@@ -60,7 +61,7 @@ const faqItems = [
 const faqSchema = getFAQPageSchema(siteUrl, pageUrl, faqItems);
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} ogImage={ogImage}>
 	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 	<Navbar />
 	<main>

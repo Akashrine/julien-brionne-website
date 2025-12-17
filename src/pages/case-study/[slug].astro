@@ -50,9 +50,11 @@ const description = caseStudy.description;
 
 const siteUrl = typeof Astro.site === 'string' ? Astro.site : Astro.site?.href || "https://julien-brionne.fr";
 const pageUrl = new URL(`/case-study/${slug}`, siteUrl).href;
-// Utiliser l'image OG générée dynamiquement pour les case studies
+// Utiliser l'image OG générée dynamiquement pour les case studies, avec fallback
 const ogImagePath = `/og/case-study-${slug}.png`;
 const ogImage = `${siteUrl}${ogImagePath}`;
+// Fallback vers image par défaut si l'image OG générée n'existe pas
+const ogImageFallback = "/diagnostic-Photoroom.webp";
 
 // JSON-LD Schema pour Article
 const articleSchema = {
@@ -159,7 +161,7 @@ const pillTextMap: Record<string, string> = {
 const pillText = pillTextMap[slug || ''] || 'Étude de cas';
 ---
 
-<Layout title={title} description={description} ogImage={ogImagePath}>
+<Layout title={title} description={description} ogImage={ogImagePath || ogImageFallback}>
 	<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 	<script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
